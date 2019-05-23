@@ -8,7 +8,7 @@
 */
 
 #include "EspMQTTClient.h" /* https://github.com/plapointe6/EspMQTTClient */
-#include "ArduinoJson.h" /* https://github.com/bblanchon/ArduinoJson */
+#include "ArduinoJson.h"   /* https://github.com/bblanchon/ArduinoJson */
 
 #define PUB_DELAY (5 * 1000) /* 5 seconds */
 
@@ -33,7 +33,7 @@ void publishTemperature() {
   long now = millis();
   if (client.isConnected() && (now - last > PUB_DELAY)) {
     String payload;
-    StaticJsonDocument<200> doc;
+    StaticJsonDocument<1024> doc;
     doc["temperature"] = random(20, 30);
     doc["humidity"] = random(40, 90);
     serializeJson(doc, payload);

@@ -1,7 +1,7 @@
 
 #include "EspMQTTClient.h" /* https://github.com/plapointe6/EspMQTTClient */
-#include "DHT.h" /* 1. https://github.com/adafruit/Adafruit_Sensor
-                    2. https://github.com/adafruit/DHT-sensor-library  */
+#include "DHT.h"        /* 1. https://github.com/adafruit/Adafruit_Sensor
+                           2. https://github.com/adafruit/DHT-sensor-library  */
 
 #define PUB_DELAY (5 * 1000) /* 5 seconds */
 
