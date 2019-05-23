@@ -5,7 +5,7 @@ EspMQTTClient client(
   "<wifi-ssid>",
   "<wifi-password>",
   "sandbox.rightech.io",
-  "<ric-client-id>"
+  "<ric-mqtt-client-id>"
 );
 
 long last = 0;
