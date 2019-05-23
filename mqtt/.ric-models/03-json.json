@@ -16,10 +16,9 @@
       "id": "json",
       "name": "JSON payload",
       "active": true,
+      "linear": false,
       "type": "argument",
       "dataType": "object",
-      "factor": 1,
-      "linear": false,
       "source": "state",
       "reference": "base/state",
       "children": [
