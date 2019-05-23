@@ -32,10 +32,11 @@ long last = 0;
 void publishTemperature() {
   long now = millis();
   if (client.isConnected() && (now - last > PUB_DELAY)) {
-    String payload;
     StaticJsonDocument<1024> doc;
     doc["temperature"] = random(20, 30);
     doc["humidity"] = random(40, 90);
+    
+    String payload;
     serializeJson(doc, payload);
 
     client.publish("base/state", payload);
