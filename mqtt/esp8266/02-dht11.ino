@@ -3,6 +3,8 @@
 #include "DHT.h" /* 1. https://github.com/adafruit/Adafruit_Sensor
                     2. https://github.com/adafruit/DHT-sensor-library  */
 
+#define PUB_DELAY (5 * 1000) /* 5 seconds */
+
 EspMQTTClient client(
   "<wifi-ssid>",
   "<wifi-password>",
@@ -26,12 +28,12 @@ void onConnectionEstablished() {
 long last = 0;
 void publishTemperature() {
   long now = millis();
-  if (client.isConnected() && (now - last > 5000)) {
-    last = now;
+  if (client.isConnected() && (now - last > PUB_DELAY)) {
     float t = dht.readTemperature();
-    float h = dht.readHumidity();
     client.publish("base/state/temperature", String(t));
+    float h = dht.readHumidity();
     client.publish("base/state/humidity", String(h));
+    last = now;
   }
 }
 

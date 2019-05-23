@@ -1,6 +1,8 @@
 
 #include "EspMQTTClient.h" /* https://github.com/plapointe6/EspMQTTClient */
 
+#define PUB_DELAY (5 * 1000) /* 5 seconds */
+
 EspMQTTClient client(
   "<wifi-ssid>",
   "<wifi-password>",
@@ -9,14 +11,8 @@ EspMQTTClient client(
   "<ric-mqtt-client-id>"
 );
 
-long last = 0;
-void publishTemperature() {
-  long now = millis();
-  if (client.isConnected() && (now - last > 5000)) {
-    last = now;
-    auto payload = String(random(20, 30));
-    client.publish("base/state/temperature", payload);
-  }
+void setup() {
+  Serial.begin(9600);  
 }
 
 void onConnectionEstablished() {
@@ -25,8 +21,14 @@ void onConnectionEstablished() {
   });
 }
 
-void setup() {
-  Serial.begin(9600);  
+long last = 0;
+void publishTemperature() {
+  long now = millis();
+  if (client.isConnected() && (now - last > PUB_DELAY)) {
+    client.publish("base/state/temperature", String(random(20, 30)));
+    client.publish("base/state/humidity", String(random(40, 90)));
+    last = now;
+  }
 }
 
 void loop() {
