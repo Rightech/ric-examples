@@ -12,10 +12,9 @@ long last = 0;
 void publishTemperature() {
   long now = millis();
   if (client.isConnected() && (now - last > 5000)) {
+    last = now;
     auto payload = String(random(20, 30));
     client.publish("base/state/temperature", payload);
-
-    last = now;
   }
 }
 
