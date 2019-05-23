@@ -4,6 +4,7 @@
 EspMQTTClient client(
   "<wifi-ssid>",
   "<wifi-password>",
+
   "sandbox.rightech.io",
   "<ric-mqtt-client-id>"
 );
@@ -29,6 +30,6 @@ void setup() {
 }
 
 void loop() {
-  publishTemperature();
   client.loop();
+  publishTemperature();
 }
