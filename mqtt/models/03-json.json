@@ -1,0 +1,104 @@
+{
+  "id": "root",
+  "name": "MQTT",
+  "active": true,
+  "base": "mqtt",
+  "type": "subsystem",
+  "children": [
+    {
+      "id": "external-software-modules",
+      "active": true,
+      "copy": true,
+      "type": "subsystem",
+      "children": []
+    },
+    {
+      "id": "json",
+      "name": "JSON payload",
+      "active": true,
+      "type": "argument",
+      "dataType": "object",
+      "factor": 1,
+      "linear": false,
+      "source": "state",
+      "reference": "base/state",
+      "children": [
+        {
+          "id": "temperature",
+          "name": "Temperature",
+          "active": true,
+          "type": "argument",
+          "source": "state",
+          "dataType": "number",
+          "unit": "temperature-celsius",
+          "reference": "json.temperature",
+          "linear": true
+        },
+        {
+          "id": "humidity",
+          "name": "Humidity",
+          "active": true,
+          "type": "argument",
+          "source": "state",
+          "dataType": "number",
+          "unit": "percent",
+          "reference": "json.humidity",
+          "linear": true
+        }
+      ]
+    },
+    {
+      "id": "server-info",
+      "name": "Server information",
+      "active": true,
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "online",
+          "name": "Online",
+          "active": true,
+          "type": "argument",
+          "source": "state",
+          "dataType": "boolean",
+          "reference": "online"
+        },
+        {
+          "id": "_ts",
+          "name": "Time",
+          "active": true,
+          "type": "argument",
+          "source": "state",
+          "dataType": "number",
+          "unit": "duration-microsecond",
+          "reference": "_ts"
+        }
+      ]
+    },
+    {
+      "id": "mqtt-last",
+      "name": "Last MQTT Publish",
+      "active": true,
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "topic",
+          "name": "Topic",
+          "active": true,
+          "type": "argument",
+          "source": "state",
+          "dataType": "string",
+          "reference": "topic"
+        },
+        {
+          "id": "payload",
+          "name": "Payload",
+          "active": true,
+          "type": "argument",
+          "source": "state",
+          "dataType": "string",
+          "reference": "payload"
+        }
+      ]
+    }
+  ]
+}
