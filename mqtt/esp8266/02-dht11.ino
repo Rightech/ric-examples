@@ -29,8 +29,8 @@ void publishTemperature() {
   if (client.isConnected() && (now - last > 5000)) {
     last = now;
     float t = dht.readTemperature();
-    float h = dht.readHumidity();
     client.publish("base/state/temperature", String(t));
+    float h = dht.readHumidity();
     client.publish("base/state/humidity", String(h));
   }
 }
