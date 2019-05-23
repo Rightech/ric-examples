@@ -1,6 +1,6 @@
 const mqtt = require('mqtt').connect('mqtt://sandbox.rightech.io', {
-  clientId: 'mqtt-olegprohazko-8jqvz2'
-})
+  clientId: '<ric-mqtt-client-id>'
+});
  
 mqtt.on('connect', ()=> {
   console.log(`${new Date}: connected`);
