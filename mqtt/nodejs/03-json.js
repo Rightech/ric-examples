@@ -1,7 +1,8 @@
 /**
- For this particular example you could use following model: https://github.com/Rightech/ric-examples/blob/master/mqtt/.ric-models/03-json.json
+ For this particular example you could use following model: 
+    https://github.com/Rightech/ric-examples/blob/master/mqtt/.ric-models/03-json.json
  Note that: 
-    @node `json`        - must have
+    @node `json`        - only must have
     @node `server-info` - for connectivity debug
     @node `mqtt-last`   - for mqtt publish debug
 */
