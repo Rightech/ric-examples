@@ -1,5 +1,5 @@
 const mqtt = require('mqtt').connect('mqtt://sandbox.rightech.io', {
-  clientId: '<ric-mqtt-client-id>'
+  clientId: process.env.MQTT_CLIENTID || '<ric-mqtt-client-id>'
 });
  
 mqtt.on('connect', ()=> {
