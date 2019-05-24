@@ -1,0 +1,133 @@
+{
+  "id": "root",
+  "base": "mqtt",
+  "name": "zigbee2mqtt",
+  "active": true,
+  "type": "subsystem",
+  "children": [
+    {
+      "id": "external-software-modules",
+      "active": true,
+      "copy": true,
+      "type": "subsystem",
+      "children": [],
+      "name": "External software modules"
+    },
+    {
+      "id": "params",
+      "name": "Params",
+      "active": true,
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "temp",
+          "name": "Temperature Sensor",
+          "description": "WSDCGQ01LM - Xiaomi MiJia temperature & humidity sensor",
+          "active": true,
+          "type": "argument",
+          "dataType": "object",
+          "reference": "zigbee2mqtt/<Zigbree device IEEE addr here>",
+          "source": "state",
+          "children": [
+            {
+              "id": "temperature",
+              "name": "Temperature",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "temperature-celsius",
+              "reference": "temp.temperature",
+              "linear": true
+            },
+            {
+              "id": "humidity",
+              "name": "Humidity",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "percent",
+              "reference": "temp.humidity",
+              "linear": true
+            }
+          ]
+        },
+        {
+          "id": "button",
+          "name": "Button",
+          "description": "WXKG01LM - Xiaomi MiJia wireless switch",
+          "active": true,
+          "type": "argument",
+          "dataType": "object",
+          "source": "state",
+          "reference": "zigbee2mqtt/<Zigbree device IEEE addr here>",
+          "children": [
+            {
+              "id": "click",
+              "name": "Click",
+              "active": true,
+              "type": "argument",
+              "dataType": "string",
+              "reference": "button.click",
+              "source": "state"
+            }
+          ]
+        },
+        {
+          "id": "server-info",
+          "name": "Server information",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "online",
+              "name": "Online",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "boolean",
+              "reference": "online"
+            },
+            {
+              "id": "_ts",
+              "name": "Time",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "duration-microsecond",
+              "reference": "_ts"
+            }
+          ]
+        },
+        {
+          "id": "mqtt-last",
+          "name": "Last MQTT Publish",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "topic",
+              "name": "Topic",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "string",
+              "reference": "topic"
+            },
+            {
+              "id": "payload",
+              "name": "Payload",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "string",
+              "reference": "payload"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
