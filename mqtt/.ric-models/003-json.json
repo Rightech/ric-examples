@@ -46,6 +46,10 @@
         }
       ]
     },
+
+    
+
+
     {
       "id": "server-info",
       "name": "Server information",
