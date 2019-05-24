@@ -1,7 +1,6 @@
 
+#include "Arduino.h"
 #include "EspMQTTClient.h" /* https://github.com/plapointe6/EspMQTTClient */
-#include "DHT.h"        /* 1. https://github.com/adafruit/Adafruit_Sensor
-                           2. https://github.com/adafruit/DHT-sensor-library  */
 
 #define PUB_DELAY (5 * 1000) /* 5 seconds */
 
@@ -13,26 +12,22 @@ EspMQTTClient client(
   "<ric-mqtt-client-id>"
 );
 
-#define DHTPIN 2
-DHT dht(DHTPIN, DHT11);
-
 void setup() {
-  Serial.begin(9600);
-  dht.begin();
+  Serial.begin(9600);  
 }
 
 void onConnectionEstablished() {
-  Serial.println("connected");
+  client.subscribe("base/relay/led1", [] (const String &payload)  {
+    Serial.println(payload);
+  });
 }
 
 long last = 0;
 void publishTemperature() {
   long now = millis();
   if (client.isConnected() && (now - last > PUB_DELAY)) {
-    float t = dht.readTemperature();
-    client.publish("base/state/temperature", String(t));
-    float h = dht.readHumidity();
-    client.publish("base/state/humidity", String(h));
+    client.publish("base/state/temperature", String(random(20, 30)));
+    client.publish("base/state/humidity", String(random(40, 90)));
     last = now;
   }
 }

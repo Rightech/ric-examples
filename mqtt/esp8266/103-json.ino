@@ -8,6 +8,7 @@
     @node `mqtt-last`   - for mqtt publish debug
 */
 
+#include "Arduino.h"
 #include "EspMQTTClient.h" /* https://github.com/plapointe6/EspMQTTClient */
 #include "ArduinoJson.h"   /* https://github.com/bblanchon/ArduinoJson */
 
