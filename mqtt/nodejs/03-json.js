@@ -2,7 +2,7 @@
  For this particular example you could use following model with JSON params preconfigured: 
     https://github.com/rightech/ric-examples/blob/master/mqtt/.ric-models/03-json.json
  Note that: 
-    @node `json`        - only must have (although you could rename all the nodes as you like)
+    @node `json`        - only must have for this example (although you could rename all the nodes/fields as you like)
     @node `server-info` - for connectivity debug
     @node `mqtt-last`   - for mqtt publish debug
 */
