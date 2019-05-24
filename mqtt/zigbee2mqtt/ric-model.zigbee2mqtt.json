@@ -10,8 +10,7 @@
       "active": true,
       "copy": true,
       "type": "subsystem",
-      "children": [],
-      "name": "External software modules"
+      "children": []
     },
     {
       "id": "params",
@@ -74,6 +73,10 @@
             }
           ]
         },
+
+
+
+
         {
           "id": "server-info",
           "name": "Server information",
