@@ -1,6 +1,6 @@
 /**
  For this particular example you could try this model with JSON params pre-configured: 
-    https://github.com/rightech/ric-examples/blob/master/mqtt/.ric-models/003-json.json
+    https://github.com/Rightech/ric-examples/blob/master/.ric-models/mqtt-example-003-json.ric-model.json
  Note that: 
     @node `json`        - only "must have" for this example 
                         ( although you could rename all the nodes/fields as you like )

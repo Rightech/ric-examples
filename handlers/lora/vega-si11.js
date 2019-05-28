@@ -1,6 +1,5 @@
 const { Buffer } = require('buffer');
 
-
 /**
  * Parse Vega SI-11 (Вега СИ-11) Payload
  *   https://en.iotvega.com/product/si11

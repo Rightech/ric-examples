@@ -1,3 +1,8 @@
+#
+# Sample ric model for this configuration can be found here:
+#   https://github.com/Rightech/ric-examples/blob/master/.ric-models/mqtt-zigbee2mqtt.ric-model.json
+#
+
 # Required: Home Assistant integration (MQTT discovery)
 homeassistant: false
 

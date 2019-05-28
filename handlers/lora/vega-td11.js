@@ -10,6 +10,9 @@ function bit(value, bit) {
  * From LoRa Server project
  *   https://www.loraserver.io/
  * 
+ * Sample model for this example:
+ *   https://github.com/Rightech/ric-examples/blob/master/.ric-models/mqtt-loraserver-td11.ric-model.json
+ * 
  * @param {string} loraData raw
  */
 function process(loraData) {
