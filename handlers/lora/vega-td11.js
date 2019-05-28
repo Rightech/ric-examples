@@ -7,23 +7,25 @@ function bit(value, bit) {
 /**
  * Parse Vega TD-11 (Вега ТД-11) Payload
  *   https://en.iotvega.com/product/td11
+ * From LoRa Server project
+ *   https://www.loraserver.io/
  * 
- * @param {string} payload raw
+ * @param {string} loraData raw
  */
-function process(payload) {
-  const bytes = [...Buffer.from(payload, 'base64')];
+function process(loraData) {
+  const bytes = [...Buffer.from(loraData, 'base64')];
   const [, b1, , b3, b4, b5, b6] = bytes;
 
   const temp = ((b4 << 8) | b3) / 10;
-  const protection = bit(b6, 0);
+  const security = bit(b6, 0);
   const tamper = bit(b6, 1);
   const hall1 = bit(b6, 2);
   const hall2 = bit(b6, 3);
 
-  return { battery: b1, temp, protection, tamper, hall1, hall2 };
+  return { battery: b1, temp, security, tamper, hall1, hall2 };
 }
 
 
 /** 
- @test payload 'AWIIIQEADw=='
+ @test loraData 'AWIIIQEADw=='
 */

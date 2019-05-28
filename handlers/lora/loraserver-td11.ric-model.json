@@ -1,0 +1,168 @@
+{
+  "id": "root",
+  "base": "mqtt",
+  "name": "lorasever td11 example",
+  "active": true,
+  "type": "subsystem",
+  "children": [
+    {
+      "id": "external-software-modules",
+      "active": true,
+      "type": "subsystem",
+      "children": [],
+      "copy": true,
+      "name": "External software modules"
+    },
+    {
+      "id": "params",
+      "name": "Params",
+      "active": true,
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "misc",
+          "name": "Arguments",
+          "active": true,
+          "type": "subsystem",
+          "source": "state",
+          "dataType": "string",
+          "children": [
+            {
+              "id": "lora",
+              "name": "lora",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "object",
+              "reference": "application/1/device/{id}/rx",
+              "parse": "only"
+            },
+            {
+              "id": "loraData",
+              "name": "LoRa Data",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "string",
+              "reference": "lora.data"
+            }
+          ]
+        },
+        {
+          "id": "td11",
+          "name": "TD",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "battery",
+              "name": "Battery level",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "percent"
+            },
+            {
+              "id": "temp",
+              "name": "Temperature",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "temperature-celsius"
+            },
+            {
+              "id": "security",
+              "name": "Security",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "boolean"
+            },
+            {
+              "id": "tamper",
+              "name": "Tamper",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "boolean"
+            },
+            {
+              "id": "hall1",
+              "name": "Hall sensor 1",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "boolean"
+            },
+            {
+              "id": "hall2",
+              "name": "Hall sensor 2",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "boolean"
+            }
+          ]
+        },
+
+
+
+        {
+          "id": "server-info",
+          "name": "Server information",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "online",
+              "name": "Online",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "boolean",
+              "reference": "online"
+            },
+            {
+              "id": "_ts",
+              "name": "Time",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "duration-microsecond",
+              "reference": "_ts"
+            }
+          ]
+        },
+        {
+          "id": "mqtt-last",
+          "name": "Last MQTT Publish",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "topic",
+              "name": "Topic",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "string",
+              "reference": "topic"
+            },
+            {
+              "id": "payload",
+              "name": "Payload",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "string",
+              "reference": "payload"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -4,11 +4,13 @@ const { Buffer } = require('buffer');
 /**
  * Parse Vega SI-11 (Вега СИ-11) Payload
  *   https://en.iotvega.com/product/si11
+ * From LoRa Server project
+ *   https://www.loraserver.io/
  * 
- * @param {string} payload raw
+ * @param {string} loraData raw
  */
-function process(payload) {
-  const buffer = Buffer.from(payload, 'base64');
+function process(loraData) {
+  const buffer = Buffer.from(loraData, 'base64');
   const bytes = [...buffer];
 
   let offset = 0;
@@ -37,5 +39,5 @@ function process(payload) {
 
 
 /** 
- @test payload 'AWMMgHV1WJwAAAAAAAAAAAAAAAAAAAAA'
+ @test loraData 'AWMMgHV1WJwAAAAAAAAAAAAAAAAAAAAA'
 */
