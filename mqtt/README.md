@@ -27,13 +27,16 @@ Or any other MQTT client tool like:
  - [MQTT.fx](https://mqttfx.jensd.de/)
  - [MQTT Explorer](https://mqtt-explorer.com/)
 
-> **WARNING**: Using MQTT `ClientId` is very basic and examplish method of device identification/authentication.  
-We recommend using X.509 client certificates, or at least TLS with username/password pair.
-
 
 ## Examples
 
-### (:construction:) 101  Hello MQTT
+### 101  Hello MQTT
+
+Connect to Rightech IoT and publish to some topics.  
+  (Also listen to some commands)
+
+> **WARNING**: Using MQTT `ClientId` is very basic and examplish method of device identification/authentication.  
+We recommend using X.509 client certificates, or at least TLS with username/password pair.
 
 | Board          | Framework   |  Example
 | -------------- | ----------- | ----------
