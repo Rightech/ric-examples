@@ -1,5 +1,5 @@
 
-const key = `
+const cert = `
 -----BEGIN CERTIFICATE-----
 
     <ric-tls-certificate>
