@@ -1,9 +1,9 @@
 # Rightech IoT Examples
 
 ## MQTT
- - [Examples](./mqtt/README.md)
+ - [Examples](./mqtt/)
 
 ## Handlers
 
- - [Basic examples]()
- - [Parse LoRa payloads]()
+ - [Basic examples](./handlers/basic)
+ - [Parse LoRa payloads](./handlers/lora)
