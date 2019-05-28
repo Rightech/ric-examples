@@ -23,6 +23,10 @@ $ mosquitto_pub -d -h sandbox.rightech.io -i <ric-mqtt-client-id> -t base/state/
 $ mosquitto_pub -d -h sandbox.rightech.io -i <ric-mqtt-client-id> -t base/state/temperature -m 24
 ```
 
+Or any other MQTT client tool like:
+ - [MQTT.fx](https://mqttfx.jensd.de/)
+ - [MQTT Explorer](https://mqtt-explorer.com/)
+
 ## Examples
 
 ### (:construction:) 101  Hello MQTT
