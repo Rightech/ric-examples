@@ -1,0 +1,6 @@
+.pio
+.pioenvs
+.piolibdeps
+
+# ignored for local testing (uversioned)
+src/main.local.cpp
