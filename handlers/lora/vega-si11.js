@@ -2,8 +2,8 @@ const { Buffer } = require('buffer');
 
 
 /**
- * Parse Vega SI-11 Payload
- *   http://iotvega.com/product/si11
+ * Parse Vega SI-11 (Вега СИ-11) Payload
+ *   https://en.iotvega.com/product/si11
  * 
  * @param {string} payload raw
  */

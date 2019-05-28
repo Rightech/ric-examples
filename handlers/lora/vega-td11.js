@@ -5,8 +5,8 @@ function bit(value, bit) {
 }
 
 /**
- * Parse Vega TD-11 Payload
- *   http://iotvega.com/product/td11
+ * Parse Vega TD-11 (Вега ТД-11) Payload
+ *   https://en.iotvega.com/product/td11
  * 
  * @param {string} payload raw
  */
