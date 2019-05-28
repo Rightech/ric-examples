@@ -27,6 +27,10 @@ Or any other MQTT client tool like:
  - [MQTT.fx](https://mqttfx.jensd.de/)
  - [MQTT Explorer](https://mqtt-explorer.com/)
 
+<aside class="notice">
+ xxx
+</aside>
+
 ## Examples
 
 ### (:construction:) 101  Hello MQTT
