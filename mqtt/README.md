@@ -25,13 +25,13 @@ $ mosquitto_pub -d -h sandbox.rightech.io -i <ric-mqtt-client-id> -t base/state/
 
 ## Examples
 
-### 101  Hello MQTT (:construction:)
+### (:construction:) 101  Hello MQTT
 
-### 102  Connect DHT11 (:construction:)
+### (:construction:) 102  Connect DHT11
 
-### 103  Publish JSON (:construction:)
+### (:construction:) 103  Publish JSON
 
-### 104  TLS (:construction:)
+### (:construction:) 104  TLS
 
 
 ## Connect
@@ -39,6 +39,6 @@ $ mosquitto_pub -d -h sandbox.rightech.io -i <ric-mqtt-client-id> -t base/state/
 
 | Project       | With example model     |  Config
 | ------------- | ------------- | ----------
-| [OpenMQTTGateway](https://github.com/1technophile/OpenMQTTGateway)   | -  | -
+| [OpenMQTTGateway](https://github.com/1technophile/OpenMQTTGateway)   | (:construction:)  | -
 | [zigbee2mqtt](https://github.com/Koenkk/zigbee2mqtt)                 | [mqtt-zigbee2mqtt](../.ric-models/mqtt-zigbee2mqtt.ric-model.json)  | -
 | [LoRa Server](https://github.com/brocaar/loraserver)                 | [mqtt-loraserver-td11](../.ric-models/mqtt-loraserver-td11.ric-model.json)  | -
