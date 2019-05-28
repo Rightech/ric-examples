@@ -18,5 +18,16 @@ For example with `mosquitto_pub` client from [Eclipse Mosquitto](https://mosquit
 
 ```console
 $ mosquitto_pub -d -h sandbox.rightech.io -i <ric-mqtt-client-id> -t base/state/temperature -m 23
-$ mosquitto_pub -d -h sandbox.rightech.io -i <ric-mqtt-client-id> -t base/state/temperature -m 23
+$ mosquitto_pub -d -h sandbox.rightech.io -i <ric-mqtt-client-id> -t base/state/temperature -m 24
 ```
+
+
+
+### Connect
+
+
+| Project       | With example model     |  Config
+| ------------- | ------------- | ----------
+| [OpenMQTTGateway](https://github.com/1technophile/OpenMQTTGateway)   | -  | -
+| [zigbee2mqtt](https://github.com/Koenkk/zigbee2mqtt)                 | [mqtt-zigbee2mqtt](../.ric-models/mqtt-zigbee2mqtt.ric-model.json)  | -
+| [LoRa Server](https://github.com/brocaar/loraserver)                 | [mqtt-loraserver-td11](../.ric-models/mqtt-loraserver-td11.ric-model.json)  | -
