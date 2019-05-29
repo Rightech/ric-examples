@@ -41,7 +41,7 @@ We recommend using X.509 client certificates, or at least TLS with username/pass
 | Board          | Framework   |  Example
 | -------------- | ----------- | ----------
 | Raspberry Pi   | Node.js     | [101-hello.js](./nodejs/101-hello.js)
-| NodeMCU        | Arduino     | [101-hello.ino](./esp8266/101-hello.ino)
+| NodeMCU        | Arduino     | [101-hello.ino](./arduino/101-hello.ino)
 
 
 ### (:construction:) 102  Connect DHT11
