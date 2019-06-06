@@ -1,8 +1,8 @@
 
-Generate API token [here](https://sandbox.rightech.io/api-tokens#?v=create&scopes=objects_one_packets_post).
+Сгенерируйте себе API токен [здесь](https://sandbox.rightech.io/api-tokens#?v=create&scopes=objects_one_packets_post).
 
 
-Then POST some JSON data with example cURL command: 
+Отправьте немного данных через cURL: 
 
 ```console
 $ curl -X POST \
@@ -10,4 +10,5 @@ $ curl -X POST \
   -H 'authorization: Bearer <insert API token here>' \
   -H 'content-type: application/json' \
   -d '{"temperature": 36.6, "humidity": 64 }'
-```  
+```
+
