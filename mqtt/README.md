@@ -44,15 +44,31 @@ We recommend using X.509 client certificates, or at least TLS with username/pass
 | NodeMCU        | Arduino     | [101-hello.ino](./arduino/101-hello.ino)
 
 
-### (:construction:) 102  Connect DHT11
+### 102  Connect DHT11
 
-### (:construction:) 103  Publish JSON
+| Board          | Framework   |  Example
+| -------------- | ----------- | ----------
+| Raspberry Pi   | Node.js     | [102-dht11.js](./nodejs/102-dht11.js)
+| NodeMCU        | Arduino     | [102-dht11.ino](./arduino/102-dht11.ino)
 
-### (:construction:) 104  TLS
+
+### 103  Publish JSON
+
+| Board          | Framework   |  Example
+| -------------- | ----------- | ----------
+| Raspberry Pi   | Node.js     | [103-json.js](./nodejs/103-json.js)
+| NodeMCU        | Arduino     | [103-json.ino](./arduino/103-json.ino)
+
+
+### 104  TLS
+
+| Board          | Framework   |  Example
+| -------------- | ----------- | ----------
+| Raspberry Pi   | Node.js     | [104-tls.js](./nodejs/104-tls.js)
+| NodeMCU        | Arduino     | (:construction:)
 
 
 ## Connect
-
 
 | Project       | With example model     |  Config
 | ------------- | ------------- | ----------
