@@ -1,0 +1,52 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2019-06-06T22:04:57.852Z",
+	"__export_source": "insomnia.desktop.app:v6.3.2",
+	"resources": [
+		{
+			"_id": "wrk_875e8475c39b4b588bda49867c1d408c",
+			"created": 1559858511520,
+			"description": "",
+			"modified": 1559858511520,
+			"name": "http-ric",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "req_4aaf94a610de49eb806b4d6238c1b463",
+			"authentication": {
+				"token": "<insert API token here>",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"temperature\" : 36.6,\n\t\"humidity\": 64\n}"
+			},
+			"created": 1559858533623,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_136b7acad8b84288a1f6009e5e671cc1",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1559858533623,
+			"method": "POST",
+			"modified": 1559858605419,
+			"name": "Send packet",
+			"parameters": [],
+			"parentId": "wrk_875e8475c39b4b588bda49867c1d408c",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://sandbox.rightech.io/api/v1/objects/http-olegprohazko-test/packets",
+			"_type": "request"
+		}
+	]
+}
