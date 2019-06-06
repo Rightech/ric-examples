@@ -5,8 +5,10 @@ You can publish some test payloads with any MQTT client.
 For example with `mosquitto_pub` client from [Eclipse Mosquitto](https://mosquitto.org/download/) project.
 
 ```console
-$ mosquitto_pub -d -h {{env}} -i {{object.id}} -t base/state/temperature -m 23
-$ mosquitto_pub -d -h {{env}} -i {{object.id}} -t base/state/temperature -m 24
+$ mosquitto_pub -d -h {{env}} \
+    -i {{object.id}} \
+    -t base/state/temperature \
+    -m 36.6
 ```
 
 Or any other MQTT client tool like:
