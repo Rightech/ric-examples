@@ -5,7 +5,7 @@
 Например `mosquitto_pub` из проекта [Eclipse Mosquitto](https://mosquitto.org/download/):
 
 ```console
-$ mosquitto_pub -d 
+$ mosquitto_pub -d \
     -h {{env}} \
     -i {{object.id}} \
     -t base/state/temperature \
