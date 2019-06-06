@@ -1,5 +1,5 @@
 
-Apparently, this device never sent any data at this time.  
+Apparently, this device never sent any data at this time. &nbsp;  
 You can publish some test payloads with any MQTT client.
 
 For example with `mosquitto_pub` client from [Eclipse Mosquitto](https://mosquitto.org/download/) project.
