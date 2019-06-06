@@ -35,8 +35,8 @@ Or any other MQTT client tool like:
 Connect to Rightech IoT and publish to some topics.  
   (Also listen to some commands)
 
-> **WARNING**: Using MQTT `ClientId` is very basic and examplish method of device identification/authentication.  
-We recommend using X.509 client certificates, or at least TLS with username/password pair.
+> **WARNING**: Using MQTT `clientId` is very basic and examplish method of device identification/authentication.  
+We recommend using X.509 client certificates, or at least MQTT `username`/`password` pair.
 
 | Board          | Framework   |  Example
 | -------------- | ----------- | ----------
