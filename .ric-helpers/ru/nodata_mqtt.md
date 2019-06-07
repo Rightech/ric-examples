@@ -3,8 +3,9 @@
 
 Посмотрите наш репозиторий с [примерами](https://github.com/Rightech/ric-examples/tree/master/mqtt#examples) для некоторых IoT платформ:
 
- - [NodeMCU/Arduino](https://github.com/Rightech/ric-examples/tree/master/mqtt/arduino)
- - [Raspberry Pi/Node.js](https://github.com/Rightech/ric-examples/blob/master/mqtt/nodejs)
+ - [Arduino | NodeMCU](https://github.com/Rightech/ric-examples/tree/master/mqtt/arduino)
+ - [Node.js | Raspberry Pi](https://github.com/Rightech/ric-examples/blob/master/mqtt/nodejs)
+ - [FreeRTOS | ESP32](https://github.com/Rightech/ric-examples/blob/master/mqtt/freertos)
 
 
 Вы также можете протестировать отправку данных с помощью любого MQTT клиента.

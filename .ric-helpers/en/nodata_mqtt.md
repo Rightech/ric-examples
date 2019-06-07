@@ -3,9 +3,9 @@ This device has not sent any data yet. &nbsp;
 
 Check our repo with [MQTT examples](https://github.com/Rightech/ric-examples/tree/master/mqtt#examples) for various IoT platforms:
 
- - [NodeMCU/Arduino](https://github.com/Rightech/ric-examples/tree/master/mqtt/arduino)
- - [Raspberry Pi/Node.js](https://github.com/Rightech/ric-examples/blob/master/mqtt/nodejs)
-
+ - [Arduino | NodeMCU](https://github.com/Rightech/ric-examples/tree/master/mqtt/arduino)
+ - [Node.js | Raspberry Pi](https://github.com/Rightech/ric-examples/blob/master/mqtt/nodejs)
+ - [FreeRTOS | ESP32](https://github.com/Rightech/ric-examples/blob/master/mqtt/freertos)
 
 You can also publish some test payloads with any MQTT client.
 
