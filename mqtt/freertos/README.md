@@ -104,3 +104,37 @@ In [demos/espressif/esp32_devkitc_esp_wrover_kit/common/config_files/aws_demo_co
 $ cd demos/espressif/esp32_devkitc_esp_wrover_kit/make/
 $ make flash monitor
 ```
+
+Demo will send 12 payloads to `freertos/demos/echo` topic:
+```
+ [MQTTEcho] MQTT echo attempting to connect to sandbox.rightech.io.
+ [MQTTEcho] MQTT echo connected.
+ [MQTTEcho] MQTT echo test echoing task created.
+ [MQTTEcho] MQTT Echo demo subscribed to freertos/demos/echo
+ [MQTTEcho] Echo successfully published 'Hello World 0'
+ [Echoing] Message returned with ACK: 'Hello World 0 ACK'
+ [MQTTEcho] Echo successfully published 'Hello World 1'
+ [Echoing] Message returned with ACK: 'Hello World 1 ACK'
+ [MQTTEcho] Echo successfully published 'Hello World 2'
+ [Echoing] Message returned with ACK: 'Hello World 2 ACK'
+ [MQTTEcho] Echo successfully published 'Hello World 3'
+ [Echoing] Message returned with ACK: 'Hello World 3 ACK'
+ [MQTTEcho] Echo successfully published 'Hello World 4'
+ [Echoing] Message returned with ACK: 'Hello World 4 ACK'
+ [MQTTEcho] Echo successfully published 'Hello World 5'
+ [Echoing] Message returned with ACK: 'Hello World 5 ACK'
+ [MQTTEcho] Echo successfully published 'Hello World 6'
+ [Echoing] Message returned with ACK: 'Hello World 6 ACK'
+ [MQTTEcho] Echo successfully published 'Hello World 7'
+ [Echoing] Message returned with ACK: 'Hello World 7 ACK'
+ [MQTTEcho] Echo successfully published 'Hello World 8'
+ [Echoing] Message returned with ACK: 'Hello World 8 ACK'
+ [MQTTEcho] Echo successfully published 'Hello World 9'
+ [Echoing] Message returned with ACK: 'Hello World 9 ACK'
+ [MQTTEcho] Echo successfully published 'Hello World 10'
+ [Echoing] Message returned with ACK: 'Hello World 10 ACK'
+ [MQTTEcho] Echo successfully published 'Hello World 11'
+ [Echoing] Message returned with ACK: 'Hello World 11 ACK'
+ [MQTTEcho] MQTT echo demo finished.
+ [MQTTEcho] ----Demo finished----
+```
