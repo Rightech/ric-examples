@@ -21,7 +21,9 @@ In [demos/common/include/aws_clientcredential.h](https://github.com/aws/amazon-f
 ```
 
 Generate X.509 client certificate:
+
 ![Generate X.509 client certificate](../../.assets/mqtt-issue-cert.gif)
+
 
 In [demos/common/include/aws_clientcredential_keys.h](https://github.com/aws/amazon-freertos/blob/master/demos/common/include/aws_clientcredential_keys.h) define:
 
