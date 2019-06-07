@@ -96,7 +96,7 @@ static const char tlsATS2_ROOT_CERTIFICATE_PEM[] =
 In [demos/espressif/esp32_devkitc_esp_wrover_kit/common/config_files/aws_demo_config.h](https://github.com/aws/amazon-freertos/blob/master/demos/espressif/esp32_devkitc_esp_wrover_kit/common/config_files/aws_demo_config.h) remove `mqttagentUSE_AWS_IOT_ALPN_443` flag:
 
 ```C
-/* Do not! Send AWS IoT MQTT traffic encrypted to destination port 443, use 8443 instead */
+/* Do not! Send AWS IoT MQTT traffic encrypted to destination port 443, use 8883 instead */
 #define democonfigMQTT_AGENT_CONNECT_FLAGS                 ( mqttagentREQUIRE_TLS )
 ```
 
