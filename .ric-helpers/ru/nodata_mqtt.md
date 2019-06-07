@@ -1,6 +1,13 @@
 
-Вероятно - данное устройство ещё не присылало каких-либо данных. &nbsp;  
-Вы можете отправить немного с помощью любого MQTT клиента.
+Данное устройство ещё не присылало каких-либо данных.
+
+Посмотрите наш репозиторий с [примерами](https://github.com/Rightech/ric-examples/tree/master/mqtt#examples) для некоторых IoT платформ:
+
+ - [NodeMCU/Arduino](https://github.com/Rightech/ric-examples/tree/master/mqtt/arduino)
+ - [Raspberry Pi/Node.js](https://github.com/Rightech/ric-examples/blob/master/mqtt/nodejs)
+
+
+Вы также можете протестировать отправку данных с помощью любого MQTT клиента.
 
 Например `mosquitto_pub` из проекта [Eclipse Mosquitto](https://mosquitto.org/download/):
 
@@ -15,6 +22,3 @@ $ mosquitto_pub -d \
 Или какого-нибудь другого:
  - [MQTT.fx](https://mqttfx.jensd.de/)
  - [MQTT Explorer](https://mqtt-explorer.com/)
-
-
-Посмотрите так же наш репозиторий с [примерами](https://github.com/Rightech/ric-examples/tree/master/mqtt#examples) для популярных IoT платформ.

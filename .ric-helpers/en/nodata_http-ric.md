@@ -1,5 +1,7 @@
 
-Generate API token [here](https://sandbox.rightech.io/api-tokens#?v=create&scopes=objects_one_packets_post).
+This device has not sent any data yet. 
+
+You can generate API token [here](https://sandbox.rightech.io/api-tokens#?v=create&scopes=objects_one_packets_post).
 
 
 Then POST some JSON data with example cURL command: 

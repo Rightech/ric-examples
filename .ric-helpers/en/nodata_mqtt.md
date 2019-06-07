@@ -1,6 +1,13 @@
 
-Apparently, this device never sent any data at this time. &nbsp;  
-You can publish some test payloads with any MQTT client.
+This device has not sent any data yet. &nbsp;  
+
+Check our repo with [MQTT examples](https://github.com/Rightech/ric-examples/tree/master/mqtt#examples) for various IoT platforms:
+
+ - [NodeMCU/Arduino](https://github.com/Rightech/ric-examples/tree/master/mqtt/arduino)
+ - [Raspberry Pi/Node.js](https://github.com/Rightech/ric-examples/blob/master/mqtt/nodejs)
+
+
+You can also publish some test payloads with any MQTT client.
 
 For example with `mosquitto_pub` client from [Eclipse Mosquitto](https://mosquitto.org/download/) project:
 
@@ -15,6 +22,3 @@ $ mosquitto_pub -d \
 Or any other MQTT client tool like:
  - [MQTT.fx](https://mqttfx.jensd.de/)
  - [MQTT Explorer](https://mqtt-explorer.com/)
-
-
-Also checkout our repo with MQTT [examples](https://github.com/Rightech/ric-examples/tree/master/mqtt#examples)
