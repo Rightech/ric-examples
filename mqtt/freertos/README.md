@@ -37,6 +37,9 @@ In [demos/common/include/aws_clientcredential_keys.h](https://github.com/aws/ama
 
 ```
 
+You can use [this online tool](https://tomeko.net/online_tools/cpp_text_escape.php) to convert PEM certificate to C-string.
+
+
 In [lib/include/private/aws_default_root_certificates.h](https://github.com/aws/amazon-freertos/blob/master/lib/include/private/aws_default_root_certificates.h) substitute root certs with ours:
 
 ```C
