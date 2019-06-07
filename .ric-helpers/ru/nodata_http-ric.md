@@ -1,8 +1,8 @@
+Данное устройство ещё не присылало каких-либо данных, но это можно исправить: 
 
-Сгенерируйте себе API токен [здесь](https://sandbox.rightech.io/api-tokens#?v=create&scopes=objects_one_packets_post).
+1. Сгенерируйте [API токен] (https://sandbox.rightech.io/api-tokens#?v=create&scopes=objects_one_packets_post).
 
-
-Отправьте немного данных через cURL: 
+2. Отправьте нам немного данных через cURL: 
 
 ```console
 $ curl -X POST \
