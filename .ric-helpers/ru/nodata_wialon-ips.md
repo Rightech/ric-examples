@@ -14,4 +14,4 @@
  - [arnavi](http://www.arusnavi.ru/)
  - [signal](https://navtelecom.ru/)
 
-свжитесь с нашим [техеическим специалистом](mailto:tech@rightech.io).
+свяжитесь с нашим [техническим специалистом](mailto:tech@rightech.io?subject=Telematics).
