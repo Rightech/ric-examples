@@ -1,4 +1,4 @@
-# ric-examples-mqtt-esp32-freertos
+# MQTTEcho demo task with Amazon FreeRTOS on ESP32
 
 
 ```console
