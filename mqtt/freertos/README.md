@@ -20,6 +20,9 @@ In [demos/common/include/aws_clientcredential.h](https://github.com/aws/amazon-f
 #define clientcredentialWIFI_PASSWORD         "<wifi-password>"
 ```
 
+Generate X.509 client certificate:
+![Generate X.509 client certificate](../../.assets/mqtt-issue-cert.gif)
+
 In [demos/common/include/aws_clientcredential_keys.h](https://github.com/aws/amazon-freertos/blob/master/demos/common/include/aws_clientcredential_keys.h) define:
 
 ```C
@@ -36,8 +39,6 @@ In [demos/common/include/aws_clientcredential_keys.h](https://github.com/aws/ama
 "-----END RSA PRIVATE KEY-----"
 
 ```
-
-You can use [this online tool](https://tomeko.net/online_tools/cpp_text_escape.php) to convert PEM certificate to C-string.
 
 
 In [lib/include/private/aws_default_root_certificates.h](https://github.com/aws/amazon-freertos/blob/master/lib/include/private/aws_default_root_certificates.h) substitute root certs with ours:
@@ -95,6 +96,7 @@ static const char tlsATS2_ROOT_CERTIFICATE_PEM[] =
 
 ```
 * ^ (mabe there is more convenient way to do it, but it is good enough for this example)
+* You can use [this online tool](https://tomeko.net/online_tools/cpp_text_escape.php) to convert PEM-encoded certificate to C-string.
 
 In [demos/espressif/esp32_devkitc_esp_wrover_kit/common/config_files/aws_demo_config.h](https://github.com/aws/amazon-freertos/blob/master/demos/espressif/esp32_devkitc_esp_wrover_kit/common/config_files/aws_demo_config.h) remove `mqttagentUSE_AWS_IOT_ALPN_443` flag:
 
