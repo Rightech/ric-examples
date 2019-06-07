@@ -14,4 +14,4 @@ For information about connecting other telematic protocols like:
  - [arnavi](http://www.arusnavi.ru/)
  - [signal](https://navtelecom.ru/)
 
-contact our [tech guys](mailto:tech@rightech.io).
+contact our [tech guys](mailto:tech@rightech.io?subject=Telematic%20protocols&body=Im%20interested%20in%20teltonika%20devices).
