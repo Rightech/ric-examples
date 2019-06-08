@@ -11,10 +11,6 @@ In [demos/common/include/aws_clientcredential.h](https://github.com/aws/amazon-f
 ```C
 #define clientcredentialMQTT_BROKER_ENDPOINT  "sandbox.rightech.io"
 
-#define clientcredentialIOT_THING_NAME        "<ric-mqtt-client-id>"
-
-
-
 #define clientcredentialWIFI_SSID             "<wifi-ssid>"
 
 #define clientcredentialWIFI_PASSWORD         "<wifi-password>"
@@ -97,8 +93,8 @@ static const char tlsATS2_ROOT_CERTIFICATE_PEM[] =
 "K1pp74P1S8SqtCr4fKGxhZSM9AyHDPSsQPhZSZg=\n"
 
 ```
-* ^ (mabe there is more convenient way to do it, but it is good enough for this example)
-* You can use [this online tool](https://tomeko.net/online_tools/cpp_text_escape.php) to convert PEM-encoded certificate to C-string.
+* ^ (maybe there is more convenient way to do it, but it is good enough for this example)
+* You can use [this online tool](https://tomeko.net/online_tools/cpp_text_escape.php) to convert PEM-encoded certificates to escaped C-strings.
 
 In [demos/espressif/esp32_devkitc_esp_wrover_kit/common/config_files/aws_demo_config.h](https://github.com/aws/amazon-freertos/blob/master/demos/espressif/esp32_devkitc_esp_wrover_kit/common/config_files/aws_demo_config.h) remove `mqttagentUSE_AWS_IOT_ALPN_443` flag:
 
