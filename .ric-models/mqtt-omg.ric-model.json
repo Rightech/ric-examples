@@ -1,0 +1,177 @@
+{
+  "id": "root",
+  "base": "mqtt",
+  "name": "OpenMQTTGateway",
+  "active": true,
+  "type": "subsystem",
+  "children": [
+    {
+      "id": "external-software-modules",
+      "active": true,
+      "copy": true,
+      "type": "subsystem",
+      "children": [],
+      "name": "External software modules"
+    },
+    {
+      "id": "params",
+      "name": "Params",
+      "active": true,
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "server-info",
+          "name": "Server information",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "online",
+              "name": "Online",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "boolean",
+              "reference": "online"
+            },
+            {
+              "id": "_ts",
+              "name": "Time",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "duration-microsecond",
+              "reference": "_ts"
+            }
+          ]
+        },
+        {
+          "id": "sys",
+          "name": "SYS",
+          "active": true,
+          "type": "argument",
+          "source": "state",
+          "dataType": "object",
+          "reference": "home/OpenMQTTGateway/SYStoMQTT",
+          "children": [
+            {
+              "id": "version",
+              "name": "Version",
+              "active": true,
+              "type": "argument",
+              "dataType": "string",
+              "factor": 1,
+              "linear": true,
+              "source": "state",
+              "reference": "home/OpenMQTTGateway/version"
+            },
+            {
+              "id": "uptime",
+              "name": "Uptime",
+              "active": true,
+              "type": "argument",
+              "dataType": "number",
+              "unit": "duration-millisecond",
+              "linear": false,
+              "reference": "sys.uptime",
+              "source": "state",
+              "factor": 1000
+            },
+            {
+              "id": "mem",
+              "name": "Free memory",
+              "active": true,
+              "type": "argument",
+              "dataType": "number",
+              "unit": "digital-byte",
+              "linear": false,
+              "reference": "sys.freeMem",
+              "source": "state",
+              "factor": 1
+            },
+            {
+              "id": "ssid",
+              "name": "SSID",
+              "active": true,
+              "type": "argument",
+              "dataType": "string",
+              "factor": 1,
+              "linear": true,
+              "source": "state",
+              "reference": "sys.SSID"
+            },
+            {
+              "id": "modules",
+              "name": "Modules",
+              "active": true,
+              "type": "argument",
+              "dataType": "string",
+              "factor": 1,
+              "linear": true,
+              "source": "state",
+              "reference": "sys.modules"
+            },
+            {
+              "id": "rssi",
+              "name": "RSSI",
+              "active": true,
+              "type": "argument",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "source": "state",
+              "reference": "sys.rssi",
+              "children": [
+                {
+                  "id": "rssi.levels.1",
+                  "name": "Max level",
+                  "active": true,
+                  "type": "level",
+                  "index": 1,
+                  "value": 0,
+                  "color": "#f16059"
+                },
+                {
+                  "id": "rssi.levels.0",
+                  "name": "Min level",
+                  "active": true,
+                  "type": "level",
+                  "index": 0,
+                  "value": -100,
+                  "color": "#a2ce4b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mqtt-last",
+          "name": "Last MQTT Publish",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "topic",
+              "name": "Topic",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "string",
+              "reference": "topic"
+            },
+            {
+              "id": "payload",
+              "name": "Payload",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "string",
+              "reference": "payload"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
