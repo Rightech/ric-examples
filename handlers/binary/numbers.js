@@ -1,7 +1,7 @@
 const { Buffer } = require('buffer');
 
 /**
- * possible binary number payload convertions
+ * possible binary number payload parsers
  *
  * @param {number} int8 signed 8-bit integer
  * @param {number} int16be signed 16-bit big-endian integer
