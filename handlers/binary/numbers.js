@@ -1,7 +1,8 @@
 const { Buffer } = require('buffer');
 
 /**
- * Makes the sum of two numbers
+ * possible binary number payload convertions
+ *
  * @param {number} int8 signed 8-bit integer
  * @param {number} int16be signed 16-bit big-endian integer
  * @param {number} int16le signed 16-bit little-endian integer
