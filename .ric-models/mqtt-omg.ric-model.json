@@ -67,31 +67,31 @@
               "reference": "home/OpenMQTTGateway/version"
             },
             {
-              "id": "uptime",
+              "id": "sys.uptime",
               "name": "Uptime",
               "active": true,
               "type": "argument",
               "dataType": "number",
               "unit": "duration-millisecond",
               "linear": false,
-              "reference": "sys.uptime",
+              "reference": null,
               "source": "state",
               "factor": 1000
             },
             {
-              "id": "mem",
+              "id": "sys.freeMem",
               "name": "Free memory",
               "active": true,
               "type": "argument",
               "dataType": "number",
               "unit": "digital-byte",
               "linear": false,
-              "reference": "sys.freeMem",
+              "reference": null,
               "source": "state",
               "factor": 1
             },
             {
-              "id": "ssid",
+              "id": "sys.SSID",
               "name": "SSID",
               "active": true,
               "type": "argument",
@@ -99,10 +99,10 @@
               "factor": 1,
               "linear": true,
               "source": "state",
-              "reference": "sys.SSID"
+              "reference": null
             },
             {
-              "id": "modules",
+              "id": "sys.modules",
               "name": "Modules",
               "active": true,
               "type": "argument",
@@ -110,10 +110,10 @@
               "factor": 1,
               "linear": true,
               "source": "state",
-              "reference": "sys.modules"
+              "reference": null
             },
             {
-              "id": "rssi",
+              "id": "sys.rssi",
               "name": "RSSI",
               "active": true,
               "type": "argument",
@@ -121,14 +121,14 @@
               "factor": 1,
               "linear": true,
               "source": "state",
-              "reference": "sys.rssi",
+              "reference": null,
               "children": [
                 {
                   "id": "rssi.levels.1",
                   "name": "Max level",
                   "active": true,
                   "type": "level",
-                  "index": 1,
+                  "index": 0,
                   "value": 0,
                   "color": "#f16059"
                 },
@@ -137,11 +137,67 @@
                   "name": "Min level",
                   "active": true,
                   "type": "level",
-                  "index": 0,
+                  "index": 1,
                   "value": -100,
                   "color": "#a2ce4b"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "id": "rf",
+          "name": "RF",
+          "active": true,
+          "type": "argument",
+          "dataType": "object",
+          "factor": 1,
+          "linear": true,
+          "source": "state",
+          "reference": "home/OpenMQTTGateway/433toMQTT",
+          "children": [
+            {
+              "id": "rf.value",
+              "name": "RF value",
+              "active": true,
+              "type": "argument",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "reference": null,
+              "source": "state"
+            },
+            {
+              "id": "rf.protocol",
+              "name": "RF protocol",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "linear": true,
+              "factor": 1,
+              "reference": null
+            },
+            {
+              "id": "rf.length",
+              "name": "RF length",
+              "active": true,
+              "type": "argument",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "reference": null,
+              "source": "state"
+            },
+            {
+              "id": "rf.delay",
+              "name": "RF delay",
+              "active": true,
+              "type": "argument",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "source": "state"
             }
           ]
         },
@@ -170,6 +226,38 @@
               "reference": "payload"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "cmds",
+      "name": "Commands",
+      "active": true,
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "send-rf-generic",
+          "name": "Send RF generic",
+          "active": true,
+          "type": "action",
+          "service": "ric-gate",
+          "command": "publish",
+          "params": {
+            "topic": "home/OpenMQTTGateway/commands/MQTTto433",
+            "payload": "{\"value\":\"{{value}}\",\"protocol\":\"{{protocol}}\",\"length\":\"{{length}}\",\"delay\":{{delay}}}"
+          }
+        },
+        {
+          "id": "send-rf-specific",
+          "name": "Send RF specific",
+          "active": true,
+          "type": "action",
+          "service": "ric-gate",
+          "command": "publish",
+          "params": {
+            "payload": "{\"value\":16679432,\"protocol\":1,\"length\":24,\"delay\":303}",
+            "topic": "home/OpenMQTTGateway/commands/MQTTto433"
+          }
         }
       ]
     }
