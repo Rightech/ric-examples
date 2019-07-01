@@ -27,7 +27,7 @@ void onConnectionEstablished() {
 }
 
 long last = 0;
-void publishTemperature() {
+void publishData() {
   long now = millis();
   if (client.isConnected() && (now - last > PUB_DELAY)) {
     float t = dht.readTemperature();
@@ -40,5 +40,5 @@ void publishTemperature() {
 
 void loop() {
   client.loop();
-  publishTemperature();
+  publishData();
 }
