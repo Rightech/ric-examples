@@ -65,6 +65,12 @@ We recommend using X.509 client certificates, or at least MQTT `username`/`passw
 | -------------- | ----------- | ----------
 | NodeMCU        | Arduino     | [103_2-json.ino](./arduino/103_2-json.ino)
 
+### 103_3  Smart light
+
+| Board          | Framework   |  Example
+| -------------- | ----------- | ----------
+| NodeMCU        | Arduino     | [103_3-json.ino](./arduino/103_3-json.ino)
+
 
 ### 104  TLS
 
