@@ -231,7 +231,7 @@ services:
       - metadata
 
   export-client:
-    image: edgexfoundry/docker-export-client-go-arm64:1.0.1
+    image: edgexfoundry/docker-export-client-go-arm64:1.1.0
     ports:
       - "48071:48071"
     container_name: edgex-export-client
