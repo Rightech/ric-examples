@@ -13,7 +13,7 @@ permit_join: true
 # Required: MQTT settings
 mqtt:
   base_topic: zigbee2mqtt
-  server: 'mqtt://sandbox.rightech.io'
+  server: 'mqtt://dev.rightech.io'
  #user: '<ric-mqtt-username>'
  #password: '<ric-mqtt-password>'
   client_id: '<ric-mqtt-client-id>'

@@ -17,7 +17,7 @@ const key = `
 
 
 const mqtt = require('mqtt')
-  .connect('mqtts://sandbox.rightech.io', { key, cert });
+  .connect('mqtts://dev.rightech.io', { key, cert });
 
 mqtt.on('message', (topic, message) => {
   console.log(`${new Date().toISOString()}: [${topic}] ${message.toString()}`);
