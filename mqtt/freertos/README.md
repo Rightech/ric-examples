@@ -9,7 +9,7 @@ $ cd amazon-freertos
 In [demos/common/include/aws_clientcredential.h](https://github.com/aws/amazon-freertos/blob/master/demos/common/include/aws_clientcredential.h) define:
 
 ```C
-#define clientcredentialMQTT_BROKER_ENDPOINT  "sandbox.rightech.io"
+#define clientcredentialMQTT_BROKER_ENDPOINT  "dev.rightech.io"
 
 #define clientcredentialWIFI_SSID             "<wifi-ssid>"
 
@@ -110,7 +110,7 @@ $ make flash monitor
 
 Demo will send 12 payloads to `freertos/demos/echo` topic:
 ```
- [MQTTEcho] MQTT echo attempting to connect to sandbox.rightech.io.
+ [MQTTEcho] MQTT echo attempting to connect to dev.rightech.io.
  [MQTTEcho] MQTT echo connected.
  [MQTTEcho] MQTT echo test echoing task created.
  [MQTTEcho] MQTT Echo demo subscribed to freertos/demos/echo

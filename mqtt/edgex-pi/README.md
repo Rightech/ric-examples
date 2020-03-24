@@ -6,7 +6,7 @@ Components
  
  - Modbus service for communication with modbus-tcp devices
  
- - MQTT-connector, which allows you to establish communication with [Rightech IoT cloud sandbox](https://sandbox.rightech.io/)
+ - MQTT-connector, which allows you to establish communication with [Rightech IoT cloud](https://dev.rightech.io/)
  
 Useful information
 ------------------

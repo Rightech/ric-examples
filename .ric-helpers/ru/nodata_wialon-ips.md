@@ -14,4 +14,4 @@
  - [arnavi](http://www.arusnavi.ru/)
  - [signal](https://navtelecom.ru/)
 
-свяжитесь с нашим [техническим специалистом](mailto:tech@rightech.io?subject=Telematic%20protocols&body=Im%20interested%20in%20teltonika%20devices).
+свяжитесь с нашим [техническим специалистом](mailto:development@rightech.io?subject=Telematic%20protocols&body=Im%20interested%20in%20teltonika%20devices).

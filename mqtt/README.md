@@ -19,8 +19,8 @@
 For example with `mosquitto_pub` client from [Eclipse Mosquitto](https://mosquitto.org/download/) project.
 
 ```console
-$ mosquitto_pub -d -h sandbox.rightech.io -i <ric-mqtt-client-id> -t base/state/temperature -m 23
-$ mosquitto_pub -d -h sandbox.rightech.io -i <ric-mqtt-client-id> -t base/state/temperature -m 24
+$ mosquitto_pub -d -h dev.rightech.io -i <ric-mqtt-client-id> -t base/state/temperature -m 23
+$ mosquitto_pub -d -h dev.rightech.io -i <ric-mqtt-client-id> -t base/state/temperature -m 24
 ```
 
 Or any other MQTT client tool like:

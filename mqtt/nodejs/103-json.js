@@ -8,7 +8,7 @@
     @node `mqtt-last`   - for mqtt publish debug
 */
 
-const mqtt = require('mqtt').connect('mqtt://sandbox.rightech.io', {
+const mqtt = require('mqtt').connect('mqtt://dev.rightech.io', {
   clientId: process.env.MQTT_CLIENTID || '<ric-mqtt-client-id>'
 });
 

@@ -12,7 +12,7 @@ EspMQTTClient client(
   "<wifi-ssid>",
   "<wifi-password>",
 
-  "sandbox.rightech.io",
+  "dev.rightech.io",
   "<ric-mqtt-client-id>"
 );
 
