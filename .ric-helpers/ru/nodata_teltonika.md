@@ -5,11 +5,11 @@
 
 ```
  хост: {{env}}
- порт: 20332
+ порт: 21451
 ```
 
 Полный список доступных протоколов можно посмотреть в [документации](https://rightech.io/developers/objects/protocol/).
 
-В случае возникновения вопросов свяжитесь с нашим [техническим специалистом](mailto:development@rightech.io?subject=Telematic%20protocols&body=Im%20interested%20in%20wialon%20devices)
+В случае возникновения вопросов свяжитесь с нашим [техническим специалистом](mailto:development@rightech.io?subject=Telematic%20protocols&body=Im%20interested%20in%20teltonika%20devices)
 или напишите в наш [Telegram-чат](https://t.me/rightech_iot)
 
