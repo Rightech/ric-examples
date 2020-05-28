@@ -12,3 +12,6 @@ $ curl -X POST \
   -H 'content-type: application/json' \
   -d '{"temperature": 36.6, "humidity": 64 }'
 ```  
+
+If you have any further questions contact our [tech guys](mailto:development@rightech.io?subject=Telematic%20protocols&body=Im%20interested%20in%20http%20devices)    
+or contact us at [Telegram](https://t.me/rightech_iot).
