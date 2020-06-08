@@ -1,7 +1,7 @@
 
 This device has not sent any data yet. 
 
-1. Generate API token in your personal account.
+1. Generate API token in your [personal account](https://{{env}}/profile#?user=tokens&tokens.scopes=objects_packet_post).
 
 2. POST some JSON data with example cURL command: 
 
