@@ -1,7 +1,7 @@
 
 #include "Arduino.h"
 #include "EspMQTTClient.h" /* https://github.com/plapointe6/EspMQTTClient */
-
+                           /* https://github.com/knolleary/pubsubclient */
 #define PUB_DELAY (5 * 1000) /* 5 seconds */
 
 EspMQTTClient client(

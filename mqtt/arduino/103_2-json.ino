@@ -1,6 +1,7 @@
 
 #include "Arduino.h"
 #include "EspMQTTClient.h"  /* https://github.com/plapointe6/EspMQTTClient */
+                            /* https://github.com/knolleary/pubsubclient */
 #include "DHT.h"            /* 1. https://github.com/adafruit/Adafruit_Sensor
                               2. https://github.com/adafruit/DHT-sensor-library  */
 #include "ArduinoJson.h"    /* https://github.com/bblanchon/ArduinoJson */

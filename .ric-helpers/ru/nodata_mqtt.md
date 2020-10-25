@@ -3,9 +3,9 @@
 
 Посмотрите наш репозиторий с [примерами](https://github.com/Rightech/ric-examples/tree/master/mqtt#examples) для некоторых IoT платформ:
 
- - [Arduino | NodeMCU](https://github.com/Rightech/ric-examples/tree/master/mqtt/arduino)
- - [Node.js | Raspberry Pi](https://github.com/Rightech/ric-examples/blob/master/mqtt/nodejs)
- - [FreeRTOS | ESP32](https://github.com/Rightech/ric-examples/blob/master/mqtt/freertos)
+* [Arduino | NodeMCU](https://github.com/Rightech/ric-examples/tree/master/mqtt/arduino)
+* [Node.js | Raspberry Pi](https://github.com/Rightech/ric-examples/blob/master/mqtt/nodejs)
+* [FreeRTOS | ESP32](https://github.com/Rightech/ric-examples/blob/master/mqtt/freertos)
 
 
 Вы также можете протестировать отправку данных с помощью любого MQTT клиента.
@@ -21,8 +21,8 @@ $ mosquitto_pub -d \
 ```
 
 Или какого-нибудь другого:
- - [MQTT.fx](https://mqttfx.jensd.de/)
- - [MQTT Explorer](https://mqtt-explorer.com/)
+* [MQTT.fx](https://mqttfx.jensd.de/)
+* [MQTT Explorer](https://mqtt-explorer.com/)
 
 
 В случае возникновения вопросов свяжитесь с нашим [техническим специалистом](mailto:development@rightech.io?subject=Telematic%20protocols&body=Im%20interested%20in%20mqtt%20devices)  
