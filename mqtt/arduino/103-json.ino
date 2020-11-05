@@ -10,6 +10,7 @@
 
 #include "Arduino.h"
 #include "EspMQTTClient.h" /* https://github.com/plapointe6/EspMQTTClient */
+                           /* https://github.com/knolleary/pubsubclient */
 #include "ArduinoJson.h"   /* https://github.com/bblanchon/ArduinoJson */
 
 #define PUB_DELAY (5 * 1000) /* 5 seconds */
