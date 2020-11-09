@@ -1,0 +1,259 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2020-11-03T09:32:29.937Z",
+  "user": "5b3c895ad4100417007d22b7",
+  "group": "5190951088b5078432000001",
+  "store": "models",
+  "data": {
+    "_id": "5d385a0aa0b2ae0011e2a32c",
+    "name": "[mqtt] Model 02",
+    "base": "mqtt",
+    "data": {
+      "id": "root",
+      "name": "MQTT",
+      "active": true,
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "external-software-modules",
+          "active": true,
+          "copy": true,
+          "type": "subsystem",
+          "children": []
+        },
+        {
+          "id": "params",
+          "name": "Params",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "server-info",
+              "name": "Server information",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "online",
+                  "name": "Online",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "boolean",
+                  "reference": "online",
+                  "expanded": false,
+                  "_localId": "rf7yinfby53y"
+                },
+                {
+                  "id": "_ts",
+                  "name": "Time",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "duration-microsecond",
+                  "reference": "_ts"
+                }
+              ]
+            },
+            {
+              "id": "lum",
+              "name": "Luminosity",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "light-lux",
+              "reference": "base/state/lum",
+              "display": {
+                "svg": null
+              },
+              "factor": 1,
+              "levels": [
+                {
+                  "index": 0,
+                  "value": "-Infinity",
+                  "color": "#f16059",
+                  "label": "0"
+                },
+                {
+                  "index": 1,
+                  "value": 10,
+                  "color": "#a2ce4b",
+                  "label": "Min"
+                },
+                {
+                  "index": 5,
+                  "value": 30,
+                  "color": "#dfb452",
+                  "label": "Mid"
+                },
+                {
+                  "index": 9,
+                  "value": 50,
+                  "color": "#f16059",
+                  "label": "Max"
+                }
+              ],
+              "linear": true
+            },
+            {
+              "id": "light",
+              "name": "Light",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "boolean",
+              "unit": null,
+              "reference": "base/state/light",
+              "display": {},
+              "factor": 1,
+              "levels": [
+                {
+                  "index": 0,
+                  "value": "-Infinity",
+                  "color": "#f16059",
+                  "label": "0"
+                },
+                {
+                  "index": 1,
+                  "value": 10,
+                  "color": "#a2ce4b",
+                  "label": "Min"
+                },
+                {
+                  "index": 5,
+                  "value": 30,
+                  "color": "#dfb452",
+                  "label": "Mid"
+                },
+                {
+                  "index": 9,
+                  "value": 50,
+                  "color": "#f16059",
+                  "label": "Max"
+                }
+              ],
+              "linear": true,
+              "_levels": [
+                {
+                  "index": 0,
+                  "value": "-Infinity",
+                  "color": "#f16059",
+                  "label": "0"
+                },
+                {
+                  "index": 1,
+                  "value": 10,
+                  "color": "#a2ce4b",
+                  "label": "Min"
+                },
+                {
+                  "index": 5,
+                  "value": 30,
+                  "color": "#dfb452",
+                  "label": "Mid"
+                },
+                {
+                  "index": 9,
+                  "value": 50,
+                  "color": "#f16059",
+                  "label": "Max"
+                }
+              ]
+            },
+            {
+              "id": "mqtt-last",
+              "name": "Last MQTT Publish",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "topic",
+                  "name": "Topic",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "string",
+                  "reference": "topic"
+                },
+                {
+                  "id": "payload",
+                  "name": "Payload",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "string",
+                  "reference": "payload"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cmds",
+          "name": "Commands",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "led-on",
+              "name": "Turn-on LED",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "led_on",
+                "payload": "1"
+              }
+            },
+            {
+              "id": "led-off",
+              "name": "Turn-off LED",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "led_on",
+                "payload": "0"
+              }
+            }
+          ]
+        }
+      ],
+      "_isRoot": true
+    },
+    "props": {
+      "bots": true,
+      "hardwareEvents": false,
+      "helper": {
+        "nostate": "@ric-docs/docs/helpers/mqtt.md"
+      },
+      "prefix": "",
+      "order": 1,
+      "defaultNode": "temperature",
+      "protocol": "mqtt",
+      "idPattern": "mqtt-$tagname-$nanoid",
+      "auth": {
+        "title": "mqtt_auth",
+        "fields": {
+          "username": {
+            "title": "mqtt_username"
+          },
+          "password": {
+            "secret": true,
+            "title": "mqtt_password"
+          }
+        }
+      },
+      "x509": {
+        "enabled": true
+      }
+    },
+    "disabled": [],
+    "removed": []
+  }
+}

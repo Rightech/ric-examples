@@ -1,0 +1,5 @@
+# How to create your own smart home scenario with Righetch IoT Cloud platform
+
+- _mqtt__Model_01.json - model of device for Rightech IoT Cloud;
+-  Аutomaton_01.json - LED lights up with blue if the room temperature is less than 20° (coldly); red - more than 30° (hot); green - if the temperature is in the range from 20° to 30° (fine).  
+Watch more [here](https://www.youtube.com/watch?v=PZs_Qop051o&list=PLb9vz8ebECgXBgilNF5UF7j01h2xWS-3I&index=4)
