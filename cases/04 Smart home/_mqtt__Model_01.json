@@ -1,0 +1,297 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2020-11-03T09:35:23.495Z",
+  "user": "5b3c895ad4100417007d22b7",
+  "group": "5190951088b5078432000001",
+  "store": "models",
+  "data": {
+    "_id": "5fa1181fe8fe243e4173fbd2",
+    "name": "[mqtt] Model 01",
+    "base": "mqtt",
+    "data": {
+      "id": "root",
+      "name": "[mqtt] Model 01",
+      "active": true,
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "external-software-modules",
+          "active": true,
+          "copy": true,
+          "type": "subsystem",
+          "children": [],
+          "name": "Внешние программные модули",
+          "disabled": true
+        },
+        {
+          "id": "params",
+          "name": "Params",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "server-info",
+              "name": "Server information",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "online",
+                  "name": "Online",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "boolean",
+                  "reference": "online"
+                },
+                {
+                  "id": "_ts",
+                  "name": "Time",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "duration-microsecond",
+                  "reference": "_ts"
+                }
+              ]
+            },
+            {
+              "id": "temperature",
+              "name": "Temperature",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "temperature-celsius",
+              "reference": "base/state/temperature",
+              "display": {
+                "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\"\nviewBox=\"0 0 16 16\"\n><g id=\"surface1\"><path style=\" \" d=\"M 7.511719 1 C 6.140625 1 5.011719 2.128906 5.011719 3.5 L 5.011719 9.121094 C 4.414063 9.746094 4 10.5625 4 11.5 C 4 13.425781 5.574219 15 7.5 15 C 9.425781 15 11 13.425781 11 11.5 C 11 10.574219 10.597656 9.765625 10.011719 9.140625 L 10.011719 3.5 C 10.011719 2.128906 8.882813 1 7.511719 1 Z M 7.511719 2 C 8.339844 2 9.011719 2.671875 9.011719 3.5 L 9.011719 4 L 7 4 L 7 5 L 9.011719 5 L 9.011719 6 L 7 6 L 7 7 L 9.011719 7 L 9.011719 8 L 7 8 L 7 9 L 9.011719 9 L 9.011719 9.289063 C 9.011719 9.429688 9.070313 9.5625 9.175781 9.65625 C 9.683594 10.117188 10 10.765625 10 11.5 C 10 12.886719 8.886719 14 7.5 14 C 6.113281 14 5 12.886719 5 11.5 C 5 10.757813 5.328125 10.105469 5.84375 9.640625 C 5.949219 9.546875 6.011719 9.414063 6.011719 9.269531 L 6.011719 3.5 C 6.011719 2.671875 6.683594 2 7.511719 2 Z \"></path></g></svg>"
+              },
+              "factor": 1,
+              "levels": [
+                {
+                  "index": 0,
+                  "value": "-Infinity",
+                  "color": "#f16059",
+                  "label": "0"
+                },
+                {
+                  "index": 1,
+                  "value": 10,
+                  "color": "#a2ce4b",
+                  "label": "Min"
+                },
+                {
+                  "index": 5,
+                  "value": 30,
+                  "color": "#dfb452",
+                  "label": "Mid"
+                },
+                {
+                  "index": 9,
+                  "value": 50,
+                  "color": "#f16059",
+                  "label": "Max"
+                }
+              ],
+              "linear": true
+            },
+            {
+              "id": "humidity",
+              "name": "Humidity",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "percent",
+              "reference": "base/state/humidity",
+              "display": {
+                "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\"\nviewBox=\"0 0 16 16\"\n><g id=\"surface1\"><path style=\" \" d=\"M 12 1.960938 L 11.582031 2.601563 C 11.582031 2.601563 11.199219 3.191406 10.8125 3.886719 C 10.621094 4.234375 10.425781 4.613281 10.273438 4.96875 C 10.121094 5.324219 10 5.640625 10 6 C 10 7.097656 10.902344 8 12 8 C 13.097656 8 14 7.097656 14 6 C 14 5.640625 13.878906 5.324219 13.726563 4.96875 C 13.574219 4.613281 13.378906 4.234375 13.1875 3.886719 C 12.800781 3.191406 12.417969 2.601563 12.417969 2.601563 Z M 4.125 2 L 3.707031 2.644531 C 3.707031 2.644531 3.324219 3.230469 2.9375 3.929688 C 2.746094 4.277344 2.550781 4.652344 2.398438 5.007813 C 2.246094 5.367188 2.125 5.683594 2.125 6.042969 C 2.125 7.140625 3.027344 8.042969 4.125 8.042969 C 5.222656 8.042969 6.125 7.140625 6.125 6.042969 C 6.125 5.683594 6.003906 5.367188 5.851563 5.007813 C 5.699219 4.652344 5.503906 4.277344 5.3125 3.929688 C 4.925781 3.230469 4.542969 2.644531 4.542969 2.644531 Z M 12 3.847656 C 12.128906 4.058594 12.15625 4.085938 12.3125 4.367188 C 12.496094 4.699219 12.675781 5.054688 12.804688 5.359375 C 12.933594 5.664063 13 5.945313 13 6 C 13 6.550781 12.550781 7 12 7 C 11.449219 7 11 6.550781 11 6 C 11 5.945313 11.066406 5.664063 11.195313 5.359375 C 11.324219 5.054688 11.503906 4.699219 11.6875 4.367188 C 11.84375 4.085938 11.871094 4.058594 12 3.847656 Z M 4.125 3.890625 C 4.253906 4.097656 4.28125 4.128906 4.4375 4.414063 C 4.621094 4.742188 4.800781 5.09375 4.929688 5.398438 C 5.058594 5.707031 5.125 5.988281 5.125 6.042969 C 5.125 6.59375 4.675781 7.042969 4.125 7.042969 C 3.574219 7.042969 3.125 6.59375 3.125 6.042969 C 3.125 5.988281 3.191406 5.707031 3.320313 5.398438 C 3.449219 5.09375 3.628906 4.742188 3.8125 4.414063 C 3.96875 4.128906 3.996094 4.097656 4.125 3.890625 Z M 8 7.960938 L 7.582031 8.601563 C 7.582031 8.601563 7.199219 9.191406 6.8125 9.886719 C 6.621094 10.234375 6.425781 10.613281 6.273438 10.96875 C 6.121094 11.324219 6 11.640625 6 12 C 6 13.097656 6.902344 14 8 14 C 9.097656 14 10 13.097656 10 12 C 10 11.640625 9.878906 11.324219 9.726563 10.96875 C 9.574219 10.613281 9.378906 10.234375 9.1875 9.886719 C 8.800781 9.191406 8.417969 8.601563 8.417969 8.601563 Z M 8 9.847656 C 8.128906 10.058594 8.15625 10.085938 8.3125 10.371094 C 8.496094 10.699219 8.675781 11.054688 8.804688 11.359375 C 8.933594 11.664063 9 11.945313 9 12 C 9 12.550781 8.550781 13 8 13 C 7.449219 13 7 12.550781 7 12 C 7 11.945313 7.066406 11.664063 7.195313 11.359375 C 7.324219 11.054688 7.503906 10.699219 7.6875 10.371094 C 7.84375 10.085938 7.871094 10.058594 8 9.847656 Z \"></path></g></svg>"
+              },
+              "factor": 1,
+              "levels": [
+                {
+                  "index": 0,
+                  "value": "-Infinity",
+                  "color": "#f16059",
+                  "label": "0"
+                },
+                {
+                  "index": 1,
+                  "value": 0,
+                  "color": "#3cc1d4",
+                  "label": "Min"
+                },
+                {
+                  "index": 5,
+                  "value": 50,
+                  "color": "#5d7ce5",
+                  "label": "Mid"
+                },
+                {
+                  "index": 9,
+                  "value": 100,
+                  "color": "#f16059",
+                  "label": "Max"
+                }
+              ],
+              "linear": true
+            },
+            {
+              "id": "pos",
+              "name": "Position (JSON)",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "object",
+              "reference": "base/state/pos",
+              "children": [
+                {
+                  "id": "lat",
+                  "name": "Latitude",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "unit": "angle-degree",
+                  "linear": false,
+                  "reference": "pos.lat",
+                  "source": "state"
+                },
+                {
+                  "id": "lon",
+                  "name": "Longitude",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "angle-degree",
+                  "linear": false,
+                  "reference": "pos.lon"
+                }
+              ]
+            },
+            {
+              "id": "mqtt-last",
+              "name": "Last MQTT Publish",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "topic",
+                  "name": "Topic",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "string",
+                  "reference": "topic"
+                },
+                {
+                  "id": "payload",
+                  "name": "Payload",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "string",
+                  "reference": "payload"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cmds",
+          "name": "Commands",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "led-red",
+              "name": "Turn-on red",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "led_on",
+                "payload": "{\"red\":255, \"green\":0, \"blue\":0}"
+              }
+            },
+            {
+              "id": "led-green",
+              "name": "Turn-on green",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "led_on",
+                "payload": "{\"red\":0, \"green\":255, \"blue\":0}"
+              }
+            },
+            {
+              "id": "led-blue",
+              "name": "Turn-on blue",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "led_on",
+                "payload": "{\"red\":0, \"green\":0, \"blue\":255}"
+              }
+            },
+            {
+              "id": "led-off",
+              "name": "Turn-off",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "led_on",
+                "payload": "{\"red\":0, \"green\":0, \"blue\":0}"
+              }
+            }
+          ]
+        }
+      ],
+      "_isRoot": true,
+      "base": "mqtt",
+      "disabled": [],
+      "removed": [],
+      "description": null
+    },
+    "props": {
+      "bots": true,
+      "hardwareEvents": false,
+      "helper": {
+        "nostate": "@ric-docs/docs/helpers/mqtt.md"
+      },
+      "prefix": "",
+      "order": 1,
+      "defaultNode": "temperature",
+      "protocol": "mqtt",
+      "idPattern": "mqtt-$tagname-$nanoid",
+      "auth": {
+        "title": "mqtt_auth",
+        "fields": {
+          "username": {
+            "title": "mqtt_username"
+          },
+          "password": {
+            "secret": true,
+            "title": "mqtt_password"
+          }
+        }
+      },
+      "x509": {
+        "enabled": true
+      }
+    },
+    "disabled": [],
+    "removed": [],
+    "description": null
+  }
+}
