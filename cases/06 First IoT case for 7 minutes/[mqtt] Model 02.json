@@ -1,17 +1,17 @@
 {
   "version": 1,
   "origin": "dev.rightech.io",
-  "time": "2020-11-03T09:32:29.937Z",
-  "user": "5b3c895ad4100417007d22b7",
-  "group": "5190951088b5078432000001",
+  "time": "2020-12-09T11:26:07.716Z",
+  "user": "5f881925a4c97e7ff134be8d",
+  "group": "5f881925a4c97e766334be8c",
   "store": "models",
   "data": {
-    "_id": "5d385a0aa0b2ae0011e2a32c",
+    "_id": "5fd0b4308f09c01633e2317c",
     "name": "[mqtt] Model 02",
     "base": "mqtt",
     "data": {
       "id": "root",
-      "name": "MQTT",
+      "name": "[mqtt] Model 02",
       "active": true,
       "type": "subsystem",
       "children": [
@@ -224,7 +224,8 @@
           ]
         }
       ],
-      "_isRoot": true
+      "_isRoot": true,
+      "description": "Smart light"
     },
     "props": {
       "bots": true,
@@ -254,6 +255,7 @@
       }
     },
     "disabled": [],
-    "removed": []
+    "removed": [],
+    "description": "Smart light"
   }
 }
