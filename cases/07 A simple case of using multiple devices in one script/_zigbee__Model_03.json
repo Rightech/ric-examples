@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2020-12-01T09:39:51.155Z",
+  "user": "5fc4c22d8f09c09bb7e015b9",
+  "group": "5fc4c22d8f09c03bfde015b8",
+  "store": "models",
+  "data": {
+    "_id": "5fc60e8f8f09c0e1bce05151",
+    "name": "[zigbee] Model 03",
+    "base": "mqtt",
+    "data": {
+      "id": "root",
+      "name": "zigbee2mqtt",
+      "active": true,
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "external-software-modules",
+          "active": true,
+          "copy": true,
+          "type": "subsystem",
+          "children": []
+        },
+        {
+          "id": "params",
+          "name": "Params",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "temp",
+              "name": "Temperature Sensor",
+              "description": "WSDCGQ01LM - Xiaomi MiJia temperature & humidity sensor",
+              "active": true,
+              "type": "argument",
+              "dataType": "object",
+              "reference": "zigbee2mqtt/<Zigbree device IEEE addr here>",
+              "source": "state",
+              "children": [
+                {
+                  "id": "temperature",
+                  "name": "Temperature",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "temperature-celsius",
+                  "reference": "temp.temperature",
+                  "linear": true
+                },
+                {
+                  "id": "humidity",
+                  "name": "Humidity",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "percent",
+                  "reference": "temp.humidity",
+                  "linear": true
+                }
+              ]
+            },
+            {
+              "id": "button",
+              "name": "Button",
+              "description": "WXKG01LM - Xiaomi MiJia wireless switch",
+              "active": true,
+              "type": "argument",
+              "dataType": "object",
+              "source": "state",
+              "reference": "zigbee2mqtt/<Zigbree device IEEE addr here>",
+              "children": [
+                {
+                  "id": "click",
+                  "name": "Click",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "reference": "button.click",
+                  "source": "state"
+                }
+              ]
+            },
+            {
+              "id": "server-info",
+              "name": "Server information",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "online",
+                  "name": "Online",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "boolean",
+                  "reference": "online"
+                },
+                {
+                  "id": "_ts",
+                  "name": "Time",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "duration-microsecond",
+                  "reference": "_ts"
+                }
+              ]
+            },
+            {
+              "id": "mqtt-last",
+              "name": "Last MQTT Publish",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "topic",
+                  "name": "Topic",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "string",
+                  "reference": "topic"
+                },
+                {
+                  "id": "payload",
+                  "name": "Payload",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "string",
+                  "reference": "payload"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "_isRoot": true,
+      "base": "mqtt"
+    },
+    "props": {
+      "bots": true,
+      "hardwareEvents": false,
+      "helper": {
+        "nostate": "@ric-docs/docs/helpers/mqtt.md"
+      },
+      "prefix": "",
+      "order": 1,
+      "defaultNode": "temperature",
+      "protocol": "mqtt",
+      "idPattern": "mqtt-$tagname-$nanoid",
+      "auth": {
+        "title": "mqtt_auth",
+        "fields": {
+          "username": {
+            "title": "mqtt_username"
+          },
+          "password": {
+            "secret": true,
+            "title": "mqtt_password"
+          }
+        }
+      },
+      "x509": {
+        "enabled": true
+      }
+    },
+    "disabled": [],
+    "removed": []
+  }
+}
