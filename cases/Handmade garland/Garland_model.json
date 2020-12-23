@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2020-12-23T11:39:19.299Z",
+  "user": "5b3c895ad4100417007d22b7",
+  "group": "5190951088b5078432000001",
+  "store": "models",
+  "data": {
+    "_id": "5fd768678f09c06974e357ad",
+    "name": "Garland model",
+    "base": "mqtt",
+    "data": {
+      "id": "root",
+      "name": "Garland model",
+      "active": true,
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "external-software-modules",
+          "active": true,
+          "copy": true,
+          "type": "subsystem",
+          "children": [],
+          "name": "External software modules"
+        },
+        {
+          "id": "params",
+          "name": "Params",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "server-info",
+              "name": "Server information",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "online",
+                  "name": "Online",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "boolean",
+                  "reference": "online"
+                },
+                {
+                  "id": "_ts",
+                  "name": "Time",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "duration-microsecond",
+                  "reference": "_ts"
+                }
+              ]
+            },
+            {
+              "id": "mode",
+              "name": "Mode",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "string",
+              "unit": null,
+              "reference": "base/state/light",
+              "display": {
+                "svg": null
+              },
+              "factor": 1,
+              "linear": true,
+              "children": []
+            },
+            {
+              "id": "mqtt-last",
+              "name": "Last MQTT Publish",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "topic",
+                  "name": "Topic",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "string",
+                  "reference": "topic"
+                },
+                {
+                  "id": "payload",
+                  "name": "Payload",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "string",
+                  "reference": "payload"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cmds",
+          "name": "Commands",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "led-on",
+              "name": "Turn-on",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "led_on",
+                "payload": null
+              },
+              "description": null
+            },
+            {
+              "id": "led-off",
+              "name": "Turn-off",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "led_off",
+                "payload": null
+              }
+            },
+            {
+              "id": "led_attenuation-5",
+              "name": "Attenuation 5 sec",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "led_attenuation",
+                "payload": "5"
+              },
+              "children": []
+            },
+            {
+              "id": "led_attenuation-10",
+              "name": "Attenuation 10 sec",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "led_attenuation",
+                "payload": "10"
+              },
+              "children": []
+            },
+            {
+              "id": "led_flashing-1",
+              "name": "Flashing 1 sec",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "led_flashing",
+                "payload": "1"
+              },
+              "children": []
+            },
+            {
+              "id": "led_flashing-3",
+              "name": "Flashing 3 sec",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "led_flashing",
+                "payload": "3"
+              },
+              "children": []
+            }
+          ]
+        }
+      ],
+      "_isRoot": true,
+      "description": "The model is designed for a board with a garland"
+    },
+    "props": {
+      "bots": true,
+      "hardwareEvents": false,
+      "helper": {
+        "nostate": "@ric-docs/docs/helpers/mqtt.md"
+      },
+      "prefix": "",
+      "order": 1,
+      "defaultNode": "temperature",
+      "protocol": "mqtt",
+      "idPattern": "mqtt-$tagname-$nanoid",
+      "auth": {
+        "title": "mqtt_auth",
+        "fields": {
+          "username": {
+            "title": "mqtt_username"
+          },
+          "password": {
+            "secret": true,
+            "title": "mqtt_password"
+          }
+        }
+      },
+      "x509": {
+        "enabled": true
+      }
+    },
+    "disabled": [],
+    "removed": [],
+    "description": "The model is designed for a board with a garland"
+  }
+}
