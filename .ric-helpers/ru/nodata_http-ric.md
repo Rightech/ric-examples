@@ -13,5 +13,5 @@ $ curl -X POST \
 ```
 
 
-В случае возникновения вопросов свяжитесь с нашим [техническим специалистом](mailto:development@rightech.io?subject=Telematic%20protocols&body=Im%20interested%20in%20http%20devices)  
-или напишите в наш [Telegram-чат](https://t.me/rightech_iot).
+В случае возникновения вопросов свяжитесь с нашими [техническими специалистами](mailto:development@rightech.io?subject=Telematic%20protocols&body=Im%20interested%20in%20wialon%20devices)  
+или напишите в наш [Telegram-чат](https://t.me/rightech_iot)
