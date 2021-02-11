@@ -7,13 +7,8 @@
     "gateway_conf": {
         "server_address": "{{env}}",
 
-        /* для EU868 */
         "serv_port_up": 1700,
-        "serv_port_down": 1700,
-
-        /* для RU864 */
-        "serv_port_up": 1701,
-        "serv_port_down": 1701,
+        "serv_port_down": 1700
     }   
 ```
 
