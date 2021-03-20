@@ -1,6 +1,5 @@
 
 - [Original example](https://github.com/platformio/platform-espressif32/tree/v3.1.1/examples/espidf-aws-iot) from [platformio/platform-espressif32](https://github.com/platformio/platform-espressif32) repo.  
-- [Original README.rst](README.rst)
 
 ### 1. Generate X.509 client certificate in Righech IoT:
 
