@@ -16,8 +16,6 @@ In file [src/subscribe_publish_sample.c](./src/subscribe_publish_sample.c#L55-L6
 #define EXAMPLE_WIFI_PASS "..."
 ```
 
-or in menuconfig `$ pio run -t menuconfig`
-
 ### 3. Build and flash
 
 
