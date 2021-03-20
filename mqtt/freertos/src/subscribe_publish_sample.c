@@ -50,8 +50,6 @@
 
 static const char *TAG = "subpub";
 
-#define MQTT_SERVER_HOST  "dev.rightech.io"
-
 /* The examples use simple WiFi configuration that you can set via
    'make menuconfig'.
 
@@ -103,7 +101,7 @@ static const char * ROOT_CA_PATH = CONFIG_EXAMPLE_ROOT_CA_PATH;
 /**
  * @brief Default MQTT HOST URL is pulled from the aws_iot_config.h
  */
-char HostAddress[255] = MQTT_SERVER_HOST;
+char HostAddress[255] = AWS_IOT_MQTT_HOST;
 
 /**
  * @brief Default MQTT port is pulled from the aws_iot_config.h
