@@ -29,6 +29,7 @@ or in menuconfig `> pio run -t menuconfig`
 > pio run -t upload && pio device monitor
 ```
  - Or click `Upload and Monitor` in `PlatformIO IDE`
+
 ![PlatformIO IDE](../../.assets/mqtt-esp32-platformio-vscode.png)
 
 If you're on Linux and run at
