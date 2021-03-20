@@ -35,21 +35,12 @@ monitor_speed = 115200
 > pio run -t upload && pio device monitor
 ```
 
-4. If you run at `Permission denied` error
+If you're on Linux and run at
 ```bash
-Auto-detected: /dev/ttyUSB0
-Uploading .pio/build/esp32dev/firmware.bin
-esptool.py v3.0
-Serial port /dev/ttyUSB0
-Traceback (most recent call last):
-  File "/home/prohazko/.platformio/penv/lib/python3.8/site-packages/serial/serialposix.py", line 322, in open
-    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
 PermissionError: [Errno 13] Permission denied: '/dev/ttyUSB0'
-
-During handling of the above exception, another exception occurred:
 ```
 
-Configure [udev.rules](https://docs.platformio.org/en/latest/faq.html#platformio-udev-rules)  or run
+Configure [udev.rules](https://docs.platformio.org/en/latest/faq.html#platformio-udev-rules) or run
 ```bash
 > sudo adduser $(whoami) dialout
 > sudo chmod a+rw /dev/ttyUSB0
