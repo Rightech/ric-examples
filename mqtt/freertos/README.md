@@ -2,19 +2,6 @@
 - [Original example](https://github.com/platformio/platform-espressif32/tree/v3.1.1/examples/espidf-aws-iot) from [platformio/platform-espressif32](https://github.com/platformio/platform-espressif32) repo.  
 - [Original README.rst](README.rst)
 
-#### modifications applied to original example:
- - [src/certs/aws-root-ca.pem](./src/certs/aws-root-ca.pem) - replaced Amazon CA cert with Let's Encrypt ISRG Root X1
- - [src/subscribe_publish_sample.c](./src/subscribe_publish_sample.c#L106) - defined `MQTT_SERVER_HOST` and used it as MQTT host address
-```cpp
-#define MQTT_SERVER_HOST  "dev.rightech.io"
-
-char HostAddress[255] = MQTT_SERVER_HOST;
-```
-- [src/subscribe_publish_sample.c](./src/subscribe_publish_sample.c#L283) - slow down publisher to 10sec instead of 1sec
-```cpp
-vTaskDelay(10 * 1000 / portTICK_RATE_MS);
-```
-
 ### 1. Generate X.509 client certificate in Righech IoT:
 
 ![Generate X.509 client certificate](../../.assets/mqtt-issue-cert.gif)
