@@ -3,7 +3,7 @@
 
 ### 1. Issue X.509 client certificate in Righech IoT
 
-![Generate X.509 client certificate](../../.assets/mqtt-issue-cert.gif)
+![Issue X.509 client certificate](../../.assets/mqtt-issue-cert.gif)
 
 - Copy certificate to [src/certs/certificate.pem.crt](./src/certs/certificate.pem.crt) file
 - Copy key to [src/certs/private.pem.key](./src/certs/private.pem.key) file
@@ -32,6 +32,10 @@ monitor_speed = 115200
 ```bash
 > pio run -t upload && pio device monitor
 ```
+
+Or install PlatformIO for [VSCode](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide)
+
+![PlatformIO IDE](../../.assets/mqtt-esp32-platformio-vscode.png)
 
 If you're on Linux and run at
 ```bash
