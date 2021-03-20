@@ -29,6 +29,7 @@ const char *mqtt_client_id = "...";
 
 const char pem_ca[] PROGMEM = R"EOF(
 # ISRG Root X1 (Self-signed)
+# https://letsencrypt.org/certificates/
 # https://letsencrypt.org/certs/isrgrootx1.pem.txt
 -----BEGIN CERTIFICATE-----
 MIIFazCCA1OgAwIBAgIRAIIQz7DSQONZRGPgu2OCiwAwDQYJKoZIhvcNAQELBQAw
