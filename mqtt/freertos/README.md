@@ -56,3 +56,4 @@ try
 > sudo adduser $(whoami) dialout
 > sudo chmod a+rw /dev/ttyUSB0
 ```
+or configure [udev.rules](https://docs.platformio.org/en/latest/faq.html#platformio-udev-rules)
