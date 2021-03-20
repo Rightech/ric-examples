@@ -7,6 +7,10 @@
 * [Node.js | Raspberry Pi](https://github.com/Rightech/ric-examples/blob/master/mqtt/nodejs)
 * [FreeRTOS | ESP32](https://github.com/Rightech/ric-examples/blob/master/mqtt/freertos)
 
+```c
+#define MQTT_SERVER_HOST  "{{env}}"
+#define MQTT_CLIENT_ID    "{{object.id}}"
+```
 
 Вы также можете протестировать отправку данных с помощью любого MQTT клиента.
 
