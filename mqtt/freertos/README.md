@@ -20,13 +20,22 @@ or in menuconfig `> pio run -t menuconfig`
 
 ### 3. Build and flash
 
-Install [PlatformIO Core](https://docs.platformio.org/en/latest/core/installation.html), connect your ESP32 and simply run
+1. Install [PlatformIO Core](https://docs.platformio.org/en/latest/core/installation.html)
+2. Specify your board params in [platformio.ini](./platformio.ini)
+```ini
+[env:esp32dev]
+platform = espressif32
+framework = espidf
+board = esp32dev
+monitor_speed = 115200
+```
+3. Plug your ESP32 and run
 
 ```bash
 > pio run -t upload && pio device monitor
 ```
 
-If you run at `Permission denied` error
+4. If you run at `Permission denied` error
 ```bash
 Auto-detected: /dev/ttyUSB0
 Uploading .pio/build/esp32dev/firmware.bin
@@ -40,10 +49,8 @@ PermissionError: [Errno 13] Permission denied: '/dev/ttyUSB0'
 During handling of the above exception, another exception occurred:
 ```
 
-try 
-
+Configure [udev.rules](https://docs.platformio.org/en/latest/faq.html#platformio-udev-rules)  or run
 ```bash
 > sudo adduser $(whoami) dialout
 > sudo chmod a+rw /dev/ttyUSB0
 ```
-or configure [udev.rules](https://docs.platformio.org/en/latest/faq.html#platformio-udev-rules)
