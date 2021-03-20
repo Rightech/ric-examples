@@ -32,13 +32,4 @@ or in menuconfig `> pio run -t menuconfig`
 
 ![PlatformIO IDE](../../.assets/mqtt-esp32-platformio-vscode.png)
 
-If you're on Linux and run at
-```bash
-PermissionError: [Errno 13] Permission denied: '/dev/ttyUSB0'
-```
-
-Configure [udev.rules](https://docs.platformio.org/en/latest/faq.html#platformio-udev-rules) or run
-```bash
-> sudo adduser $(whoami) dialout
-> sudo chmod a+rw /dev/ttyUSB0
-```
+If you're on Linux and run at `PermissionError: [Errno 13] Permission denied: '/dev/ttyUSB0'` - configure [udev.rules](https://docs.platformio.org/en/latest/faq.html#platformio-udev-rules)
