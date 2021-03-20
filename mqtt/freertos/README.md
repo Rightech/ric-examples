@@ -20,21 +20,15 @@ or in menuconfig `> pio run -t menuconfig`
 
 ### 3. Build and flash
 
-1. Install [PlatformIO Core](https://docs.platformio.org/en/latest/core/installation.html)
-2. Specify your board params in [platformio.ini](./platformio.ini)
-```ini
-[env:esp32dev]
-board = esp32dev
-monitor_speed = 115200
-```
-3. Plug your ESP32 and run
+
+1. Install [PlatformIO Core (CLI)](https://docs.platformio.org/en/latest/core/installation.html) or [PlatformIO IDE](https://docs.platformio.org/en/latest/integration/ide/vscode.html#installation) for VS Code
+
+2. Plug your ESP32 and run
 
 ```bash
 > pio run -t upload && pio device monitor
 ```
-
-Or install [PlatformIO IDE](https://docs.platformio.org/en/latest/integration/ide/vscode.html#installation) for VS Code
-
+or click `Upload and Monitor` in `PlatformIO IDE`
 ![PlatformIO IDE](../../.assets/mqtt-esp32-platformio-vscode.png)
 
 If you're on Linux and run at
