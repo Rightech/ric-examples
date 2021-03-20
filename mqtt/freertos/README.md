@@ -21,14 +21,14 @@ or in menuconfig `> pio run -t menuconfig`
 ### 3. Build and flash
 
 
-1. Install [PlatformIO Core (CLI)](https://docs.platformio.org/en/latest/core/installation.html) or [PlatformIO IDE](https://docs.platformio.org/en/latest/integration/ide/vscode.html#installation) for VS Code
+- Install [PlatformIO Core (CLI)](https://docs.platformio.org/en/latest/core/installation.html) or [PlatformIO IDE](https://docs.platformio.org/en/latest/integration/ide/vscode.html#installation) for VS Code
 
-2. Plug your ESP32 and run
+- Plug your ESP32 and run
 
 ```bash
 > pio run -t upload && pio device monitor
 ```
-or click `Upload and Monitor` in `PlatformIO IDE`
+ - Or click `Upload and Monitor` in `PlatformIO IDE`
 ![PlatformIO IDE](../../.assets/mqtt-esp32-platformio-vscode.png)
 
 If you're on Linux and run at
