@@ -80,6 +80,8 @@ We recommend using X.509 client certificates, or at least MQTT `username`/`passw
 | NodeMCU        | Arduino     | [104-tls.ino](./arduino/104-tls.ino)
 
 
+### [201 ESP32 + FreeRTOS with PlatformIO](./freertos#readme)
+
 ## Connect
 
 | Project       | With example model     |  Config
