@@ -77,7 +77,7 @@ We recommend using X.509 client certificates, or at least MQTT `username`/`passw
 | Board          | Framework   |  Example
 | -------------- | ----------- | ----------
 | Raspberry Pi   | Node.js     | [104-tls.js](./nodejs/104-tls.js)
-| NodeMCU        | Arduino     | (:construction:)
+| NodeMCU        | Arduino     | [104-tls.ino](./arduino/104-tls.ino)
 
 
 ## Connect
