@@ -1,4 +1,4 @@
-# :warning: Outdate, need update
+# :warning: Outdated, need update
 
 # [MQTTEcho] Amazon FreeRTOS task on ESP32
 
