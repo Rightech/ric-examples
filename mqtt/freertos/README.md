@@ -24,8 +24,6 @@ or in menuconfig `> pio run -t menuconfig`
 2. Specify your board params in [platformio.ini](./platformio.ini)
 ```ini
 [env:esp32dev]
-platform = espressif32
-framework = espidf
 board = esp32dev
 monitor_speed = 115200
 ```
