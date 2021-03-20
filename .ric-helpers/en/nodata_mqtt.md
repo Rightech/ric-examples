@@ -7,6 +7,11 @@ Check our repo with [MQTT examples](https://github.com/Rightech/ric-examples/tre
 * [Node.js | Raspberry Pi](https://github.com/Rightech/ric-examples/blob/master/mqtt/nodejs)
 * [FreeRTOS | ESP32](https://github.com/Rightech/ric-examples/blob/master/mqtt/freertos)
 
+```c
+#define MQTT_SERVER_HOST  "{{env}}"
+#define MQTT_CLIENT_ID    "{{object.id}}"
+```
+
 You can also publish some test payloads with any MQTT client.
 
 For example with `mosquitto_pub` client from [Eclipse Mosquitto](https://mosquitto.org/download/) project:
