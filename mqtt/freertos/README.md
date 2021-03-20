@@ -33,7 +33,7 @@ monitor_speed = 115200
 > pio run -t upload && pio device monitor
 ```
 
-Or install PlatformIO for [VSCode](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide)
+Or install [PlatformIO IDE](https://docs.platformio.org/en/latest/integration/ide/vscode.html#installation) for VS Code
 
 ![PlatformIO IDE](../../.assets/mqtt-esp32-platformio-vscode.png)
 
