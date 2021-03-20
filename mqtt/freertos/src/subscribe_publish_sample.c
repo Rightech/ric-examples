@@ -50,6 +50,8 @@
 
 static const char *TAG = "subpub";
 
+#define MQTT_SERVER_HOST  "dev.rightech.io"
+
 /* The examples use simple WiFi configuration that you can set via
    'make menuconfig'.
 
@@ -101,7 +103,7 @@ static const char * ROOT_CA_PATH = CONFIG_EXAMPLE_ROOT_CA_PATH;
 /**
  * @brief Default MQTT HOST URL is pulled from the aws_iot_config.h
  */
-char HostAddress[255] = AWS_IOT_MQTT_HOST;
+char HostAddress[255] = MQTT_SERVER_HOST;
 
 /**
  * @brief Default MQTT port is pulled from the aws_iot_config.h
@@ -278,7 +280,7 @@ void aws_iot_task(void *param) {
         }
 
         ESP_LOGI(TAG, "Stack remaining for task '%s' is %d bytes", pcTaskGetTaskName(NULL), uxTaskGetStackHighWaterMark(NULL));
-        vTaskDelay(1000 / portTICK_RATE_MS);
+        vTaskDelay(10 * 1000 / portTICK_RATE_MS);
         sprintf(cPayload, "%s : %d ", "hello from ESP32 (QOS0)", i++);
         paramsQOS0.payloadLen = strlen(cPayload);
         rc = aws_iot_mqtt_publish(&client, TOPIC, TOPIC_LEN, &paramsQOS0);
