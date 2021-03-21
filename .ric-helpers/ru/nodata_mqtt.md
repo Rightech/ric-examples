@@ -5,7 +5,7 @@
 
 * [Arduino | NodeMCU](https://github.com/Rightech/ric-examples/tree/master/mqtt/arduino)
 * [Node.js | Raspberry Pi](https://github.com/Rightech/ric-examples/blob/master/mqtt/nodejs)
-* [FreeRTOS | ESP32](https://github.com/Rightech/ric-examples/blob/master/mqtt/freertos#readme)
+* [FreeRTOS | ESP32](https://github.com/Rightech/ric-examples/blob/master/mqtt/esp-idf#readme)
 
 ```c
 #define MQTT_SERVER_HOST  "{{env}}"
