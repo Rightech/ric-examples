@@ -3,6 +3,8 @@
 
 ### 1. Issue X.509 client certificate in Righech IoT
 
+- Go to [https://dev.rightech.io/](https://dev.rightech.io/)
+
 ![Issue X.509 client certificate](../../.assets/mqtt-issue-cert.gif)
 
 - Copy certificate to [src/certs/certificate.pem.crt](./src/certs/certificate.pem.crt) file
