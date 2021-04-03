@@ -198,7 +198,7 @@
           "children": [
             {
               "id": "printhead-jog-up",
-              "name": " go ↑",
+              "name": "move ↑",
               "active": true,
               "type": "action",
               "service": "ric-gate",
@@ -206,11 +206,11 @@
               "params": {
                 "payload": "{\"y\":10}",
                 "topic": "octoprint/movehead-up"
-              },
+              }
             },
             {
               "id": "printhead-jog-down",
-              "name": " go ↓",
+              "name": "move ↓",
               "active": true,
               "type": "action",
               "service": "ric-gate",
@@ -218,10 +218,11 @@
               "params": {
                 "topic": "octoprint/movehead-down",
                 "payload": "{\"y\":-10}"
-              }            },
+              }
+            },
             {
               "id": "printhead-jog-left",
-              "name": " go ←",
+              "name": "move ←",
               "active": true,
               "type": "action",
               "service": "ric-gate",
@@ -233,7 +234,7 @@
             },
             {
               "id": "printhead-jog-right",
-              "name": " go →",
+              "name": "move →",
               "active": true,
               "type": "action",
               "service": "ric-gate",
