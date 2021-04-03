@@ -1,7 +1,7 @@
 {
   "id": "root",
-  "name": "OctoPrint",
   "base": "mqtt",
+  "name": "OctoPrint",
   "active": true,
   "type": "subsystem",
   "children": [
@@ -55,25 +55,23 @@
           "linear": true,
           "children": [
             {
-              "id": "temperatureBedActual",
+              "id": "temperatureBed.actual",
               "name": "Actual",
               "active": true,
               "type": "argument",
               "source": "state",
               "dataType": "number",
               "unit": "temperature-celsius",
-              "reference": "temperatureBed.actual",
               "linear": true
             },
             {
-              "id": "temperatureBedTarget",
+              "id": "temperatureBed.target",
               "name": "Target",
               "active": true,
               "type": "argument",
               "source": "state",
               "dataType": "number",
               "unit": "temperature-celsius",
-              "reference": "temperatureBed.target",
               "linear": true
             }
           ]
@@ -88,25 +86,23 @@
           "reference": "octoPrint/temperature/tool0",
           "children": [
             {
-              "id": "temperatureToolActual",
+              "id": "temperatureTool.actual",
               "name": "Actual",
               "active": true,
               "type": "argument",
               "source": "state",
               "dataType": "number",
               "unit": "temperature-celsius",
-              "reference": "temperatureTool.actual",
               "linear": true
             },
             {
-              "id": "temperatureToolTarget",
+              "id": "temperatureTool.target",
               "name": "Target",
               "active": true,
               "type": "argument",
               "source": "state",
               "dataType": "number",
               "unit": "temperature-celsius",
-              "reference": "temperatureTool.target",
               "linear": true
             }
           ]
@@ -122,19 +118,18 @@
           "unit": null,
           "children": [
             {
-              "id": "currentFile",
+              "id": "printingProgress.path",
               "name": "File",
               "active": true,
               "type": "argument",
               "dataType": "string",
               "factor": 1,
               "linear": true,
-              "reference": "printingProgress.path",
               "source": "state",
               "unit": null
             },
             {
-              "id": "currentProgress",
+              "id": "printingProgress.progress",
               "name": "Percent",
               "active": true,
               "type": "argument",
@@ -142,7 +137,6 @@
               "dataType": "number",
               "linear": true,
               "factor": 1,
-              "reference": "printingProgress.progress",
               "unit": "percent"
             },
             {
