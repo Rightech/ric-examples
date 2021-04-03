@@ -1,0 +1,20 @@
+plugins:
+    mqtt:
+        broker:
+            url: dev.rightech.io
+        client:
+            client_id: efn7PthdE4fe-tzAMqPCh6xEb
+        publish:
+            temperatureThreshold: '1'
+
+    # highly optional
+    # TODO: forward mqtt payloads to OctoPrint API command with `extract` field
+    # - https://github.com/jneilliii/OctoPrint-MQTTSubscribe/issues/21
+    mqttsubscribe:
+        topics:
+        -   command: '{ "command": "jog", "absolute": false, "y":10 }'
+            disable_popup: true
+            extract: ''
+            rest: api/printer/printhead
+            topic: octoprint/movehead-up
+            type: post

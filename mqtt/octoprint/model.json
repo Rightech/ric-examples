@@ -1,0 +1,251 @@
+{
+  "id": "root",
+  "name": "OctoPrint",
+  "base": "mqtt",
+  "active": true,
+  "type": "subsystem",
+  "children": [
+    {
+      "id": "external-software-modules",
+      "active": true,
+      "copy": true,
+      "type": "subsystem"
+    },
+    {
+      "id": "params",
+      "name": "Params",
+      "active": true,
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "server-info",
+          "name": "Server information",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "online",
+              "name": "Online",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "boolean",
+              "reference": "online"
+            },
+            {
+              "id": "_ts",
+              "name": "Time",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "duration-microsecond",
+              "reference": "_ts"
+            }
+          ]
+        },
+        {
+          "id": "temperatureBed",
+          "name": "Bed Temperature",
+          "active": true,
+          "type": "argument",
+          "source": "state",
+          "dataType": "object",
+          "reference": "octoPrint/temperature/bed",
+          "linear": true,
+          "children": [
+            {
+              "id": "temperatureBedActual",
+              "name": "Actual",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "temperature-celsius",
+              "reference": "temperatureBed.actual",
+              "linear": true
+            },
+            {
+              "id": "temperatureBedTarget",
+              "name": "Target",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "temperature-celsius",
+              "reference": "temperatureBed.target",
+              "linear": true
+            }
+          ]
+        },
+        {
+          "id": "temperatureTool",
+          "name": "Tool Temperature",
+          "active": true,
+          "type": "argument",
+          "source": "state",
+          "dataType": "object",
+          "reference": "octoPrint/temperature/tool0",
+          "children": [
+            {
+              "id": "temperatureToolActual",
+              "name": "Actual",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "temperature-celsius",
+              "reference": "temperatureTool.actual",
+              "linear": true
+            },
+            {
+              "id": "temperatureToolTarget",
+              "name": "Target",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "temperature-celsius",
+              "reference": "temperatureTool.target",
+              "linear": true
+            }
+          ]
+        },
+        {
+          "id": "printingProgress",
+          "name": "Progress",
+          "active": true,
+          "type": "argument",
+          "dataType": "object",
+          "reference": "octoPrint/progress/printing",
+          "source": "state",
+          "unit": null,
+          "children": [
+            {
+              "id": "currentFile",
+              "name": "File",
+              "active": true,
+              "type": "argument",
+              "dataType": "string",
+              "factor": 1,
+              "linear": true,
+              "reference": "printingProgress.path",
+              "source": "state",
+              "unit": null
+            },
+            {
+              "id": "currentProgress",
+              "name": "Percent",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "linear": true,
+              "factor": 1,
+              "reference": "printingProgress.progress",
+              "unit": "percent"
+            },
+            {
+              "id": "zAxis",
+              "name": "Z axis",
+              "active": true,
+              "type": "argument",
+              "dataType": "object",
+              "source": "state",
+              "reference": "octoPrint/event/ZChange"
+            }
+          ]
+        },
+        {
+          "id": "mqtt-last",
+          "name": "Last MQTT Publish",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "topic",
+              "name": "Topic",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "string",
+              "reference": "topic"
+            },
+            {
+              "id": "payload",
+              "name": "Payload",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "string",
+              "reference": "payload"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cmds",
+      "name": "Commands",
+      "active": true,
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "move-head",
+          "name": "move-head",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "printhead-jog-up",
+              "name": " go ↑",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "payload": "{\"y\":10}",
+                "topic": "octoprint/movehead-up"
+              },
+            },
+            {
+              "id": "printhead-jog-down",
+              "name": " go ↓",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "octoprint/movehead-down",
+                "payload": "{\"y\":-10}"
+              }            },
+            {
+              "id": "printhead-jog-left",
+              "name": " go ←",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "octoprint/movehead-left",
+                "payload": "{\"x\":-10}"
+              }
+            },
+            {
+              "id": "printhead-jog-right",
+              "name": " go →",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "octoprint/movehead-right",
+                "payload": "{\"x\":10}"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
