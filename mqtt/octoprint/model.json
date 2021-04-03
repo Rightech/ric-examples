@@ -199,7 +199,7 @@
               "command": "publish",
               "params": {
                 "payload": "{\"y\":10}",
-                "topic": "octoprint/movehead-up"
+                "topic": "octoprint/printhead-up"
               }
             },
             {
@@ -210,7 +210,7 @@
               "service": "ric-gate",
               "command": "publish",
               "params": {
-                "topic": "octoprint/movehead-down",
+                "topic": "octoprint/printhead-down",
                 "payload": "{\"y\":-10}"
               }
             },
@@ -222,7 +222,7 @@
               "service": "ric-gate",
               "command": "publish",
               "params": {
-                "topic": "octoprint/movehead-left",
+                "topic": "octoprint/printhead-left",
                 "payload": "{\"x\":-10}"
               }
             },
@@ -234,7 +234,7 @@
               "service": "ric-gate",
               "command": "publish",
               "params": {
-                "topic": "octoprint/movehead-right",
+                "topic": "octoprint/printhead-right",
                 "payload": "{\"x\":10}"
               }
             }
