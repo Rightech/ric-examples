@@ -12,9 +12,9 @@ plugins:
     # - https://github.com/jneilliii/OctoPrint-MQTTSubscribe/issues/21
     mqttsubscribe:
         topics:
-        -   command: '{ "command": "jog", "absolute": false, "y":10 }'
-            disable_popup: true
+        -   topic: octoprint/printhead-up
             extract: ''
             rest: api/printer/printhead
-            topic: octoprint/movehead-up
             type: post
+            command: '{ "command": "jog", "absolute": false, "y":10 }'
+            disable_popup: true
