@@ -83,7 +83,7 @@ services:
       - consul
 
   mongo:
-    image: edgexfoundry/docker-edgex-mongo-arm64:1.0.1
+    image: edgexfoundry/docker-edgex-mongo-arm64:1.3.0
     ports:
       - "27017:27017"
     container_name: edgex-mongo
