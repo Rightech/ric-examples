@@ -101,7 +101,7 @@ services:
       - volume
 
   logging:
-    image: edgexfoundry/docker-support-logging-go-arm64:1.0.1
+    image: edgexfoundry/docker-support-logging-go-arm64:1.3.1
     ports:
       - "48061:48061"
     container_name: edgex-support-logging
