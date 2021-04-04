@@ -66,7 +66,7 @@ services:
       - volume
 
   config-seed:
-    image: edgexfoundry/docker-core-config-seed-go-arm64:1.0.0
+    image: edgexfoundry/docker-core-config-seed-go-arm64:1.1.0
     container_name: edgex-config-seed
     hostname: edgex-core-config-seed
     networks:
