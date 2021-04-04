@@ -195,7 +195,7 @@ services:
       - logging
 
   command:
-    image: edgexfoundry/docker-core-command-go-arm64:1.0.1
+    image: edgexfoundry/docker-core-command-go-arm64:1.3.1
     ports:
       - "48082:48082"
     container_name: edgex-core-command
