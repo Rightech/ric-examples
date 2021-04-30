@@ -1,73 +1,41 @@
-## Running Edgex services on Raspberry PI 3B+
+## Download compose file
 
-Components
-----------
- - Basic Edgex services
- 
- - Modbus service for communication with modbus-tcp devices
- 
- - MQTT-connector, which allows you to establish communication with [Rightech IoT cloud](https://dev.rightech.io/)
- 
-Useful information
-------------------
- - Firstly, if you are not familliar with the Edgex services it's worth to learn about them.
- 
- - Secondly, for the first steps in the Edgex services, it's recommended to use PC or laptop.
- 
- - For better experience on Raspberry use 16 gb sd card. Create swap file because lack of RAM.
- 
- ```shell
-sudo touch /tmp/theswap
-sudo chmod 600 /tmp/theswap
-sudo dd if=/dev/zero of=/tmp/theswap bs=1M count=2048
-sudo mkswap /tmp/theswap
-sudo swapon /tmp/theswap
- ```
- 
-Prerequisites
--------------
-  
- - Use Ubuntu 18.04 Server for arm64. Link: https://ubuntu.com/download/iot/raspberry-pi-2-3
- 
- - Install docker, docker-compose.
- 
- - You can use this modbus emulator. Link: http://modbuspal.sourceforge.net/.
- 
- - The main instruction how to use these services is [there](https://github.com/kovorotniy/edgex-modbus-ric-tutorial). Don't forget to read through this instruction.
- 
- - Execute `docker-compose up -d` for launching all services. 
- 
- - UI will be available at `your-ip:4000`, there you can monitor all devices and services.
- 
-Customizing
------------
+```sh
+> curl https://raw.githubusercontent.com/edgexfoundry/developer-scripts/master/releases/geneva/compose-files/docker-compose-geneva-redis-no-secty.yml -o docker-compose.yml
+```
 
-- Modbus profile and configuration is hardcoded. After clonning repo, modify [modbus profile](./modbus.test.device.profile.yml) and [configuration](./configuration.toml) for own purposes. 
+## Add MQTT exporter service
 
 ```yaml
 
-  device-modbus:
-    image: device-modbus
+  app-service-mqtt:
+    image: edgexfoundry/docker-app-service-configurable:1.1.0
     ports:
-      - "49999:49999"
-    container_name: edgex-device-modbus
-    hostname: edgex-device-modbus
+      - "127.0.0.1:48101:48101"
+    container_name: edgex-app-service-configurable-mqtt
+    hostname: edgex-app-service-configurable-mqtt
     networks:
-      edgex-network:
-        aliases:
-            - edgex-device-modbus
-    volumes:
-      - db-data:/data/db
-      - log-data:/edgex/logs
-      - consul-config:/consul/config
-      - consul-data:/consul/data
-      - ./configuration.toml:/res/docker/configuration.toml
-      - ./modbus.test.device.profile.yml:/res/modbus.test.device.profile.yml
+      - edgex-network
+    environment:
+      <<: *common-variables
+      edgex_profile: mqtt-export
+      Service_Host: edgex-app-service-configurable-mqtt
+      Service_Port: 48101
+      MessageBus_SubscribeHost_Host: edgex-core-data
+      Binding_PublishTopic: events
+      Writable_Pipeline_Functions_MQTTSend_Addressable_Publisher: <client-id>
+      Writable_Pipeline_Functions_MQTTSend_Addressable_Address: dev.rightech.io
+      Writable_Pipeline_Functions_MQTTSend_Addressable_Port: 1883
+      Writable_Pipeline_Functions_MQTTSend_Addressable_Protocol: tcp
+      Writable_Pipeline_Functions_MQTTSend_Addressable_Topic: EdgeXEvents
     depends_on:
+      - consul
       - data
-      - command
-```
- 
 
- 
- 
+```
+
+## Run EdgeX
+
+```sh
+> docker-compose up
+```
