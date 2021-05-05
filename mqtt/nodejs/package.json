@@ -12,6 +12,6 @@
   "dependencies": {
     "dotenv": "^8.1.0",
     "mqtt": "^2.18.8",
-    "node-dht-sensor": "^0.3.0"
+    "node-dht-sensor": "^0.4.3"
   }
 }
