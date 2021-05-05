@@ -270,7 +270,7 @@ services:
       - metadata
 
   device-rest:
-    image: edgexfoundry/docker-device-rest-go:1.1.1
+    image: edgexfoundry/docker-device-rest-go:1.2.1
     ports:
       - "127.0.0.1:49986:49986"
     container_name: edgex-device-rest
