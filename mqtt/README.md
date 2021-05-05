@@ -76,6 +76,7 @@ We recommend using X.509 client certificates, or at least MQTT `username`/`passw
 
 | Project       | With example model     |  Config
 | ------------- | ---------------------- | ----------
+| [ESPHome](https://esphome.io/)   | - | [config.yaml](./esphome/config.yaml)
 | [OpenMQTTGateway](https://github.com/1technophile/OpenMQTTGateway)   | [model.json](../.ric-models/mqtt-omg.ric-model.json)  | -
 | [OctoPrint](https://octoprint.org/)                                  | [model.json](./octoprint/model.json)   | [config.yaml](./octoprint/config.yaml)
 | [zigbee2mqtt](https://github.com/Koenkk/zigbee2mqtt)                 | [model.json](./zigbee2mqtt/model.json) | [configuration.yaml](./zigbee2mqtt/configuration.yaml)

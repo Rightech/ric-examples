@@ -1,0 +1,16 @@
+esphome:
+  name: esphome-test
+  platform: ESP32
+  board: esp32dev
+
+wifi:
+  ssid: my-wifi-ssid
+  password: my-wifi-pass
+
+mqtt:
+  broker: dev.rightech.io
+  client_id: mqtt-test-id
+  discovery: false
+  log_topic:
+
+logger:
