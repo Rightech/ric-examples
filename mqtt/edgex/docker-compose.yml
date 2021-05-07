@@ -50,7 +50,7 @@ volumes:
 
 services:
   consul:
-    image: edgexfoundry/docker-edgex-consul:1.2.0
+    image: edgexfoundry/docker-edgex-consul:1.3.0
     ports:
       - "127.0.0.1:8400:8400"
       - "127.0.0.1:8500:8500"
