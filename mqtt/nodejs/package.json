@@ -10,7 +10,7 @@
   },
   "homepage": "https://github.com/Rightech/ric-examples#readme",
   "dependencies": {
-    "dotenv": "^8.1.0",
+    "dotenv": "^9.0.2",
     "mqtt": "^2.18.8",
     "node-dht-sensor": "^0.3.0"
   }
