@@ -8,11 +8,11 @@
 
 ![Create automaton](./assets/02_create_automaton.png)
 
-Automaton will send PUBLISH command to MQTT IoT panel object for every packet from first device.  
+Automaton will send `PUBLISH` command to `MQTT IoT Panel` object for every packet from first device.  
 
 ![Send PUBLISH](./assets/03_automaton_publish.png)
 
-For PUBLISH command specify custom payload, for example:
+For PUBLISH command specify JSON payload, for example:
 
 ```json
 {
