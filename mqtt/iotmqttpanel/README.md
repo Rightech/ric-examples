@@ -1,4 +1,4 @@
-# Connect object to `IoT MQTT Panel` app
+# Connect object to [`IoT MQTT Panel`](https://play.google.com/store/apps/details?id=snr.lab.iotmqttpanel.prod) app
 
 ### 1. Create new MQTT object for panel app
 
