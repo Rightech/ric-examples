@@ -1,10 +1,10 @@
 # Connect object to `IoT MQTT Panel` app
 
-## 1. Create new MQTT object for panel app
+### 1. Create new MQTT object for panel app
 
 ![Create MQTT Object](./assets/01_panel_object.png)
 
-## 2. Create automaton with 2 models
+### 2. Create automaton with 2 models
 
 ![Create automaton](./assets/02_create_automaton.png)
 
@@ -21,11 +21,11 @@ For PUBLISH command specify custom payload, for example:
 }
 ```
 
-## 3. Start automaton
+### 3. Start automaton
 
 ![Start automaton](./assets/04_automaton_start.png)
 
-## 4. In `IoT MQTT Panel` app specify topics for panels:
+### 4. In `IoT MQTT Panel` app specify topics for panels:
 
 config | view
 -------|-----
