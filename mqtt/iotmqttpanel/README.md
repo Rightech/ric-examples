@@ -27,5 +27,9 @@ For PUBLISH command specify custom payload, for example:
 
 ## 4. In `IoT MQTT Panel` app specify topics for panels:
 
-![Panel config](./assets/05_panel_config.jpg)
-![Panel view](./assets/06_panel_view.jpg)
+config | view
+-------|-----
+![Panel config](./assets/05_panel_config.jpg) | ![Panel view](./assets/06_panel_view.jpg)
+
+
+
