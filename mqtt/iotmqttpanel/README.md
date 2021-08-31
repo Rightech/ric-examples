@@ -1,6 +1,6 @@
 # Connect object to [`IoT MQTT Panel`](https://play.google.com/store/apps/details?id=snr.lab.iotmqttpanel.prod) app
 
-### 1. Create new MQTT object for `MQTT IoT Panel`
+### 1. Create new MQTT object for `IoT MQTT Panel`
 
 ![Create MQTT Object](./assets/01_panel_object.png)
 
@@ -8,7 +8,7 @@
 
 ![Create automaton](./assets/02_create_automaton.png)
 
-Automaton will send `PUBLISH` command to `MQTT IoT Panel` object for every packet from first device.  
+Automaton will send `PUBLISH` command to `IoT MQTT Panel` object for every packet from first device.  
 
 ![Send PUBLISH](./assets/03_automaton_publish.png)
 
@@ -25,7 +25,7 @@ For PUBLISH command specify JSON payload, for example:
 
 ![Start automaton](./assets/04_automaton_start.png)
 
-### 4. In `IoT MQTT Panel` app specify topics for panels:
+### 4. In `IoT MQTT Panel` specify topics for panels:
 
 config | view
 -------|-----
