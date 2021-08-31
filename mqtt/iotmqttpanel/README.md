@@ -1,10 +1,10 @@
 # Connect object to [`IoT MQTT Panel`](https://play.google.com/store/apps/details?id=snr.lab.iotmqttpanel.prod) app
 
-### 1. Create new MQTT object for panel app
+### 1. Create new MQTT object for `MQTT IoT Panel`
 
 ![Create MQTT Object](./assets/01_panel_object.png)
 
-### 2. Create automaton with 2 models
+### 2. Create automaton with multiple models
 
 ![Create automaton](./assets/02_create_automaton.png)
 
