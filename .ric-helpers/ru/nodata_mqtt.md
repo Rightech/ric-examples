@@ -14,7 +14,7 @@
 
 Вы также можете протестировать отправку данных с помощью любого MQTT клиента.
 
-Например `mosquitto_pub` из проекта [Eclipse Mosquitto](https://mosquitto.org/download/):
+Например, `mosquitto_pub` из проекта [Eclipse Mosquitto](https://mosquitto.org/download/):
 
 ```console
 $ mosquitto_pub -d \
