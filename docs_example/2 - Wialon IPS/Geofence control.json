@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2021-12-24T08:27:53.583Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "automatons",
+  "data": {
+    "_id": "61b74bdf00aa230010dee2cb",
+    "name": "Geofence control",
+    "description": "",
+    "models": [
+      "61b7078d00aa230010ded2df",
+      "61c5796938944e0010fc7d3e"
+    ],
+    "model": "61b7078d00aa230010ded2df",
+    "data": "{\"states\":{\"initial\":{\"data\":{\"type\":\"init\",\"id\":\"initial\",\"width\":20,\"height\":20},\"position\":{\"top\":100,\"left\":80}},\"final\":{\"data\":{\"type\":\"final\",\"id\":\"final\",\"width\":20,\"height\":20},\"position\":{\"top\":40,\"left\":1200}},\"first\":{\"data\":{\"type\":\"state\",\"id\":\"first\",\"name\":\"OUT\",\"description\":\"\",\"onenter\":[{\"id\":\"kettle_off\",\"name\":\"Turn-off kettle\",\"targetsTo\":\"{{model1}}\",\"args\":{}}],\"onexit\":[],\"width\":240,\"height\":140},\"position\":{\"top\":220,\"left\":400}},\"kx4q3lnv\":{\"data\":{\"type\":\"state\",\"id\":\"kx4q3lnv\",\"name\":\"IN\",\"description\":\"\",\"height\":140,\"width\":240,\"onenter\":[{\"id\":\"kettle_on\",\"name\":\"Turn-on kettle\",\"targetsTo\":\"{{model1}}\",\"args\":{}}],\"onexit\":[]},\"position\":{\"top\":480,\"left\":400}}},\"transitions\":{\"0\":{\"drawMode\":\"rou\",\"points\":[{\"x\":100,\"y\":100},{\"x\":260,\"y\":100},{\"x\":260,\"y\":100},{\"x\":420,\"y\":100},{\"x\":420,\"y\":160},{\"x\":420,\"y\":160},{\"x\":420,\"y\":200}],\"data\":{\"id\":\"0\",\"name\":\"Инициализация логики\",\"description\":\"Событие, возникающее при запуске интерпретации модели логики\",\"event\":\"init\",\"owner\":{\"id\":\"initial\",\"point\":{\"location\":\"right\",\"id\":0}},\"target\":{\"id\":\"first\",\"point\":{\"location\":\"top\",\"id\":1}},\"targetsTo\":null},\"version\":3,\"block\":{\"data\":{\"type\":\"connectionBlock\",\"connectionKey\":\"0\"},\"layout\":{\"width\":11,\"height\":6,\"position\":{\"x\":16,\"y\":2}},\"key\":\"cb-0\"}},\"kx4sma1h\":{\"drawMode\":\"rou\",\"points\":[{\"x\":380,\"y\":260},{\"x\":340,\"y\":260},{\"x\":340,\"y\":420},{\"x\":340,\"y\":460},{\"x\":340,\"y\":460},{\"x\":340,\"y\":540},{\"x\":380,\"y\":540}],\"data\":{\"owner\":{\"id\":\"first\",\"point\":{\"id\":2,\"location\":\"left\"}},\"target\":{\"id\":\"kx4q3lnv\",\"point\":{\"id\":3,\"location\":\"left\"}},\"id\":\"kx4sma1h\",\"event\":\"geofence-enter\",\"name\":\"Вход в геозону\",\"eventParameters\":{\"geofence-enter.geofence\":{\"id\":\"geofence-enter.geofence\",\"active\":true,\"type\":\"argument\",\"source\":\"config\",\"dataType\":\"string\",\"name\":\"geofence\",\"_parentId\":\"geofence-enter\",\"_isBase\":true}},\"targetsTo\":\"{{model0}}\"},\"version\":3,\"block\":{\"data\":{\"type\":\"connectionBlock\",\"connectionKey\":\"kx4sma1h\"},\"layout\":{\"width\":8,\"height\":3,\"position\":{\"x\":13,\"y\":20}},\"key\":\"cb-kx4sma1h\"}},\"kx4smipb\":{\"drawMode\":\"rou\",\"points\":[{\"x\":640,\"y\":540},{\"x\":680,\"y\":540},{\"x\":680,\"y\":420},{\"x\":680,\"y\":420},{\"x\":680,\"y\":380},{\"x\":680,\"y\":260},{\"x\":640,\"y\":260}],\"data\":{\"owner\":{\"id\":\"kx4q3lnv\",\"point\":{\"id\":3,\"location\":\"right\"}},\"target\":{\"id\":\"first\",\"point\":{\"id\":2,\"location\":\"right\"}},\"id\":\"kx4smipb\",\"event\":\"geofence-leave\",\"name\":\"Выход из геозоны\",\"eventParameters\":{\"geofence-leave.geofence\":{\"id\":\"geofence-leave.geofence\",\"active\":true,\"type\":\"argument\",\"source\":\"config\",\"dataType\":\"string\",\"name\":\"geofence\",\"_parentId\":\"geofence-leave\",\"_isBase\":true}},\"targetsTo\":\"{{model0}}\"},\"version\":3,\"block\":{\"data\":{\"type\":\"connectionBlock\",\"connectionKey\":\"kx4smipb\"},\"layout\":{\"width\":8,\"height\":3,\"position\":{\"x\":30,\"y\":18}},\"key\":\"cb-kx4smipb\"}}}}"
+  }
+}

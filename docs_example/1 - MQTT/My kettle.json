@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2021-12-24T08:18:44.254Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "objects",
+  "data": {
+    "_id": "61b3519b00aa230010ddf5a4",
+    "id": "mqtt-kettle1",
+    "name": "My kettle",
+    "config": {
+      "position": {
+        "lat": 52.95545734537296,
+        "lon": 36.03617548942566
+      }
+    },
+    "status": "on",
+    "owner": "613645025dab3700105ae872",
+    "group": "613645025dab3700105ae871",
+    "_licensed": true,
+    "time": 1639141787532,
+    "_at": 1640333844024,
+    "description": "Kettle control"
+  }
+}

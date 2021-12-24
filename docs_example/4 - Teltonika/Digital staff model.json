@@ -1,0 +1,767 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2021-12-24T06:50:31.784Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "models",
+  "data": {
+    "_id": "61b9fd3100aa230010df7dfd",
+    "name": "Digital staff model",
+    "base": "teltonika",
+    "description": "TMT250 tracker\n",
+    "data": {
+      "id": "root",
+      "active": true,
+      "name": "Digital staff model",
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "external-software-modules",
+          "active": true,
+          "copy": true,
+          "type": "subsystem",
+          "children": [],
+          "name": "Внешние программные модули",
+          "description": "порт 1883 или 8883(TLS)"
+        },
+        {
+          "id": "iye86vhl",
+          "active": true,
+          "name": "Params",
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "times",
+              "active": true,
+              "name": "Time",
+              "type": "subsystem",
+              "children": []
+            },
+            {
+              "id": "gps_sys",
+              "active": true,
+              "name": "🛰 GPS",
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "lat",
+                  "active": true,
+                  "name": "Latitude",
+                  "type": "argument",
+                  "description": "North – south position",
+                  "unit": "angle-degree",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "navigation.latitude",
+                  "factor": 1,
+                  "linear": true
+                },
+                {
+                  "id": "lon",
+                  "active": true,
+                  "name": "Longitude",
+                  "type": "argument",
+                  "description": "East – west position",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "navigation.longitude",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": "angle-degree"
+                },
+                {
+                  "id": "speed",
+                  "active": true,
+                  "name": "Speed",
+                  "type": "argument",
+                  "description": "Speed calculated from satellites",
+                  "unit": "speed-kilometer-per-hour",
+                  "source": "state",
+                  "dataType": "number",
+                  "display": {
+                    "levels": "60, 90",
+                    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M2.5 1.3H1.3v1.2H0v1.3h2.5zM10.6 10h1.3v1.3h-1.3zM11.9 8.8h1.3v1.3h-1.3zM13.1 7.5h1.3v1.3h-1.3z\"></path><path class=\"st0\" d=\"M11.9 2.6V1.3h1.3V0h-5v1.3h1.3v1.4C5.2 3.3 2 7 2 11.4c0 4.8 3.9 8.8 8.8 8.8 4.8 0 8.8-3.9 8.8-8.8-.2-4.5-3.5-8.2-7.7-8.8zm-1.3 15c-3.5 0-6.3-2.8-6.3-6.3S7.1 5 10.6 5c1.4 0 2.7.5 3.8 1.3v1.2h1.2c.8 1.1 1.3 2.3 1.3 3.8 0 3.4-2.8 6.3-6.3 6.3z\"></path></svg>"
+                  },
+                  "reference": "navigation.speed",
+                  "_style": {
+                    "order": 2
+                  },
+                  "factor": 1,
+                  "linear": true,
+                  "children": [
+                    {
+                      "id": "speed.levels.0",
+                      "name": "-Infinity",
+                      "active": true,
+                      "type": "level",
+                      "index": 0,
+                      "value": "-Infinity",
+                      "color": "#a2ce4b"
+                    },
+                    {
+                      "id": "speed.levels.1",
+                      "name": "Min",
+                      "active": true,
+                      "type": "level",
+                      "index": 1,
+                      "value": 1,
+                      "color": "#a2ce4b"
+                    },
+                    {
+                      "id": "speed.levels.2",
+                      "name": "Mid",
+                      "active": true,
+                      "type": "level",
+                      "index": 5,
+                      "value": 20,
+                      "color": "#ffae62"
+                    },
+                    {
+                      "id": "speed.levels.3",
+                      "name": "Max",
+                      "active": true,
+                      "type": "level",
+                      "index": 9,
+                      "value": 30,
+                      "color": "#f16059"
+                    }
+                  ]
+                },
+                {
+                  "id": "time",
+                  "active": false,
+                  "name": "GPS time",
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "duration-millisecond",
+                  "reference": "navigation.time"
+                },
+                {
+                  "id": "altitude",
+                  "active": true,
+                  "name": "Altitude",
+                  "type": "argument",
+                  "description": "Meters above sea level",
+                  "unit": "length-meter",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "navigation.height",
+                  "factor": 1,
+                  "linear": true
+                },
+                {
+                  "id": "angle",
+                  "active": true,
+                  "name": "Angle",
+                  "type": "argument",
+                  "unit": "angle-degree",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "navigation.angle",
+                  "description": "Degrees from north pole",
+                  "factor": 1,
+                  "linear": true
+                },
+                {
+                  "id": "sat-count",
+                  "active": true,
+                  "name": "Satellites",
+                  "type": "argument",
+                  "description": "Number of visible satellites",
+                  "source": "state",
+                  "dataType": "number",
+                  "display": {
+                    "levels": "10, 6",
+                    "svg": "<svg viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M10 16.6c-1.7 0-3.1 1.3-3.4 2.9 0 .3.2.5.4.5h5.9c.2 0 .4-.2.4-.4-.2-1.7-1.6-3-3.3-3zM0 8h6v2H0zM0 11h6v2H0zM14 8h6v2h-6zM14 11h6v2h-6zM12.5 16c.3 0 .5-.2.5-.5V7.3c0-.3-.2-.6-.5-.6h-.2v-.1c0-.3-.2-.6-.5-.6H8.4c-.3 0-.5.3-.5.6v.1h-.2c-.3 0-.6.2-.7.5v8.2c0 .4.4.6.7.6h4.8zM10 2C8.1 2 6.6 3.6 6.5 5.6h1.1c0-1.4 1.1-2.5 2.4-2.5s2.4 1.1 2.4 2.5h1.2C13.4 3.6 11.9 2 10 2z\"></path><path d=\"M10 1.3c2.4 0 4.4 1.9 4.4 4.4h1.2C15.6 2.5 13.1 0 10 0 6.9 0 4.4 2.5 4.4 5.6h1.2c0-2.4 2-4.3 4.4-4.3z\"></path></svg>"
+                  },
+                  "reference": "navigation.sat-count",
+                  "_style": {
+                    "order": 4
+                  },
+                  "factor": 1,
+                  "linear": true,
+                  "children": [
+                    {
+                      "id": "sat-count.levels.0",
+                      "name": "-Infinity",
+                      "active": true,
+                      "type": "level",
+                      "index": 0,
+                      "value": "-Infinity",
+                      "color": "#f16059"
+                    },
+                    {
+                      "id": "sat-count.levels.1",
+                      "name": "Min",
+                      "active": true,
+                      "type": "level",
+                      "index": 1,
+                      "value": 0,
+                      "color": "#f16059"
+                    },
+                    {
+                      "id": "sat-count.levels.2",
+                      "name": "Mid",
+                      "active": true,
+                      "type": "level",
+                      "index": 5,
+                      "value": 15,
+                      "color": "#f3d54e"
+                    },
+                    {
+                      "id": "sat-count.levels.3",
+                      "name": "Max",
+                      "active": true,
+                      "type": "level",
+                      "index": 9,
+                      "value": 20,
+                      "color": "#a2ce4b"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "permanent",
+              "name": "📊 Permanent I/O elements",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "bat",
+                  "active": true,
+                  "name": "🔋 Battery",
+                  "type": "subsystem",
+                  "children": [
+                    {
+                      "id": "percentage",
+                      "name": "Battery Level",
+                      "active": true,
+                      "type": "argument",
+                      "unit": "percent",
+                      "source": "state",
+                      "dataType": "number",
+                      "display": {
+                        "levels": "4.19, 3.8",
+                        "svg": "<svg viewBox=\"0 0 16 16\"><path d=\"M 1.585938 4 C 0.71875 4 0 4.71875 0 5.585938 L 0 10.410156 C 0 11.28125 0.71875 12 1.585938 12 L 12.410156 12 C 13.28125 12 14 11.28125 14 10.410156 L 14 10 L 15 10 C 15.546875 10 16 9.546875 16 9 L 16 7 C 16 6.453125 15.546875 6 15 6 L 14 6 L 14 5.585938 C 14 4.71875 13.28125 4 12.410156 4 Z M 1.585938 5 L 12.410156 5 C 12.742188 5 13 5.257813 13 5.585938 L 13 10.410156 C 13 10.742188 12.742188 11 12.410156 11 L 1.585938 11 C 1.257813 11 1 10.742188 1 10.410156 L 1 5.585938 C 1 5.257813 1.257813 5 1.585938 5 Z M 2 6 L 2 10 L 9 10 L 9 6 Z M 14 7 L 15 7 L 15 9 L 14 9 Z\" /></svg>"
+                      },
+                      "reference": "in_out_113",
+                      "factor": 1,
+                      "params": {
+                        "command": "",
+                        "in": 0,
+                        "value": 0
+                      },
+                      "_style": {
+                        "order": 1
+                      },
+                      "linear": true,
+                      "children": [
+                        {
+                          "id": "bat-voltage.levels.0",
+                          "name": "-Infinity",
+                          "active": true,
+                          "type": "level",
+                          "index": 0,
+                          "value": "-Infinity",
+                          "color": "#f16059"
+                        },
+                        {
+                          "id": "bat-voltage.levels.1",
+                          "name": "Min",
+                          "active": true,
+                          "type": "level",
+                          "index": 1,
+                          "value": 30,
+                          "color": "#ffae62"
+                        },
+                        {
+                          "id": "bat-voltage.levels.2",
+                          "name": "Mid",
+                          "active": true,
+                          "type": "level",
+                          "index": 5,
+                          "value": 60,
+                          "color": "#a2ce4b"
+                        },
+                        {
+                          "id": "bat-voltage.levels.3",
+                          "name": "Max",
+                          "active": true,
+                          "type": "level",
+                          "index": 9,
+                          "value": 80,
+                          "color": "#a2ce4b"
+                        }
+                      ],
+                      "description": "Battery capacity level "
+                    },
+                    {
+                      "id": "voltage",
+                      "name": "Battery voltage",
+                      "active": true,
+                      "type": "argument",
+                      "unit": "electric-volt",
+                      "source": "state",
+                      "dataType": "number",
+                      "reference": "in_out_67",
+                      "factor": 0.001
+                    },
+                    {
+                      "id": "current",
+                      "name": "Battery current ",
+                      "active": true,
+                      "type": "argument",
+                      "unit": "electric-ampere",
+                      "source": "state",
+                      "dataType": "number",
+                      "reference": "in_out_68",
+                      "factor": 0.001,
+                      "linear": true
+                    }
+                  ]
+                },
+                {
+                  "id": "movement",
+                  "active": true,
+                  "name": "Movement",
+                  "type": "argument",
+                  "description": "0 – Movement Off\n1 – Movement On",
+                  "source": "state",
+                  "dataType": "boolean",
+                  "reference": "in_out_240"
+                },
+                {
+                  "id": "data_mode",
+                  "name": "Data Mode",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "0 – Home On Stop\n1 – Home On Moving\n2 – Roaming On Stop\n3 – Roaming On Moving\n4 – Unknown On Stop\n5 – Unknown On Moving ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_80"
+                },
+                {
+                  "id": "signal",
+                  "active": true,
+                  "name": "GSM Signal",
+                  "type": "argument",
+                  "description": "Value in scale 1-5",
+                  "source": "state",
+                  "dataType": "number",
+                  "display": {
+                    "levels": "4, 2",
+                    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M8.6 13.7c-.8.8-.8 2 0 2.8.1.1.3.2.4.3V20h1.7v-3.1c.2-.1.5-.2.7-.4.8-.8.8-2 0-2.8-.8-.7-2-.7-2.8 0zm2.1 1.6c-.4 0-.7-.3-.7-.7 0-.4.3-.7.7-.7.4 0 .7.3.7.7-.1.4-.4.7-.7.7zM10 2.9c-4.1 0-7.6 2-10 5l1.8 1.7C3.7 7.1 6.6 5.4 10 5.4c3.4 0 6.3 1.7 8.3 4.2L20 7.9c-2.4-3-5.9-5-10-5zm0 5c-2.7 0-5.1 1.3-6.6 3.4l1.8 1.8c1-1.6 2.8-2.7 4.8-2.7s3.8 1.1 4.8 2.7l1.8-1.8c-1.4-2.1-3.9-3.4-6.6-3.4z\"></path></svg>"
+                  },
+                  "params": {
+                    "command": "",
+                    "in": 0,
+                    "value": 0
+                  },
+                  "reference": "in_out_21",
+                  "_style": {
+                    "order": 3
+                  },
+                  "factor": 1,
+                  "linear": true,
+                  "children": [
+                    {
+                      "id": "signal.levels.0",
+                      "name": "-Infinity",
+                      "active": true,
+                      "type": "level",
+                      "index": 0,
+                      "value": "-Infinity",
+                      "color": "#f16059"
+                    },
+                    {
+                      "id": "signal.levels.1",
+                      "name": "Min",
+                      "active": true,
+                      "type": "level",
+                      "index": 1,
+                      "value": 0,
+                      "color": "#f16059"
+                    },
+                    {
+                      "id": "signal.levels.2",
+                      "name": "Mid",
+                      "active": true,
+                      "type": "level",
+                      "index": 5,
+                      "value": 2,
+                      "color": "#a2ce4b"
+                    },
+                    {
+                      "id": "signal.levels.3",
+                      "name": "Max",
+                      "active": true,
+                      "type": "level",
+                      "index": 9,
+                      "value": 5,
+                      "color": "#a2ce4b"
+                    }
+                  ]
+                },
+                {
+                  "id": "sleep_mode",
+                  "name": "Sleep Mode",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "0 - Sleep modes disabled\n1 – GNSS sleep\n2 – Deep sleep\n3 – Online deep sleep\n4 - Ultra deep sleep ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_200",
+                  "children": []
+                },
+                {
+                  "id": "gnss",
+                  "name": "GNSS",
+                  "active": true,
+                  "type": "subsystem",
+                  "children": [
+                    {
+                      "id": "gnss_status",
+                      "name": "GNSS Status",
+                      "active": true,
+                      "type": "argument",
+                      "source": "state",
+                      "dataType": "number",
+                      "reference": "in_out_69",
+                      "factor": 1,
+                      "linear": true,
+                      "description": "0 - GNSS OFF\n1 – GNSS ON with fix\n2 - GNSS ON without fix\n3 - GNSS sleep"
+                    },
+                    {
+                      "id": "gnss_pdop",
+                      "name": "GNSS PDOP",
+                      "active": true,
+                      "type": "argument",
+                      "source": "state",
+                      "dataType": "number",
+                      "reference": "in_out_181",
+                      "factor": 0.1,
+                      "linear": true
+                    },
+                    {
+                      "id": "gnss_hdop",
+                      "name": "GNSS HDOP",
+                      "active": true,
+                      "type": "argument",
+                      "source": "state",
+                      "dataType": "number",
+                      "reference": "in_out_182",
+                      "factor": 0.1,
+                      "linear": true
+                    }
+                  ]
+                },
+                {
+                  "id": "inst_move",
+                  "name": "Instant Movement",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_303",
+                  "unit": null,
+                  "children": [],
+                  "description": "Logic: 0/1 returns movement value"
+                },
+                {
+                  "id": "charging",
+                  "name": "Charger Connected",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_116",
+                  "unit": null,
+                  "children": [
+                    {
+                      "id": "charging.levels.0",
+                      "name": "False",
+                      "active": true,
+                      "type": "level",
+                      "index": 0,
+                      "value": false,
+                      "color": "#a8b3b4"
+                    },
+                    {
+                      "id": "charging.levels.1",
+                      "name": "True",
+                      "active": true,
+                      "type": "level",
+                      "index": 1,
+                      "value": true,
+                      "color": "#932df2"
+                    }
+                  ],
+                  "description": "0 - charger is not connected\n1 - charger is connected ",
+                  "display": {
+                    "svg": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\r\n<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->\r\n<svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\r\n\t viewBox=\"0 0 490.1 490.1\" style=\"enable-background:new 0 0 490.1 490.1;\" xml:space=\"preserve\">\r\n<g>\r\n\t<g>\r\n\t\t<path d=\"M473.15,376.625c22.6-22.6,22.6-59.3,0-81.8c-22.6-22.6-59.3-22.6-81.8,0l-30.7,30.7c-8.5,8.5-22.4,8.5-30.9,0l-54.8-54.9\r\n\t\t\tc-3.4-3.4-8-5.3-12.7-5.3c-4.8,0-9.4,1.9-12.7,5.3c-15,15-34.9,23.3-56.2,23.3c-21.3,0-41.2-8.3-56.2-23.3l-49.6-49.6l112.3-112.3\r\n\t\t\tl49.6,49.6c13.8,13.8,22,32.1,23.1,51.5c0.6,9.6,8.5,17,18,17c0.3,0,0.7,0,1.1,0c9.9-0.6,17.5-9.1,16.9-19\r\n\t\t\tc-1.6-28.3-13.6-54.9-33.6-74.9l-49.6-49.6l5.5-5.5c7-7,7-18.4,0-25.5c-7-7-18.4-7-25.5,0l-35.3,35.3l-61.2-61.2\r\n\t\t\tc-7-7-18.4-7-25.5,0c-7,7-7,18.4,0,25.5l61.2,61.2l-52.6,52.6l-61.2-61.2c-7-7-18.4-7-25.5,0c-7,7-7,18.4,0,25.5l61.3,61.2\r\n\t\t\tl-35.3,35.3c-7,7-7,18.4,0,25.5c3.5,3.5,8.1,5.3,12.7,5.3c4.6,0,9.2-1.8,12.7-5.3l5.5-5.5l49.6,49.6\r\n\t\t\tc21.8,21.8,50.8,33.8,81.6,33.8c24.7,0,48.3-7.7,67.9-22.1l43.1,43.1c11.3,11.3,26.1,16.9,40.9,16.9s29.6-5.6,40.9-16.9l30.7-30.7\r\n\t\t\tc8.5-8.5,22.4-8.5,30.9,0s8.5,22.4,0,30.9l-30.7,30.7c-10.9,10.9-16.9,25.4-16.9,40.9s6,30,16.9,40.9c3.5,3.5,8.1,5.3,12.7,5.3\r\n\t\t\tc4.6,0,9.2-1.8,12.7-5.3c7-7,7-18.4,0-25.5c-4.1-4.1-6.4-9.6-6.4-15.4s2.3-11.3,6.4-15.4L473.15,376.625z\"/>\r\n\t</g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n</svg>\r\n"
+                  }
+                },
+                {
+                  "id": "x",
+                  "name": "Axis X",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_17",
+                  "unit": "length-meter",
+                  "children": [],
+                  "description": "X axis value"
+                },
+                {
+                  "id": "y",
+                  "name": "Axis Y",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_18",
+                  "unit": "length-meter",
+                  "children": [],
+                  "description": "Y axis value"
+                },
+                {
+                  "id": "z",
+                  "name": "Axis Z",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_19",
+                  "unit": "length-meter",
+                  "children": [],
+                  "description": "Z axis value"
+                }
+              ]
+            },
+            {
+              "id": "eventual",
+              "name": "❗Eventual I/O elements",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "alarm",
+                  "name": "Alarm",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "description": "0 – Reserved\n1 – Alarm event occured",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_236",
+                  "children": [
+                    {
+                      "id": "alarm.levels.0",
+                      "name": "False",
+                      "active": true,
+                      "type": "level",
+                      "index": 0,
+                      "value": false,
+                      "color": "#a8b3b4"
+                    },
+                    {
+                      "id": "alarm.levels.1",
+                      "name": "True",
+                      "active": true,
+                      "type": "level",
+                      "index": 1,
+                      "value": true,
+                      "color": "#f16059"
+                    }
+                  ],
+                  "unit": null,
+                  "display": {
+                    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\"><path fill-rule=\"evenodd\" d=\"M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z\"/></svg>"
+                  }
+                },
+                {
+                  "id": "down",
+                  "name": "ManDown/FallDown",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "description": "0 – ManDown/FallDown deactivated\n1 – ManDown/FalDown is active",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_242",
+                  "children": [],
+                  "unit": null
+                },
+                {
+                  "id": "movement_ev",
+                  "name": "Movement Event ",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "description": "0 - Movement event occurred\n1 - No Movement event occured",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_310",
+                  "children": [],
+                  "unit": null
+                },
+                {
+                  "id": "button",
+                  "name": "Button Click",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "description": "Button ID (X) and Action (Y) Value 0xXY\nX - button ID:\n1 - alarm button\n2 - power button\n3 - button 1\n4 - button 2\n5 - button 3\nY - action:\n1 - 1 click\n2 - 2 clicks\n3 - long click",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_389",
+                  "children": [],
+                  "unit": null
+                },
+                {
+                  "id": "power_ev",
+                  "name": "Power Event",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "description": "1 - Device turned OFF\n0 - Device turned ON",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_390",
+                  "children": [],
+                  "unit": null
+                },
+                {
+                  "id": "tamper_ev",
+                  "name": "Tamper detection Event",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "description": "0 - Tamper restore\n1 - Tamper alarm ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_520",
+                  "children": [],
+                  "unit": null
+                }
+              ]
+            },
+            {
+              "id": "ble",
+              "name": "BLE Sensor I/O elements",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "ble_temp1",
+                  "name": "BLE Temperature #1",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": "temperature-celsius",
+                  "reference": "in_out_25"
+                },
+                {
+                  "id": "ble_bat1",
+                  "name": "BLE Battery #1",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": "percent",
+                  "reference": "in_out_29",
+                  "children": []
+                },
+                {
+                  "id": "ble_hum1",
+                  "name": "BLE Humidity #1",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": "percent",
+                  "reference": "in_out_86",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cmds",
+          "name": "Commands",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "on_demand_tracking0",
+              "name": "Stops tracking",
+              "active": true,
+              "type": "action",
+              "source": "state",
+              "dataType": "string",
+              "params": {
+                "command": "on_demand_tracking0",
+                "in": 1,
+                "value": 1
+              },
+              "command": "text_command",
+              "service": "ric-gate",
+              "description": "Note: This command is supported from 55.00.00 firmware version.\n\non_demand_tracking#\n\nTracking on Demand functionality. # = Value ↓\n0 – Stops Tracking on Demand functionality.\n1 – Starts Tracking on Demand functionality.\n2 – Generates one high priority record and inititates data sending to server.",
+              "children": []
+            },
+            {
+              "id": "on_demand_tracking1",
+              "name": "Starts tracking",
+              "active": true,
+              "type": "action",
+              "source": "state",
+              "dataType": "string",
+              "params": {
+                "command": "on_demand_tracking1",
+                "in": 1,
+                "value": 1
+              },
+              "command": "text_command",
+              "service": "ric-gate",
+              "description": "Note: This command is supported from 55.00.00 firmware version.\n\non_demand_tracking#\n\nTracking on Demand functionality. # = Value ↓\n0 – Stops Tracking on Demand functionality.\n1 – Starts Tracking on Demand functionality.\n2 – Generates one high priority record and inititates data sending to server.",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "_at": 1594369140752,
+      "base": "teltonika",
+      "description": "TMT250 tracker\n"
+    },
+    "props": {
+      "bots": false,
+      "hardwareEvents": false,
+      "helper": "",
+      "prefix": "teltonika:",
+      "order": 5,
+      "typeInput": {
+        "hidden": true
+      },
+      "protocol": "teltonika",
+      "idPattern": "teltonika:<imei>",
+      "icon": "<svg viewBox=\"0 0 48 48\"><path fill=\"#ffb74d\" d=\"M24,11c2.758,0,5-2.242,5-5s-2.242-5-5-5s-5,2.242-5,5S21.242,11,24,11\" /><path fill=\"#607d8b\" d=\"M33,22c0,2.485,0,9,0,9l-3,2l-1,14H19l-1-14l-3-2c0,0,0-4.029,0-9s4.029-9,9-9S33,17.029,33,22z\" /></svg>"
+    },
+    "group": "613645025dab3700105ae871"
+  }
+}

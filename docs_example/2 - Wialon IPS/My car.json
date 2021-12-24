@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2021-12-24T07:37:23.495Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "objects",
+  "data": {
+    "_id": "61b73dbc00aa230010dedf6c",
+    "id": "wialon:123456789012",
+    "name": "My car",
+    "config": {
+      "position": {}
+    },
+    "status": "ok",
+    "owner": "613645025dab3700105ae872",
+    "group": "613645025dab3700105ae871",
+    "_licensed": true,
+    "time": 1639398844181,
+    "_at": 1640331328160,
+    "botEnabled": true,
+    "description": "Kettle control"
+  }
+}

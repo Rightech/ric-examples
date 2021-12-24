@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2021-12-23T13:52:03.810Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "objects",
+  "data": {
+    "_id": "61c078dd6b93f5001078afa1",
+    "id": "coap:sensor_lum",
+    "name": "Luminosity sensor",
+    "config": {
+      "position": {}
+    },
+    "status": "ok",
+    "owner": "613645025dab3700105ae872",
+    "group": "613645025dab3700105ae871",
+    "_licensed": true,
+    "time": 1640003805064
+  }
+}

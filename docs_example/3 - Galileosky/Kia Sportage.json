@@ -1,0 +1,803 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2021-12-24T06:55:45.554Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "models",
+  "data": {
+    "_id": "61b8a2ec6b93f5001076e32c",
+    "name": "Kia Sportage",
+    "base": "galileosky",
+    "description": "Model for my car",
+    "data": {
+      "id": "root",
+      "name": "Kia Sportage",
+      "active": true,
+      "checked": true,
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "external-software-modules",
+          "active": true,
+          "copy": true,
+          "type": "subsystem",
+          "children": [],
+          "name": "Внешние программные модули"
+        },
+        {
+          "id": "jmg69it6",
+          "name": "Global parameters",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "times",
+              "name": "Time",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "time",
+                  "name": "Date and time",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "tag_20",
+                  "unit": "duration-millisecond",
+                  "factor": 1000,
+                  "linear": true,
+                  "_parentId": "times"
+                }
+              ]
+            },
+            {
+              "id": "device_id",
+              "name": "Identifier of a device",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "reference": "tag_04",
+              "linear": true,
+              "factor": 1,
+              "_parentId": "jmg69it6"
+            },
+            {
+              "id": "coords",
+              "name": "Coordinates",
+              "active": true,
+              "type": "subsystem",
+              "source": "state",
+              "dataType": "number",
+              "children": [
+                {
+                  "id": "lat",
+                  "name": "Latitude",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "tag_30.lat",
+                  "factor": 0.000001,
+                  "linear": true,
+                  "unit": "angle-degree",
+                  "_parentId": "coords"
+                },
+                {
+                  "id": "lon",
+                  "name": "Longitude",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "tag_30.lon",
+                  "factor": 0.000001,
+                  "linear": true,
+                  "unit": "angle-degree",
+                  "_parentId": "coords"
+                },
+                {
+                  "id": "height",
+                  "name": "Нeight",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "length-meter",
+                  "reference": "tag_34",
+                  "linear": true,
+                  "factor": 1,
+                  "_parentId": "coords"
+                },
+                {
+                  "id": "speed_value",
+                  "name": "Speed",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "speed-kilometer-per-hour",
+                  "reference": "tag_33.speed",
+                  "factor": 0.1,
+                  "display": {
+                    "svg": "<svg viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M2.5 1.3H1.3v1.2H0v1.3h2.5zM10.6 10h1.3v1.3h-1.3zM11.9 8.8h1.3v1.3h-1.3zM13.1 7.5h1.3v1.3h-1.3z\"></path><path d=\"M11.9 2.6V1.3h1.3V0h-5v1.3h1.3v1.4C5.2 3.3 2 7 2 11.4c0 4.8 3.9 8.8 8.8 8.8 4.8 0 8.8-3.9 8.8-8.8-.2-4.5-3.5-8.2-7.7-8.8zm-1.3 15c-3.5 0-6.3-2.8-6.3-6.3S7.1 5 10.6 5c1.4 0 2.7.5 3.8 1.3v1.2h1.2c.8 1.1 1.3 2.3 1.3 3.8 0 3.4-2.8 6.3-6.3 6.3z\" class=\"st0\"></path></svg>"
+                  },
+                  "linear": true,
+                  "children": [
+                    {
+                      "id": "speed_value.levels.0",
+                      "name": "-Infinity",
+                      "active": true,
+                      "type": "level",
+                      "index": 0,
+                      "value": "-Infinity",
+                      "color": "#a2ce4b",
+                      "expanded": false,
+                      "_localId": "6wx1wxxlhd2r"
+                    },
+                    {
+                      "id": "speed_value.levels.1",
+                      "name": "Min",
+                      "active": true,
+                      "type": "level",
+                      "index": 1,
+                      "value": 0,
+                      "color": "#a2ce4b",
+                      "expanded": false,
+                      "_localId": "czrbjd63kaig"
+                    },
+                    {
+                      "id": "speed_value.levels.2",
+                      "name": "Mid",
+                      "active": true,
+                      "type": "level",
+                      "index": 5,
+                      "value": 50,
+                      "color": "#ffae62",
+                      "expanded": false,
+                      "_localId": "jbu48o9d9o24"
+                    },
+                    {
+                      "id": "speed_value.levels.3",
+                      "name": "Max",
+                      "active": true,
+                      "type": "level",
+                      "index": 9,
+                      "value": 100,
+                      "color": "#f16059",
+                      "expanded": false,
+                      "_localId": "q1t4v0u9zufn"
+                    }
+                  ],
+                  "expanded": false,
+                  "_localId": "h2eq55hgex10",
+                  "_parentId": "coords"
+                },
+                {
+                  "id": "satellite",
+                  "name": "Number of satellites",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "tag_30.satellite",
+                  "display": {
+                    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M10 16.6c-1.7 0-3.1 1.3-3.4 2.9 0 .3.2.5.4.5h5.9c.2 0 .4-.2.4-.4-.2-1.7-1.6-3-3.3-3zM0 8h6v2H0zM0 11h6v2H0zM14 8h6v2h-6zM14 11h6v2h-6zM12.5 16c.3 0 .5-.2.5-.5V7.3c0-.3-.2-.6-.5-.6h-.2v-.1c0-.3-.2-.6-.5-.6H8.4c-.3 0-.5.3-.5.6v.1h-.2c-.3 0-.6.2-.7.5v8.2c0 .4.4.6.7.6h4.8zM10 2C8.1 2 6.6 3.6 6.5 5.6h1.1c0-1.4 1.1-2.5 2.4-2.5s2.4 1.1 2.4 2.5h1.2C13.4 3.6 11.9 2 10 2z\"></path><path d=\"M10 1.3c2.4 0 4.4 1.9 4.4 4.4h1.2C15.6 2.5 13.1 0 10 0 6.9 0 4.4 2.5 4.4 5.6h1.2c0-2.4 2-4.3 4.4-4.3z\"></path></svg>"
+                  },
+                  "factor": 1,
+                  "linear": true,
+                  "children": [
+                    {
+                      "id": "satellite.levels.0",
+                      "name": "-Infinity",
+                      "active": true,
+                      "type": "level",
+                      "index": 0,
+                      "value": "-Infinity",
+                      "color": "#f16059",
+                      "expanded": false,
+                      "_localId": "1g2wbvcikiat"
+                    },
+                    {
+                      "id": "satellite.levels.1",
+                      "name": " ",
+                      "active": true,
+                      "type": "level",
+                      "index": 1,
+                      "value": 0,
+                      "color": "#ffae62",
+                      "expanded": false,
+                      "_localId": "f84rpgdxk4dt"
+                    },
+                    {
+                      "id": "satellite.levels.2",
+                      "name": " ",
+                      "active": true,
+                      "type": "level",
+                      "index": 5,
+                      "value": 10,
+                      "color": "#a2ce4b",
+                      "expanded": false,
+                      "_localId": "fik6kuwbkien"
+                    },
+                    {
+                      "id": "satellite.levels.3",
+                      "name": " ",
+                      "active": true,
+                      "type": "level",
+                      "index": 9,
+                      "value": 15,
+                      "color": "#a2ce4b",
+                      "expanded": false,
+                      "_localId": "x4lrrb6bwbmp"
+                    }
+                  ],
+                  "description": " ",
+                  "expanded": false,
+                  "_localId": "zzn0d5dp9678",
+                  "_parentId": "coords"
+                },
+                {
+                  "id": "direction",
+                  "name": "Direction",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "angle-degree",
+                  "reference": "tag_33.direction",
+                  "factor": 0.1,
+                  "linear": true,
+                  "description": null,
+                  "expanded": false,
+                  "_localId": "f3lhpp2byl46",
+                  "_parentId": "coords"
+                }
+              ]
+            },
+            {
+              "id": "jmg7ewuq",
+              "name": "Statuses",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "supply_voltage",
+                  "name": "Supply voltage",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "electric-volt",
+                  "reference": "tag_41",
+                  "factor": 0.001,
+                  "linear": true,
+                  "description": "Supply voltage, mV",
+                  "expanded": false,
+                  "_localId": "6dhcqdvy1z2k",
+                  "_parentId": "jmg7ewuq"
+                },
+                {
+                  "id": "accumulator_voltage",
+                  "name": "Battery voltage",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "electric-volt",
+                  "reference": "tag_42",
+                  "display": {
+                    "style": "order:1",
+                    "levels": "4.19, 3.8",
+                    "svg": "<svg style=\"shape-rendering: optimizespeed\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M20 3V2H0v18h20V3zM5 7h1V6h1v1h1v1H7v1H6V8H5V7zm13 11H2V3h1v14h7V3h8v15zM16 7h-3v1h3V7zm0-7h-4v2h4V0zM8 0H4v2h4V0z\" class=\"st0\"></path></svg>"
+                  },
+                  "factor": 0.001,
+                  "_style": {
+                    "order": 1
+                  },
+                  "linear": true,
+                  "children": [
+                    {
+                      "id": "accumulator_voltage.levels.0",
+                      "name": "-Infinity",
+                      "active": true,
+                      "type": "level",
+                      "index": 0,
+                      "value": "-Infinity",
+                      "color": "#f16059",
+                      "expanded": false,
+                      "_localId": "s9q3beglgeda"
+                    },
+                    {
+                      "id": "accumulator_voltage.levels.1",
+                      "name": "Min",
+                      "active": true,
+                      "type": "level",
+                      "index": 1,
+                      "value": 0,
+                      "color": "#f16059",
+                      "expanded": false,
+                      "_localId": "g8ax808mmtym"
+                    },
+                    {
+                      "id": "accumulator_voltage.levels.2",
+                      "name": "Mid",
+                      "active": true,
+                      "type": "level",
+                      "index": 5,
+                      "value": 6,
+                      "color": "#ffae62",
+                      "expanded": false,
+                      "_localId": "3udvex10797j"
+                    },
+                    {
+                      "id": "accumulator_voltage.levels.3",
+                      "name": "Max",
+                      "active": true,
+                      "type": "level",
+                      "index": 9,
+                      "value": 10,
+                      "color": "#a2ce4b",
+                      "expanded": false,
+                      "_localId": "imfce8w1cese"
+                    }
+                  ],
+                  "description": "Battery voltage, mV",
+                  "expanded": false,
+                  "_localId": "pozzd7yhr17w",
+                  "_parentId": "jmg7ewuq"
+                },
+                {
+                  "id": "terminal_temp",
+                  "name": "Tracking device temperature",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "angle-degree",
+                  "reference": "tag_43",
+                  "linear": true,
+                  "factor": 1,
+                  "description": "Tracking device temperature, °C",
+                  "expanded": false,
+                  "_localId": "w0v78n0ozufa",
+                  "_parentId": "jmg7ewuq"
+                }
+              ]
+            },
+            {
+              "id": "in",
+              "name": "Sensors",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "in1.voltage",
+                  "name": "Sensor 1",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "electric-volt",
+                  "reference": "tag_51",
+                  "factor": 0.001,
+                  "children": [],
+                  "linear": true,
+                  "expanded": false,
+                  "_localId": "nnn5sxc9m72r"
+                },
+                {
+                  "id": "in2.voltage",
+                  "name": "Sensor 2",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "electric-volt",
+                  "reference": "tag_52",
+                  "factor": 0.001,
+                  "children": [],
+                  "linear": true,
+                  "expanded": false,
+                  "_localId": "58x3gmzr08p8"
+                }
+              ]
+            },
+            {
+              "id": "user_data",
+              "name": "User data",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "data2",
+                  "name": "Script",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "boolean",
+                  "reference": "tag_E2",
+                  "factor": 1,
+                  "linear": true
+                },
+                {
+                  "id": "data9",
+                  "name": "GSM jamming ",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "boolean",
+                  "reference": "tag_E9",
+                  "factor": 1,
+                  "linear": true
+                }
+              ],
+              "description": ""
+            },
+            {
+              "id": "command_ans",
+              "name": "Command answer",
+              "active": false,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "nCommand",
+                  "name": "N command",
+                  "active": false,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "tag_E0",
+                  "factor": 1,
+                  "linear": true,
+                  "expanded": false,
+                  "_localId": "b0quini0hluz"
+                },
+                {
+                  "id": "textCommand",
+                  "name": "Answer text",
+                  "active": false,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "string",
+                  "reference": "tag_E1",
+                  "expanded": false,
+                  "_localId": "2fmwqptyk2bp"
+                },
+                {
+                  "id": "binData",
+                  "name": "Binary data",
+                  "active": false,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "string",
+                  "reference": "tag_EB",
+                  "expanded": false,
+                  "_localId": "kt0aji2oe92u"
+                },
+                {
+                  "id": "tag_04",
+                  "name": "Device ID",
+                  "active": false,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "status.Dev",
+                  "factor": 1,
+                  "linear": true,
+                  "description": "Identifier of a device",
+                  "expanded": false,
+                  "_localId": "dg6tpyd4inv7"
+                },
+                {
+                  "id": "tag_02",
+                  "name": "Firmware version",
+                  "active": false,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "status.Soft",
+                  "factor": 1,
+                  "linear": true,
+                  "description": "Firmware version",
+                  "expanded": false,
+                  "_localId": "6raftburd8z1"
+                },
+                {
+                  "id": "tag_10",
+                  "name": "Number of an archive record",
+                  "active": false,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "status.Pack",
+                  "factor": 1,
+                  "linear": true,
+                  "description": null,
+                  "expanded": false,
+                  "_localId": "dida1une9g3y"
+                },
+                {
+                  "id": "tag_20",
+                  "name": "Date and time",
+                  "active": false,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "string",
+                  "reference": "status.TmDt",
+                  "description": "Date and time",
+                  "expanded": false,
+                  "_localId": "tnvhmshktolr"
+                },
+                {
+                  "id": "tag_30.accuracy",
+                  "name": "Coordinates in degrees",
+                  "active": false,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "status.Nav",
+                  "description": "Coordinates in degrees, number of satellites, indication of coordinates determination correctness and source of coordinates",
+                  "factor": 1,
+                  "linear": true,
+                  "expanded": false,
+                  "_localId": "nq2h039u0qox"
+                },
+                {
+                  "id": "tag_30.lat",
+                  "name": "Latitude",
+                  "active": false,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "status.Lat",
+                  "factor": 1000000,
+                  "linear": true,
+                  "description": null,
+                  "expanded": false,
+                  "_localId": "wgx4qizp5o7o"
+                },
+                {
+                  "id": "tag_30.lon",
+                  "name": "Longitude",
+                  "active": false,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "status.Lon",
+                  "factor": 1000000,
+                  "linear": true,
+                  "description": null,
+                  "expanded": false,
+                  "_localId": "e8p2c09qnbza"
+                },
+                {
+                  "id": "tag_33.speed",
+                  "name": "Speed",
+                  "active": false,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "speed-kilometer-per-hour",
+                  "reference": "status.Spd",
+                  "factor": 10,
+                  "linear": true,
+                  "description": null,
+                  "expanded": false,
+                  "_localId": "d3xy8g214k1x"
+                },
+                {
+                  "id": "tag_35",
+                  "name": "HDOP",
+                  "active": false,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "status.HDOP",
+                  "factor": 10,
+                  "linear": true,
+                  "description": null,
+                  "expanded": false,
+                  "_localId": "k43qu94q9260"
+                },
+                {
+                  "id": "tag_30.satellite",
+                  "name": "Satellite",
+                  "active": false,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "status.SatCnt",
+                  "factor": 1,
+                  "linear": true,
+                  "description": null,
+                  "expanded": false,
+                  "_localId": "9mehh8si8mai"
+                },
+                {
+                  "id": "tag_34",
+                  "name": "Height",
+                  "active": false,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "length-meter",
+                  "reference": "status.Alt",
+                  "factor": 1,
+                  "linear": true,
+                  "description": null,
+                  "expanded": false,
+                  "_localId": "ggn2xnkz9v1t"
+                },
+                {
+                  "id": "tag_33.direction",
+                  "name": "Direction",
+                  "active": false,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "angle-degree",
+                  "reference": "status.A",
+                  "factor": 10,
+                  "linear": true,
+                  "description": null,
+                  "expanded": false,
+                  "_localId": "5tp3xg1bnon1"
+                }
+              ],
+              "description": "This field need for parse data. Don't remove this fields!!!",
+              "expanded": false,
+              "_localId": "vrbu1ah2d914"
+            }
+          ]
+        },
+        {
+          "id": "cmds",
+          "name": "Commands",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "info",
+              "name": "Information commands",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "inall",
+                  "name": "Get analog inputs",
+                  "active": true,
+                  "type": "action",
+                  "command": "text_command",
+                  "params": {
+                    "command": "inall"
+                  },
+                  "description": null,
+                  "service": "ric-gate"
+                },
+                {
+                  "id": "info_out_gal",
+                  "name": "Get outputs",
+                  "active": true,
+                  "type": "action",
+                  "command": "text_command",
+                  "params": {
+                    "command": "OUT"
+                  },
+                  "description": null,
+                  "service": "ric-gate",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "control",
+              "name": "Control commands",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "com_reset_galileo",
+                  "name": "Reset terminal",
+                  "active": true,
+                  "type": "action",
+                  "service": "ric-gate",
+                  "command": "text_command",
+                  "params": {
+                    "command": "RESET"
+                  },
+                  "description": null
+                },
+                {
+                  "id": "com_on",
+                  "name": "Unblock",
+                  "active": true,
+                  "type": "action",
+                  "service": "ric-gate",
+                  "command": "text_command",
+                  "params": {
+                    "command": "ON"
+                  },
+                  "description": null,
+                  "children": []
+                },
+                {
+                  "id": "com_off",
+                  "name": "Block",
+                  "active": true,
+                  "type": "action",
+                  "service": "ric-gate",
+                  "command": "text_command",
+                  "params": {
+                    "command": "OFF"
+                  },
+                  "description": null,
+                  "children": []
+                },
+                {
+                  "id": "com_on_gl_gal",
+                  "name": "GL script on",
+                  "active": true,
+                  "type": "action",
+                  "service": "ric-gate",
+                  "command": "text_command",
+                  "params": {
+                    "command": "ONGL"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "com_off_gl_gal",
+                  "name": "GL script off",
+                  "active": true,
+                  "type": "action",
+                  "service": "ric-gate",
+                  "command": "text_command",
+                  "params": {
+                    "command": "OFFGL"
+                  }
+                },
+                {
+                  "id": "info_photo_gal",
+                  "name": "Make a photo",
+                  "active": true,
+                  "type": "action",
+                  "service": "ric-gate",
+                  "command": "text_command",
+                  "params": {
+                    "command": "MAKEPHOTO"
+                  },
+                  "description": "Make a photo and send it to server"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "_localId": 15,
+      "selected": false,
+      "_isRoot": true,
+      "disabled": [],
+      "removed": [],
+      "base": "wialon-ips",
+      "_at": 1594307410411,
+      "description": "Model for my car"
+    },
+    "props": {
+      "bots": false,
+      "hardwareEvents": false,
+      "helper": "",
+      "prefix": "galileosky:",
+      "order": 4,
+      "typeInput": {
+        "hidden": true
+      },
+      "protocol": "galileosky",
+      "idPattern": "galileosky:<imei>",
+      "icon": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\r\n<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->\r\n<svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\r\n\t viewBox=\"0 0 512 512\" style=\"enable-background:new 0 0 512 512;\" xml:space=\"preserve\">\r\n<g>\r\n\t<path style=\"fill:#FFD117;\" d=\"M116.548,248.42c1.298,0,2.614-0.304,3.845-0.944c4.087-2.128,5.676-7.165,3.548-11.252\r\n\t\tL81.33,154.36c-1.437-2.76-4.289-4.49-7.4-4.49H44.865c-4.607,0-8.342,3.735-8.342,8.342c0,4.607,3.735,8.342,8.342,8.342h24.001\r\n\t\tl40.274,77.374C110.627,246.784,113.536,248.42,116.548,248.42z\"/>\r\n\t<path style=\"fill:#FFD117;\" d=\"M393.976,248.42c-1.298,0-2.614-0.304-3.845-0.944c-4.087-2.128-5.676-7.165-3.548-11.252\r\n\t\tl42.612-81.864c1.437-2.76,4.289-4.49,7.4-4.49h29.063c4.607,0,8.342,3.735,8.342,8.342c0,4.607-3.735,8.342-8.342,8.342h-24.001\r\n\t\tl-40.274,77.374C399.896,246.784,396.987,248.42,393.976,248.42z\"/>\r\n</g>\r\n<path style=\"fill:#FFB367;\" d=\"M381.207,118.924c-5.65-10.853-20.282-19.733-32.518-19.733H161.836\r\n\tc-12.236,0-26.868,8.88-32.518,19.733l-42.612,81.863l23.384,55.616h290.343l23.384-55.616L381.207,118.924z\"/>\r\n<path style=\"fill:#FFFFFF;\" d=\"M117.812,242.748h274.901l14.659-37.42l-40.965-78.699c-2.773-5.326-11.714-10.752-17.718-10.752\r\n\tH161.836c-6.004,0-14.946,5.426-17.718,10.752l-40.965,78.699L117.812,242.748z\"/>\r\n<g>\r\n\t<rect x=\"17.224\" y=\"368.037\" style=\"fill:#0E0A57;\" width=\"87.774\" height=\"44.771\"/>\r\n\t<rect x=\"405.521\" y=\"368.037\" style=\"fill:#0E0A57;\" width=\"87.774\" height=\"44.771\"/>\r\n</g>\r\n<path style=\"fill:#FFD117;\" d=\"M457.139,191.58l-64.426,17.797H117.812L53.386,191.58c-30.645,0-54.626,25.016-53.336,55.616\r\n\tl71.99,24.516L2.108,288.397l3.993,79.643h498.323l3.993-79.643l-69.932-16.685l71.99-24.516\r\n\tC511.765,216.597,487.783,191.58,457.139,191.58z\"/>\r\n<g>\r\n\t<path style=\"fill:#FF7039;\" d=\"M512,247.197c0,0.044,0,0.089,0,0.133l-2.058,41.067H406.64c0-22.747,18.442-41.201,41.201-41.201\r\n\t\tH512z\"/>\r\n\t<path style=\"fill:#FF7039;\" d=\"M105.409,288.397H2.108L0.05,247.33c0-0.044,0-0.089,0-0.133h64.159\r\n\t\tC86.967,247.197,105.409,265.65,105.409,288.397z\"/>\r\n</g>\r\n<rect x=\"162.733\" y=\"312.376\" style=\"fill:#FFF0B2;\" width=\"185.058\" height=\"38.987\"/>\r\n<path style=\"fill:#FFB367;\" d=\"M301.526,288.397h-92.53c-4.607,0-8.342-3.735-8.342-8.342c0-4.607,3.735-8.342,8.342-8.342h92.53\r\n\tc4.607,0,8.342,3.735,8.342,8.342C309.869,284.662,306.134,288.397,301.526,288.397z\"/>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n</svg>\r\n"
+    },
+    "group": "613645025dab3700105ae871"
+  }
+}

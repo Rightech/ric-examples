@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2021-12-23T13:56:36.134Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "objects",
+  "data": {
+    "_id": "61bc7f3b6b93f5001077c445",
+    "id": "eui:243daeb0fdbadded",
+    "name": "Modem",
+    "config": {
+      "position": {
+        "lat": 55.693164679152126,
+        "lon": 37.53582000732422
+      },
+      "lora": {
+        "appKey": "6e3b6f6e3b6f6e3b6f6e3b6f6e3b6f6f",
+        "gatewayId": "0242ac0000110002"
+      }
+    },
+    "status": "ok",
+    "owner": "613645025dab3700105ae872",
+    "group": "613645025dab3700105ae871",
+    "_licensed": true,
+    "time": 1639743291922,
+    "_at": 1639833255776
+  }
+}

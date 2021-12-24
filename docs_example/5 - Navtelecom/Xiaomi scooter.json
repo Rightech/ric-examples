@@ -1,0 +1,890 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2021-12-23T14:01:36.968Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "models",
+  "data": {
+    "_id": "61bb3e4b6b93f500107779ea",
+    "name": "Xiaomi scooter",
+    "base": "navtelecom",
+    "description": "Model for my scooter",
+    "data": {
+      "id": "root",
+      "name": "Xiaomi scooter",
+      "active": true,
+      "checked": true,
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "external-software-modules",
+          "active": true,
+          "copy": true,
+          "type": "subsystem",
+          "children": [],
+          "name": "Внешние программные модули"
+        },
+        {
+          "id": "parameters",
+          "active": true,
+          "name": "Параметры",
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "times",
+              "active": true,
+              "name": "Время",
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "gps_time",
+                  "active": true,
+                  "name": "Время события",
+                  "type": "argument",
+                  "dataType": "number",
+                  "unit": "duration-millisecond",
+                  "reference": "navigation.time",
+                  "factor": 1000,
+                  "linear": true,
+                  "description": "Время события",
+                  "_parentId": "times"
+                }
+              ]
+            },
+            {
+              "name": "Событие",
+              "reference": "code",
+              "dataType": "number",
+              "active": true,
+              "type": "argument",
+              "id": "code",
+              "description": "Код события, соответствующий данной записи",
+              "factor": 1,
+              "linear": true,
+              "_parentId": "parameters"
+            },
+            {
+              "name": "Функциональные модули 1",
+              "reference": "module1",
+              "dataType": "number",
+              "active": true,
+              "type": "argument",
+              "id": "module1",
+              "children": [
+                {
+                  "id": "module1.0",
+                  "name": "GSM включен",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": null,
+                  "_parentId": "module1"
+                },
+                {
+                  "id": "module1.1",
+                  "name": "USB включен",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "linear": true,
+                  "factor": 1,
+                  "unit": null,
+                  "_parentId": "module1"
+                },
+                {
+                  "id": "module1.2",
+                  "name": "Навигационный приемник включен",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "linear": true,
+                  "factor": 1,
+                  "unit": null,
+                  "_parentId": "module1"
+                },
+                {
+                  "id": "module1.3",
+                  "name": "Часы синхронизированы",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "linear": true,
+                  "factor": 1,
+                  "unit": null,
+                  "_parentId": "module1"
+                },
+                {
+                  "id": "module1.4",
+                  "name": "Работает вторая SIM-карта",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "linear": true,
+                  "factor": 1,
+                  "unit": null,
+                  "_parentId": "module1"
+                },
+                {
+                  "id": "module1.5",
+                  "name": "Регистрация в сотовой сети",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "linear": true,
+                  "factor": 1,
+                  "unit": null,
+                  "_parentId": "module1"
+                },
+                {
+                  "id": "module1.6",
+                  "name": "Роуминг",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "linear": true,
+                  "factor": 1,
+                  "unit": null,
+                  "_parentId": "module1"
+                },
+                {
+                  "id": "module1.7",
+                  "name": "Двигатель запущен",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "linear": true,
+                  "factor": 1,
+                  "unit": null,
+                  "_parentId": "module1"
+                }
+              ],
+              "description": "Статус функциональных модулей 1 ",
+              "factor": 1,
+              "linear": true,
+              "_parentId": "parameters"
+            },
+            {
+              "name": "Функциональные модули 2",
+              "reference": "module2",
+              "dataType": "number",
+              "active": true,
+              "type": "argument",
+              "id": "module2",
+              "children": [
+                {
+                  "id": "module2.0",
+                  "name": "Глушение GSM",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": null,
+                  "_parentId": "module2"
+                },
+                {
+                  "id": "module2.1",
+                  "name": "Промышленные помехи",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "linear": true,
+                  "factor": 1,
+                  "unit": null,
+                  "_parentId": "module2"
+                },
+                {
+                  "id": "module2.2",
+                  "name": "Усреднение координат",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "linear": true,
+                  "factor": 1,
+                  "unit": null,
+                  "_parentId": "module2"
+                },
+                {
+                  "id": "module2.3",
+                  "name": "Ошибка акселерометра",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "linear": true,
+                  "factor": 1,
+                  "unit": null,
+                  "_parentId": "module2"
+                },
+                {
+                  "id": "module2.4",
+                  "name": "Включен Bluetooth",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "linear": true,
+                  "factor": 1,
+                  "unit": null,
+                  "_parentId": "module2"
+                },
+                {
+                  "id": "module2.5",
+                  "name": "Включен Wi-Fi",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "linear": true,
+                  "factor": 1,
+                  "unit": null,
+                  "_parentId": "module2"
+                },
+                {
+                  "id": "module2.6",
+                  "name": "Резерв",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "linear": true,
+                  "factor": 1,
+                  "unit": null,
+                  "_parentId": "module2"
+                }
+              ],
+              "description": "Статус функциональных модулей 2",
+              "factor": 1,
+              "linear": true,
+              "_parentId": "parameters"
+            },
+            {
+              "id": "bat-voltage",
+              "name": "Напряжение батареи",
+              "active": true,
+              "description": "Напряжение на резервном источнике питания",
+              "type": "argument",
+              "unit": "electric-volt",
+              "dataType": "number",
+              "reference": "bat-voltage",
+              "factor": 0.001,
+              "linear": true,
+              "_parentId": "battery"
+            },
+            {
+              "id": "cdc-state.0",
+              "name": "Самокат разблокирован",
+              "active": true,
+              "type": "argument",
+              "dataType": "boolean",
+              "_parentId": "cdc-state",
+              "display": {
+                "svg": "<svg viewBox=\"0 0 16 16\"><path d=\"M 8 1 C 5.796875 1 4 2.796875 4 5 L 4 6 L 3.5 6 C 2.675781 6 2 6.675781 2 7.5 L 2 12.5 C 2 13.324219 2.675781 14 3.5 14 L 12.5 14 C 13.324219 14 14 13.324219 14 12.5 L 14 7.5 C 14 6.675781 13.324219 6 12.5 6 L 12 6 L 12 5 C 12 2.796875 10.203125 1 8 1 Z M 8 2 C 9.664063 2 11 3.335938 11 5 L 11 6 L 5 6 L 5 5 C 5 3.335938 6.335938 2 8 2 Z M 3.5 7 L 12.5 7 C 12.78125 7 13 7.21875 13 7.5 L 13 12.5 C 13 12.78125 12.78125 13 12.5 13 L 3.5 13 C 3.21875 13 3 12.78125 3 12.5 L 3 7.5 C 3 7.21875 3.21875 7 3.5 7 Z\" /></svg>"
+              },
+              "children": [
+                {
+                  "id": "cdc-state.0.levels.0",
+                  "name": "False",
+                  "active": true,
+                  "type": "level",
+                  "index": 0,
+                  "value": false,
+                  "color": "#a2ce4b"
+                },
+                {
+                  "id": "cdc-state.0.levels.1",
+                  "name": "True",
+                  "active": true,
+                  "type": "level",
+                  "index": 1,
+                  "value": true,
+                  "color": "#f16059"
+                }
+              ]
+            },
+            {
+              "id": "coords",
+              "active": true,
+              "name": "Координаты",
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "lat",
+                  "active": true,
+                  "name": "Широта",
+                  "type": "argument",
+                  "description": "Последняя валидная широта",
+                  "unit": "angle-degree",
+                  "dataType": "number",
+                  "reference": "navigation.latitude",
+                  "factor": 1,
+                  "linear": true,
+                  "_parentId": "coords"
+                },
+                {
+                  "id": "lon",
+                  "active": true,
+                  "name": "Долгота",
+                  "type": "argument",
+                  "description": "Последняя валидная долгота",
+                  "dataType": "number",
+                  "reference": "navigation.longitude",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": "angle-degree",
+                  "_parentId": "coords"
+                }
+              ]
+            },
+            {
+              "id": "gps",
+              "active": true,
+              "name": "GPS",
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "signal",
+                  "active": true,
+                  "name": "Уровень GSM",
+                  "type": "argument",
+                  "description": null,
+                  "dataType": "number",
+                  "display": {
+                    "style": "order:3",
+                    "levels": "4, 2",
+                    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M8.6 13.7c-.8.8-.8 2 0 2.8.1.1.3.2.4.3V20h1.7v-3.1c.2-.1.5-.2.7-.4.8-.8.8-2 0-2.8-.8-.7-2-.7-2.8 0zm2.1 1.6c-.4 0-.7-.3-.7-.7 0-.4.3-.7.7-.7.4 0 .7.3.7.7-.1.4-.4.7-.7.7zM10 2.9c-4.1 0-7.6 2-10 5l1.8 1.7C3.7 7.1 6.6 5.4 10 5.4c3.4 0 6.3 1.7 8.3 4.2L20 7.9c-2.4-3-5.9-5-10-5zm0 5c-2.7 0-5.1 1.3-6.6 3.4l1.8 1.8c1-1.6 2.8-2.7 4.8-2.7s3.8 1.1 4.8 2.7l1.8-1.8c-1.4-2.1-3.9-3.4-6.6-3.4z\"></path></svg>"
+                  },
+                  "params": {
+                    "command": "",
+                    "in": 0,
+                    "value": 0
+                  },
+                  "reference": "navigation.signal",
+                  "_style": {
+                    "order": 3
+                  },
+                  "factor": 1,
+                  "linear": true,
+                  "_parentId": "gps"
+                },
+                {
+                  "id": "gps_on",
+                  "active": true,
+                  "name": "Навигационный приемник включен",
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "reference": "navigation.gps_on",
+                  "_parentId": "gps"
+                },
+                {
+                  "id": "gps_valid",
+                  "active": true,
+                  "name": "Валидная навигация",
+                  "type": "argument",
+                  "description": null,
+                  "dataType": "boolean",
+                  "reference": "navigation.gps_valid",
+                  "_parentId": "gps"
+                },
+                {
+                  "id": "sat-count",
+                  "active": true,
+                  "name": "Количество спутников",
+                  "type": "argument",
+                  "description": "Количество навигационных спутников GPS ",
+                  "dataType": "number",
+                  "display": {
+                    "style": "order:4",
+                    "levels": "10, 6",
+                    "svg": "<svg viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M10 16.6c-1.7 0-3.1 1.3-3.4 2.9 0 .3.2.5.4.5h5.9c.2 0 .4-.2.4-.4-.2-1.7-1.6-3-3.3-3zM0 8h6v2H0zM0 11h6v2H0zM14 8h6v2h-6zM14 11h6v2h-6zM12.5 16c.3 0 .5-.2.5-.5V7.3c0-.3-.2-.6-.5-.6h-.2v-.1c0-.3-.2-.6-.5-.6H8.4c-.3 0-.5.3-.5.6v.1h-.2c-.3 0-.6.2-.7.5v8.2c0 .4.4.6.7.6h4.8zM10 2C8.1 2 6.6 3.6 6.5 5.6h1.1c0-1.4 1.1-2.5 2.4-2.5s2.4 1.1 2.4 2.5h1.2C13.4 3.6 11.9 2 10 2z\"></path><path d=\"M10 1.3c2.4 0 4.4 1.9 4.4 4.4h1.2C15.6 2.5 13.1 0 10 0 6.9 0 4.4 2.5 4.4 5.6h1.2c0-2.4 2-4.3 4.4-4.3z\"></path></svg>"
+                  },
+                  "reference": "navigation.sat-count",
+                  "_style": {
+                    "order": 4
+                  },
+                  "factor": 1,
+                  "linear": true,
+                  "children": [
+                    {
+                      "id": "sat-count.levels.0",
+                      "name": "-Infinity",
+                      "active": true,
+                      "type": "level",
+                      "index": 0,
+                      "value": "-Infinity",
+                      "color": "#f16059"
+                    },
+                    {
+                      "id": "sat-count.levels.1",
+                      "name": "Min",
+                      "active": true,
+                      "type": "level",
+                      "index": 1,
+                      "value": 0,
+                      "color": "#f16059"
+                    },
+                    {
+                      "id": "sat-count.levels.2",
+                      "name": "Mid",
+                      "active": true,
+                      "type": "level",
+                      "index": 5,
+                      "value": 15,
+                      "color": "#f3d54e"
+                    },
+                    {
+                      "id": "sat-count.levels.3",
+                      "name": "Max",
+                      "active": true,
+                      "type": "level",
+                      "index": 9,
+                      "value": 30,
+                      "color": "#a2ce4b"
+                    }
+                  ],
+                  "_parentId": "gps"
+                },
+                {
+                  "id": "speed",
+                  "active": true,
+                  "name": "Скорость",
+                  "type": "argument",
+                  "description": null,
+                  "unit": "speed-kilometer-per-hour",
+                  "dataType": "number",
+                  "display": {
+                    "style": "order:2",
+                    "levels": "60, 90",
+                    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M2.5 1.3H1.3v1.2H0v1.3h2.5zM10.6 10h1.3v1.3h-1.3zM11.9 8.8h1.3v1.3h-1.3zM13.1 7.5h1.3v1.3h-1.3z\"></path><path class=\"st0\" d=\"M11.9 2.6V1.3h1.3V0h-5v1.3h1.3v1.4C5.2 3.3 2 7 2 11.4c0 4.8 3.9 8.8 8.8 8.8 4.8 0 8.8-3.9 8.8-8.8-.2-4.5-3.5-8.2-7.7-8.8zm-1.3 15c-3.5 0-6.3-2.8-6.3-6.3S7.1 5 10.6 5c1.4 0 2.7.5 3.8 1.3v1.2h1.2c.8 1.1 1.3 2.3 1.3 3.8 0 3.4-2.8 6.3-6.3 6.3z\"></path></svg>"
+                  },
+                  "reference": "navigation.speed",
+                  "_style": {
+                    "order": 2
+                  },
+                  "factor": 1,
+                  "linear": true,
+                  "_parentId": "gps"
+                },
+                {
+                  "id": "angle",
+                  "active": true,
+                  "name": "Курс",
+                  "type": "argument",
+                  "description": null,
+                  "unit": "angle-degree",
+                  "dataType": "number",
+                  "reference": "navigation.angle",
+                  "factor": 1,
+                  "linear": true,
+                  "_parentId": "gps"
+                },
+                {
+                  "id": "mileage",
+                  "name": "Текущий пробег",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "reference": "navigation.mileage",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": "length-kilometer",
+                  "_parentId": "gps"
+                }
+              ]
+            },
+            {
+              "id": "vr_acc",
+              "name": "Датчики акселерометра",
+              "active": true,
+              "type": "argument",
+              "dataType": "number",
+              "children": [
+                {
+                  "id": "sh1",
+                  "name": "Датчик SH1",
+                  "active": true,
+                  "type": "argument",
+                  "description": "0 – в норме;\n1 – сработал",
+                  "dataType": "boolean",
+                  "reference": "tag_139.0",
+                  "_parentId": "vr_acc"
+                },
+                {
+                  "id": "sh2",
+                  "name": "Датчик SH2",
+                  "active": true,
+                  "type": "argument",
+                  "description": "0 – в норме;\n1 – сработал",
+                  "dataType": "boolean",
+                  "reference": "tag_139.1",
+                  "_parentId": "vr_acc"
+                },
+                {
+                  "id": "sh3",
+                  "name": "Датчик SH3",
+                  "active": true,
+                  "type": "argument",
+                  "description": "0 – в норме;\n1 – сработал",
+                  "dataType": "boolean",
+                  "reference": "tag_139.2",
+                  "_parentId": "vr_acc"
+                },
+                {
+                  "id": "sh4",
+                  "name": "Датчик SH4",
+                  "active": true,
+                  "type": "argument",
+                  "description": "0 – в норме;\n1 – сработал",
+                  "dataType": "boolean",
+                  "reference": "tag_139.3",
+                  "_parentId": "vr_acc"
+                },
+                {
+                  "id": "wakeup",
+                  "name": "Датчик WAKEUP",
+                  "active": true,
+                  "type": "argument",
+                  "description": "0 – в норме;\n1 – сработал",
+                  "dataType": "boolean",
+                  "reference": "tag_139.4",
+                  "_parentId": "vr_acc"
+                }
+              ],
+              "description": "Виртуальные датчики акселерометра",
+              "factor": 1,
+              "linear": true,
+              "_parentId": "parameters"
+            },
+            {
+              "id": "in_sens",
+              "name": "Внутренний датчик угла наклона",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "angle1",
+                  "name": "Угол наклона",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "unit": "angle-degree",
+                  "reference": "tag_140",
+                  "description": "Угол наклона относительно местной вертикали",
+                  "factor": 1,
+                  "linear": true,
+                  "_parentId": "in_sens"
+                },
+                {
+                  "id": "angle2",
+                  "name": "Угол тангажа",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "reference": "tag_141_0",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": "angle-degree",
+                  "_parentId": "in_sens"
+                },
+                {
+                  "id": "angle3",
+                  "name": "Угол крена",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "reference": "tag_141_1",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": "angle-degree",
+                  "_parentId": "in_sens"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "commands",
+          "active": true,
+          "name": "Команды",
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "cmd_state",
+              "name": "Запрос модели и версии устройства",
+              "active": true,
+              "type": "action",
+              "command": "get_param",
+              "params": {
+                "param": "state"
+              },
+              "service": "ric-gate",
+              "children": []
+            },
+            {
+              "id": "cmd_diagnostic",
+              "name": "Запрос информации о прошивке",
+              "active": true,
+              "type": "action",
+              "command": "get_param",
+              "params": {
+                "param": "diagnostic"
+              },
+              "service": "ric-gate",
+              "children": [],
+              "description": "Запрос информации о версии прошивки GPS приёмника"
+            },
+            {
+              "id": "toggle_out1_on",
+              "name": "Разблокировать",
+              "active": true,
+              "type": "action",
+              "command": "toggle_mode",
+              "params": {
+                "command": "out",
+                "in": "1",
+                "value": "1"
+              },
+              "service": "ric-gate"
+            },
+            {
+              "id": "toggle_out1_off",
+              "name": "Заблокировать",
+              "active": true,
+              "type": "action",
+              "command": "toggle_mode",
+              "params": {
+                "command": "out",
+                "in": "1",
+                "value": "0"
+              },
+              "service": "ric-gate",
+              "children": []
+            },
+            {
+              "id": "toggle_out2_on",
+              "name": "Включить фару",
+              "active": true,
+              "type": "action",
+              "command": "toggle_mode",
+              "params": {
+                "command": "out",
+                "in": "2",
+                "value": "1"
+              },
+              "service": "ric-gate",
+              "children": []
+            },
+            {
+              "id": "toggle_out2_off",
+              "name": "Выключить фару",
+              "active": true,
+              "type": "action",
+              "command": "toggle_mode",
+              "params": {
+                "command": "out",
+                "in": "2",
+                "value": "0"
+              },
+              "service": "ric-gate",
+              "children": []
+            },
+            {
+              "id": "cmd_restart",
+              "name": "Перезапуск устройства",
+              "active": true,
+              "type": "action",
+              "command": "toggle_mode",
+              "params": {
+                "command": "restart",
+                "in": "0",
+                "value": "0"
+              },
+              "service": "ric-gate",
+              "children": [],
+              "description": null
+            },
+            {
+              "id": "toggle_out3_on",
+              "name": "Включение выходной линии 3",
+              "active": false,
+              "type": "action",
+              "command": "toggle_mode",
+              "params": {
+                "command": "out",
+                "in": "3",
+                "value": "1"
+              },
+              "service": "ric-gate",
+              "children": []
+            },
+            {
+              "id": "toggle_out3_off",
+              "name": "Выключение выходной линии 3",
+              "active": false,
+              "type": "action",
+              "command": "toggle_mode",
+              "params": {
+                "command": "out",
+                "in": "3",
+                "value": "0"
+              },
+              "service": "ric-gate",
+              "children": []
+            },
+            {
+              "id": "toggle_out4_on",
+              "name": "Включение выходной линии 4",
+              "active": false,
+              "type": "action",
+              "command": "toggle_mode",
+              "params": {
+                "command": "out",
+                "in": "4",
+                "value": "1"
+              },
+              "service": "ric-gate",
+              "children": []
+            },
+            {
+              "id": "toggle_out4_off",
+              "name": "Выключение выходной линии 4",
+              "active": false,
+              "type": "action",
+              "command": "toggle_mode",
+              "params": {
+                "command": "out",
+                "in": "4",
+                "value": "0"
+              },
+              "service": "ric-gate",
+              "children": []
+            },
+            {
+              "id": "toggle_in1_on",
+              "name": "Блокировка входной линии 1",
+              "active": false,
+              "type": "action",
+              "command": "toggle_mode",
+              "params": {
+                "command": "in",
+                "in": "1",
+                "value": "0"
+              },
+              "service": "ric-gate",
+              "children": []
+            },
+            {
+              "id": "toggle_in1_off",
+              "name": "Разблокировка входной линии 1",
+              "active": false,
+              "type": "action",
+              "command": "toggle_mode",
+              "params": {
+                "command": "in",
+                "in": "1",
+                "value": "1"
+              },
+              "service": "ric-gate",
+              "children": []
+            },
+            {
+              "id": "cmd_protection_on1",
+              "name": "Постановка под охрану Режим 1",
+              "active": false,
+              "type": "action",
+              "command": "toggle_mode",
+              "params": {
+                "command": "protection",
+                "in": "1",
+                "value": "1"
+              },
+              "service": "ric-gate",
+              "children": []
+            },
+            {
+              "id": "cmd_protection_on2",
+              "name": "Постановка под охрану Режим 2",
+              "active": false,
+              "type": "action",
+              "command": "toggle_mode",
+              "params": {
+                "command": "protection",
+                "in": "2",
+                "value": "1"
+              },
+              "service": "ric-gate",
+              "children": []
+            },
+            {
+              "id": "cmd_protection_off",
+              "name": "Снять с охраны",
+              "active": false,
+              "type": "action",
+              "command": "toggle_mode",
+              "params": {
+                "command": "protection",
+                "in": "1",
+                "value": "0"
+              },
+              "service": "ric-gate",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "geo",
+          "name": "События для геозон",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "in_allowed",
+              "name": "Вход в разрешенную",
+              "active": true,
+              "type": "event-logic",
+              "description": "Вход в разрешенную геозону"
+            },
+            {
+              "id": "out_allowed",
+              "name": "Выход из разрешенной",
+              "active": true,
+              "type": "event-logic",
+              "description": "Выход из разрешенной геозоны",
+              "children": []
+            },
+            {
+              "id": "in_forbidden",
+              "name": "Вход в запрещенную",
+              "active": true,
+              "type": "event-logic",
+              "description": "Вход в запрещенную геозону",
+              "children": []
+            },
+            {
+              "id": "out_forbidden",
+              "name": "Выход из запрещенной",
+              "active": true,
+              "type": "event-logic",
+              "description": "Выход из запрещенной геозоны",
+              "children": []
+            }
+          ]
+        }
+      ],
+      "description": "Model for my scooter"
+    },
+    "props": {
+      "bots": false,
+      "hardwareEvents": false,
+      "helper": "",
+      "prefix": "signal:",
+      "order": 8,
+      "typeInput": {
+        "hidden": true
+      },
+      "protocol": "signal",
+      "idPattern": "signal:<imei>",
+      "icon": "<svg viewBox=\"0 0 48 48\">\n<g>\n<path style=\" stroke:none;fill-rule:nonzero;fill:rgb(69.01961%,74.509805%,77.254903%);fill-opacity:1;\" d=\"M 36.886719 37.488281 L 31.003906 7 L 26.042969 7 L 26.042969 5 L 31.832031 5 C 32.3125 5 32.722656 5.34375 32.8125 5.8125 L 38.847656 37.117188 Z M 36.886719 37.488281 \" />\n<path style=\" stroke:none;fill-rule:nonzero;fill:rgb(12.941177%,12.941177%,12.941177%);fill-opacity:1;\" d=\"M 38 43 C 35.242188 43 33 40.757812 33 38 C 33 35.242188 35.242188 33 38 33 C 40.757812 33 43 35.242188 43 38 C 43 40.757812 40.757812 43 38 43 Z M 38 35 C 36.347656 35 35 36.347656 35 38 C 35 39.652344 36.347656 41 38 41 C 39.652344 41 41 39.652344 41 38 C 41 36.347656 39.652344 35 38 35 Z M 38 35 \" />\n<path style=\" stroke:none;fill-rule:nonzero;fill:rgb(16.470589%,44.313726%,63.921571%);fill-opacity:1;\" d=\"M 17 38 L 15 38 C 15 35.242188 12.757812 33 10 33 C 7.242188 33 5 35.242188 5 38 L 3 38 C 3 34.140625 6.140625 31 10 31 C 13.859375 31 17 34.140625 17 38 Z M 17 38 \" />\n<path style=\" stroke:none;fill-rule:nonzero;fill:rgb(16.470589%,44.313726%,63.921571%);fill-opacity:1;\" d=\"M 36.453125 37.726562 L 33.878906 24.328125 C 33.773438 23.785156 34.128906 23.261719 34.671875 23.15625 L 35.652344 22.972656 C 36.195312 22.867188 36.71875 23.222656 36.824219 23.765625 L 39.398438 37.167969 C 39.554688 37.980469 39.019531 38.765625 38.207031 38.921875 C 37.394531 39.074219 36.609375 38.539062 36.453125 37.726562 Z M 36.453125 37.726562 \" />\n<path style=\" stroke:none;fill-rule:nonzero;fill:rgb(12.941177%,12.941177%,12.941177%);fill-opacity:1;\" d=\"M 10 43 C 7.242188 43 5 40.757812 5 38 C 5 35.242188 7.242188 33 10 33 C 12.757812 33 15 35.242188 15 38 C 15 40.757812 12.757812 43 10 43 Z M 10 35 C 8.347656 35 7 36.347656 7 38 C 7 39.652344 8.347656 41 10 41 C 11.652344 41 13 39.652344 13 38 C 13 36.347656 11.652344 35 10 35 Z M 10 35 \" />\n<path style=\" stroke:none;fill-rule:nonzero;fill:rgb(16.470589%,44.313726%,63.921571%);fill-opacity:1;\" d=\"M 37.066406 28.34375 L 34.636719 26.582031 L 27.816406 36 L 18.355469 36 C 17.152344 36 15.996094 36.359375 15.007812 37 L 10 37 C 9.449219 37 9 37.449219 9 38 C 9 38.550781 9.449219 39 10 39 L 28.335938 39 C 28.976562 39 29.582031 38.691406 29.957031 38.171875 L 31.519531 36 Z M 37.066406 28.34375 \" />\n</g>\n</svg>"
+    },
+    "group": "613645025dab3700105ae871"
+  }
+}

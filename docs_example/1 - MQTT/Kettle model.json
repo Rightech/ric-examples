@@ -1,0 +1,305 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2021-12-24T08:24:22.091Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "models",
+  "data": {
+    "_id": "61c5796938944e0010fc7d3e",
+    "name": "Kettle model",
+    "base": "mqtt",
+    "description": "Model for all my kettles",
+    "data": {
+      "id": "root",
+      "name": "Kettle model",
+      "active": true,
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "external-software-modules",
+          "active": true,
+          "copy": true,
+          "type": "subsystem",
+          "children": [],
+          "name": "External software modules"
+        },
+        {
+          "id": "params",
+          "name": "Params",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "server-info",
+              "name": "Server information",
+              "active": true,
+              "type": "subsystem",
+              "children": []
+            },
+            {
+              "id": "temperature",
+              "name": "Temperature",
+              "active": false,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "temperature-fahrenheit",
+              "reference": "kettle/temperature",
+              "display": {
+                "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\"\nviewBox=\"0 0 16 16\"\n><g id=\"surface1\"><path style=\" \" d=\"M 7.511719 1 C 6.140625 1 5.011719 2.128906 5.011719 3.5 L 5.011719 9.121094 C 4.414063 9.746094 4 10.5625 4 11.5 C 4 13.425781 5.574219 15 7.5 15 C 9.425781 15 11 13.425781 11 11.5 C 11 10.574219 10.597656 9.765625 10.011719 9.140625 L 10.011719 3.5 C 10.011719 2.128906 8.882813 1 7.511719 1 Z M 7.511719 2 C 8.339844 2 9.011719 2.671875 9.011719 3.5 L 9.011719 4 L 7 4 L 7 5 L 9.011719 5 L 9.011719 6 L 7 6 L 7 7 L 9.011719 7 L 9.011719 8 L 7 8 L 7 9 L 9.011719 9 L 9.011719 9.289063 C 9.011719 9.429688 9.070313 9.5625 9.175781 9.65625 C 9.683594 10.117188 10 10.765625 10 11.5 C 10 12.886719 8.886719 14 7.5 14 C 6.113281 14 5 12.886719 5 11.5 C 5 10.757813 5.328125 10.105469 5.84375 9.640625 C 5.949219 9.546875 6.011719 9.414063 6.011719 9.269531 L 6.011719 3.5 C 6.011719 2.671875 6.683594 2 7.511719 2 Z \"></path></g></svg>"
+              },
+              "factor": 1,
+              "linear": true,
+              "children": [
+                {
+                  "id": "temperature.levels.0",
+                  "name": "-Infinity",
+                  "active": true,
+                  "type": "level",
+                  "index": 0,
+                  "value": "-Infinity",
+                  "color": "#f16059"
+                },
+                {
+                  "id": "temperature.levels.1",
+                  "name": "Min",
+                  "active": true,
+                  "type": "level",
+                  "index": 1,
+                  "value": 10,
+                  "color": "#a2ce4b"
+                },
+                {
+                  "id": "temperature.levels.2",
+                  "name": "Mid",
+                  "active": true,
+                  "type": "level",
+                  "index": 5,
+                  "value": 30,
+                  "color": "#ffae62"
+                },
+                {
+                  "id": "temperature.levels.3",
+                  "name": "Max",
+                  "active": true,
+                  "type": "level",
+                  "index": 9,
+                  "value": 50,
+                  "color": "#f16059"
+                }
+              ],
+              "_parentId": "params"
+            },
+            {
+              "id": "temperatureC",
+              "name": "Temperature",
+              "active": true,
+              "type": "argument",
+              "source": "state",
+              "dataType": "number",
+              "unit": "temperature-celsius",
+              "reference": null,
+              "display": {
+                "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\"\nviewBox=\"0 0 16 16\"\n><g id=\"surface1\"><path style=\" \" d=\"M 7.511719 1 C 6.140625 1 5.011719 2.128906 5.011719 3.5 L 5.011719 9.121094 C 4.414063 9.746094 4 10.5625 4 11.5 C 4 13.425781 5.574219 15 7.5 15 C 9.425781 15 11 13.425781 11 11.5 C 11 10.574219 10.597656 9.765625 10.011719 9.140625 L 10.011719 3.5 C 10.011719 2.128906 8.882813 1 7.511719 1 Z M 7.511719 2 C 8.339844 2 9.011719 2.671875 9.011719 3.5 L 9.011719 4 L 7 4 L 7 5 L 9.011719 5 L 9.011719 6 L 7 6 L 7 7 L 9.011719 7 L 9.011719 8 L 7 8 L 7 9 L 9.011719 9 L 9.011719 9.289063 C 9.011719 9.429688 9.070313 9.5625 9.175781 9.65625 C 9.683594 10.117188 10 10.765625 10 11.5 C 10 12.886719 8.886719 14 7.5 14 C 6.113281 14 5 12.886719 5 11.5 C 5 10.757813 5.328125 10.105469 5.84375 9.640625 C 5.949219 9.546875 6.011719 9.414063 6.011719 9.269531 L 6.011719 3.5 C 6.011719 2.671875 6.683594 2 7.511719 2 Z \"></path></g></svg>"
+              },
+              "factor": 1,
+              "linear": true,
+              "children": [
+                {
+                  "id": "temperature-19e3h.levels.0",
+                  "name": "-Infinity",
+                  "active": true,
+                  "type": "level",
+                  "index": 0,
+                  "value": "-Infinity",
+                  "color": "#f16059",
+                  "children": []
+                },
+                {
+                  "id": "temperature-19e3h.levels.1",
+                  "name": "Min",
+                  "active": true,
+                  "type": "level",
+                  "index": 1,
+                  "value": 10,
+                  "color": "#a2ce4b",
+                  "children": []
+                },
+                {
+                  "id": "temperature-19e3h.levels.2",
+                  "name": "Mid",
+                  "active": true,
+                  "type": "level",
+                  "index": 5,
+                  "value": 30,
+                  "color": "#ffae62",
+                  "children": []
+                },
+                {
+                  "id": "temperature-19e3h.levels.3",
+                  "name": "Max",
+                  "active": true,
+                  "type": "level",
+                  "index": 9,
+                  "value": 50,
+                  "color": "#f16059",
+                  "children": []
+                }
+              ],
+              "_parentId": "params"
+            },
+            {
+              "id": "mqtt-last",
+              "name": "Last MQTT Publish",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "topic",
+                  "name": "Topic",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "string",
+                  "reference": "topic",
+                  "_parentId": "mqtt-last"
+                },
+                {
+                  "id": "payload",
+                  "name": "Payload",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "string",
+                  "reference": "payload",
+                  "_parentId": "mqtt-last"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cmds",
+          "name": "Commands",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "kettle_on",
+              "name": "Turn-on kettle",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "kettle/actions",
+                "payload": "{\"on\":true}"
+              },
+              "description": null
+            },
+            {
+              "id": "kettle_off",
+              "name": "Turn-off kettle",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "publish",
+              "params": {
+                "topic": "kettle/actions",
+                "payload": "{\"on\":false}"
+              },
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "kettle_on_check",
+              "name": "Turn-on - check",
+              "active": true,
+              "type": "action",
+              "service": "ric-logic",
+              "command": "publish",
+              "params": {
+                "topic": null,
+                "payload": ""
+              },
+              "description": null,
+              "children": [],
+              "automaton": "61b5ee6f00aa230010de91d2"
+            }
+          ]
+        }
+      ],
+      "_isRoot": true,
+      "description": "Model for all my kettles"
+    },
+    "props": {
+      "bots": true,
+      "hardwareEvents": false,
+      "helper": {
+        "nostate": "@ric-docs/docs/helpers/mqtt.md"
+      },
+      "prefix": "",
+      "order": 1,
+      "typeInput": {
+        "hidden": true
+      },
+      "statusInput": {
+        "hidden": false
+      },
+      "descriptionInput": {
+        "hidden": false
+      },
+      "defaultNode": "temperature",
+      "protocol": "mqtt",
+      "idPattern": "mqtt-$tagname-$nanoid",
+      "auth": {
+        "title": "mqtt_auth",
+        "fields": {
+          "username": {
+            "title": "mqtt_username"
+          },
+          "password": {
+            "secret": true,
+            "title": "mqtt_password"
+          }
+        }
+      },
+      "x509": {
+        "enabled": true
+      },
+      "parserParams": {
+        "saveBinaryAs": {
+          "ctrl": "Select",
+          "defaultValue": "",
+          "opts": {
+            "options": [
+              {
+                "value": "",
+                "label": "Text"
+              },
+              {
+                "value": "base64",
+                "label": "Base64"
+              },
+              {
+                "value": "hex",
+                "label": "HEX"
+              }
+            ]
+          },
+          "when": {
+            "==": [
+              {
+                "var": "node.dataType"
+              },
+              "string"
+            ]
+          }
+        }
+      },
+      "icon": "<?xml version=\"1.0\" encoding=\"utf-8\"?><!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\" x=\"0px\" y=\"0px\" width=\"528\" height=\"528\" viewBox=\"0 0 48 48\" enable-background=\"new 0 0 48 48\" xml:space=\"preserve\">\n<g>\n\t<path fill=\"#0097A7\" d=\"M14,22c-2,0-6-7-6-7H6.5H6H3.5H3v1h0.5c3,1,2.5,4,3.5,10s6,7,6,7S16,22,14,22z\"/>\n\t<path fill=\"#0097A7\" d=\"M33,16.001C33,13.526,29.971,11,25,11s-8,2.526-8,5.001s3.029,3.958,8,3.958S33,18.476,33,16.001z\"/>\n\t<path fill=\"#0097A7\" d=\"M35.943,15.317l-4.375,1.363l0.892,2.864l4.376-1.363c2.105-0.655,4.352,0.523,5.013,2.645   c0.005,0.016,0.385,1.71-0.077,4.542l-0.127,0.8c-0.503,3.218-0.826,4.39-2.454,4.896l-2.864,0.893l0.892,2.864l2.864-0.893   c3.557-1.107,4.05-4.254,4.527-7.297l0.123-0.781c0.582-3.574,0.041-5.741-0.023-5.932C43.561,16.234,39.628,14.169,35.943,15.317z   \"/>\n\t<circle fill=\"#0097A7\" cx=\"25\" cy=\"9.001\" r=\"2\"/>\n</g>\n<g>\n\t<path fill=\"#4DD0E1\" d=\"M34,38c2,0-19,0-17,0s2,3,2,3h13C32,41,32,38,34,38z\"/>\n\t<path fill=\"#4DD0E1\" d=\"M16,14c0,0-4,10-4,17s4.925,9,11,9h5c6.075,0,11-2,11-9s-5-17-5-17H16z\"/>\n</g>\n</svg>"
+    },
+    "group": "613645025dab3700105ae871"
+  }
+}

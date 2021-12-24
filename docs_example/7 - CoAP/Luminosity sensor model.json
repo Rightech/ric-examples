@@ -1,0 +1,334 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2021-12-23T13:51:27.720Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "models",
+  "data": {
+    "_id": "61c074ab00aa230010e0fdb3",
+    "name": "Luminosity sensor model",
+    "base": "coap",
+    "data": {
+      "id": "root",
+      "active": true,
+      "name": "Luminosity sensor model",
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "external-software-modules",
+          "active": true,
+          "copy": true,
+          "type": "subsystem",
+          "children": [],
+          "name": "Внешние программные модули",
+          "disabled": true
+        },
+        {
+          "id": "params",
+          "active": true,
+          "name": "Params",
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "request",
+              "name": "Request information",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "type",
+                  "name": "Packet type",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "type",
+                  "description": "0 - CON\n1 - NON\n2 - ACK\n3 - RST",
+                  "unit": null,
+                  "_parentId": "request"
+                },
+                {
+                  "id": "code",
+                  "name": "Code",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "code",
+                  "description": "0.00 - Empty\n0.01 - GET\n0.02 - POST\n0.03 - PUT\n0.04 - DELETE\n2.01 - Created\n2.02 - Deleted\n2.03 - Valid\n2.04 - Changed\n2.05 - Content\n4.00 - Bad Request\n4.01 - Unauthorized\n4.02 - Bad Option\n4.03 - Forbidden\n4.04 - Not Found\n4.05 - Method Not Allowed\n4.06 - Not Acceptable\n4.12 - Precondition Failed\n4.13 - Request Entity Too Large\n4.15 - Unsupported Content-Format\n5.00 - Internal Server Error\n5.01 - Not Implemented\n5.02 - Bad Gateway\n5.03 - Service Unavailable\n5.04 - Gateway Timeout\n5.05 - Proxying Not Supported",
+                  "children": [],
+                  "unit": null,
+                  "_parentId": "request"
+                },
+                {
+                  "id": "messageId",
+                  "name": "Message ID",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "messageId",
+                  "description": "Used to identify duplicate messages",
+                  "children": [],
+                  "unit": null,
+                  "_parentId": "request"
+                },
+                {
+                  "id": "token",
+                  "name": "Token",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "token",
+                  "children": [],
+                  "unit": null,
+                  "_parentId": "request"
+                },
+                {
+                  "id": "key1",
+                  "name": "Key 1",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "key1",
+                  "children": [],
+                  "unit": null,
+                  "description": "From Query",
+                  "_parentId": "request"
+                },
+                {
+                  "id": "key2",
+                  "name": "Key 2",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "key2",
+                  "children": [],
+                  "unit": null,
+                  "description": "From Query",
+                  "_parentId": "request"
+                },
+                {
+                  "id": "key3",
+                  "name": "Key 3",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "key3",
+                  "children": [],
+                  "unit": null,
+                  "description": "From Query",
+                  "_parentId": "request"
+                },
+                {
+                  "id": "options",
+                  "name": "Options",
+                  "active": true,
+                  "type": "subsystem",
+                  "description": "(URI, max-age, Content и Etag, ...)",
+                  "children": [
+                    {
+                      "id": "uri",
+                      "name": "Uri",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "uri",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "host0",
+                      "name": "Uri-Host",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "option.Uri-Host.0",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "port0",
+                      "name": "Uri-Port",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "option.Uri-Port.0",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "path0",
+                      "name": "Uri-Path 0",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "option.Uri-Path.0",
+                      "unit": null,
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "path1",
+                      "name": "Uri-Path 1",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "linear": true,
+                      "factor": 1,
+                      "reference": "option.Uri-Path.1",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "path2",
+                      "name": "Uri-Path 2",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "linear": true,
+                      "factor": 1,
+                      "reference": "option.Uri-Path.2",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "observe0",
+                      "name": "Observe",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "linear": true,
+                      "factor": 1,
+                      "reference": "option.Observe.0",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "query0",
+                      "name": "Uri-Query 0",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "linear": true,
+                      "factor": 1,
+                      "reference": "option.Uri-Query.0",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "query1",
+                      "name": "Uri-Query 1",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "linear": true,
+                      "factor": 1,
+                      "reference": "option.Uri-Query.1",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "query2",
+                      "name": "Uri-Query 2",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "linear": true,
+                      "factor": 1,
+                      "reference": "option.Uri-Query.2",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "options"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "luminosity",
+              "name": "Luminosity",
+              "active": true,
+              "type": "argument",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "reference": "sensor/luminosity",
+              "unit": "light-lux"
+            },
+            {
+              "id": "coap-last",
+              "active": true,
+              "name": "Last CoAP Publish",
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "path",
+                  "active": true,
+                  "name": "Path",
+                  "type": "argument",
+                  "dataType": "string",
+                  "reference": "path",
+                  "_parentId": "coap-last"
+                },
+                {
+                  "id": "payload",
+                  "active": true,
+                  "name": "Payload",
+                  "type": "argument",
+                  "dataType": "string",
+                  "reference": "payload",
+                  "_parentId": "coap-last"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "RFC 7252 The Constrained Application Protocol (CoAP)",
+      "base": "base",
+      "disabled": [],
+      "removed": []
+    },
+    "props": {
+      "bots": false,
+      "hardwareEvents": false,
+      "helper": "",
+      "prefix": "coap:",
+      "order": 12,
+      "typeInput": {
+        "hidden": true
+      },
+      "protocol": "coap",
+      "idPattern": "coap:$tagname-$nanoid"
+    },
+    "group": "613645025dab3700105ae871"
+  }
+}

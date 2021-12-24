@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2021-12-24T06:52:30.843Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "objects",
+  "data": {
+    "_id": "61ba19e06b93f5001077364b",
+    "id": "teltonika:863591020395780",
+    "name": "Digital staff",
+    "config": {
+      "position": {}
+    },
+    "status": "ok",
+    "owner": "613645025dab3700105ae872",
+    "group": "613645025dab3700105ae871",
+    "_licensed": true,
+    "time": 1639586272029,
+    "_at": 1640328692102
+  }
+}

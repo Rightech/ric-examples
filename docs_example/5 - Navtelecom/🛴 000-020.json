@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2021-12-23T14:03:04.974Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "objects",
+  "data": {
+    "_id": "61bb72f900aa230010dfd4e4",
+    "id": "ntcb:86359102095780",
+    "name": "🛴 000-020",
+    "config": {
+      "position": {}
+    },
+    "status": "ok",
+    "owner": "613645025dab3700105ae872",
+    "group": "613645025dab3700105ae871",
+    "_licensed": true,
+    "time": 1639674617637,
+    "_at": 1640268166248
+  }
+}

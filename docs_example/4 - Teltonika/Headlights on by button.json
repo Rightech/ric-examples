@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2021-12-24T06:53:31.956Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "automatons",
+  "data": {
+    "_id": "61c04b1400aa230010e0f3aa",
+    "name": "Headlights on by button",
+    "description": "",
+    "models": [
+      "61b9fd3100aa230010df7dfd",
+      "61bb3e4b6b93f500107779ea"
+    ],
+    "model": "61b9fd3100aa230010df7dfd",
+    "data": "{\"states\":{\"initial\":{\"data\":{\"type\":\"init\",\"id\":\"initial\",\"width\":20,\"height\":20},\"position\":{\"top\":100,\"left\":80}},\"final\":{\"data\":{\"type\":\"final\",\"id\":\"final\",\"width\":20,\"height\":20},\"position\":{\"top\":40,\"left\":1040}},\"first\":{\"data\":{\"type\":\"state\",\"id\":\"first\",\"name\":\"Waiting for a button\",\"description\":\"\",\"onenter\":[],\"onexit\":[{\"id\":\"toggle_out2_on\",\"name\":\"Включить фару\",\"args\":{},\"targetsTo\":\"{{model1}}\"}],\"width\":280,\"height\":160},\"position\":{\"top\":220,\"left\":400}}},\"transitions\":{\"0\":{\"drawMode\":\"rou\",\"points\":[{\"x\":100,\"y\":100},{\"x\":260,\"y\":100},{\"x\":260,\"y\":100},{\"x\":420,\"y\":100},{\"x\":420,\"y\":160},{\"x\":420,\"y\":160},{\"x\":420,\"y\":200}],\"data\":{\"id\":\"0\",\"name\":\"Инициализация логики\",\"description\":\"Событие, возникающее при запуске интерпретации модели логики\",\"event\":\"init\",\"owner\":{\"id\":\"initial\",\"point\":{\"location\":\"right\",\"id\":0}},\"target\":{\"id\":\"first\",\"point\":{\"location\":\"top\",\"id\":1}},\"targetsTo\":null},\"version\":3,\"block\":{\"data\":{\"type\":\"connectionBlock\",\"connectionKey\":\"0\"},\"layout\":{\"width\":11,\"height\":6,\"position\":{\"x\":16,\"y\":2}},\"key\":\"cb-0\"}},\"kxehwlvz\":{\"drawMode\":\"rou\",\"points\":[{\"x\":520,\"y\":380},{\"x\":520,\"y\":440},{\"x\":340,\"y\":440},{\"x\":340,\"y\":240},{\"x\":380,\"y\":240}],\"data\":{\"owner\":{\"id\":\"first\",\"point\":{\"id\":6,\"location\":\"bottom\"}},\"target\":{\"id\":\"first\",\"point\":{\"id\":1,\"location\":\"left\"}},\"id\":\"kxehwlvz\",\"event\":\"es-recive-device-data\",\"name\":\"Получены данные\",\"description\":\"Выполнить переход если: Объект 1, параметр \\\"Alarm\\\" = true\",\"condition\":\"{\\\"0\\\":{\\\"0\\\":{\\\"data\\\":{\\\"type\\\":\\\"parametr\\\",\\\"arg\\\":\\\"alarm\\\",\\\"source\\\":\\\"state\\\",\\\"identifier\\\":\\\"objects[0]\\\"},\\\"type\\\":\\\"parametr\\\"},\\\"1\\\":{\\\"data\\\":{\\\"arg\\\":\\\"true\\\",\\\"type\\\":\\\"value\\\"},\\\"type\\\":\\\"parametr\\\"},\\\"data\\\":{\\\"type\\\":\\\"equal\\\"},\\\"type\\\":\\\"condition\\\"}}\",\"userCode\":\"objects[0][\\\"state\\\"][\\\"alarm\\\"] == true\",\"targetsTo\":\"{{model0}}\"},\"version\":3,\"block\":{\"data\":{\"type\":\"connectionBlock\",\"connectionKey\":\"kxehwlvz\"},\"layout\":{\"width\":11,\"height\":5,\"position\":{\"x\":12,\"y\":20}},\"key\":\"cb-kxehwlvz\"}}}}"
+  }
+}
