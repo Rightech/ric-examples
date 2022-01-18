@@ -1,0 +1,762 @@
+{
+  "version": 1,
+  "origin": "sandbox.rightech.io",
+  "time": "2022-01-18T08:28:50.955Z",
+  "user": "5b3c895ad4100417007d22b7",
+  "group": "5190951088b5078432000001",
+  "store": "models",
+  "data": {
+    "_id": "618d1bb340a5970011070b55",
+    "name": "[teltonika] TAT100",
+    "base": "teltonika",
+    "data": {
+      "id": "root",
+      "active": true,
+      "name": "[teltonika] TAT100",
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "external-software-modules",
+          "active": true,
+          "copy": true,
+          "type": "subsystem",
+          "children": [],
+          "name": "Внешние программные модули"
+        },
+        {
+          "id": "iye86vhl",
+          "active": true,
+          "name": "Params",
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "gps",
+              "active": true,
+              "name": "GPS",
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "time",
+                  "active": true,
+                  "name": "GPS time",
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "duration-millisecond",
+                  "reference": "navigation.time"
+                },
+                {
+                  "id": "lat",
+                  "active": true,
+                  "name": "Latitude",
+                  "type": "argument",
+                  "description": "North – south position",
+                  "unit": "angle-degree",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "navigation.latitude",
+                  "factor": 1,
+                  "linear": true
+                },
+                {
+                  "id": "lon",
+                  "active": true,
+                  "name": "Longitude",
+                  "type": "argument",
+                  "description": "East – west position",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "navigation.longitude",
+                  "factor": 1,
+                  "linear": true
+                },
+                {
+                  "id": "speed",
+                  "active": true,
+                  "name": "Speed",
+                  "type": "argument",
+                  "description": "Speed calculated from satellites",
+                  "unit": "speed-kilometer-per-hour",
+                  "source": "state",
+                  "dataType": "number",
+                  "display": {
+                    "style": "order:2",
+                    "levels": "60, 90",
+                    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M2.5 1.3H1.3v1.2H0v1.3h2.5zM10.6 10h1.3v1.3h-1.3zM11.9 8.8h1.3v1.3h-1.3zM13.1 7.5h1.3v1.3h-1.3z\"></path><path class=\"st0\" d=\"M11.9 2.6V1.3h1.3V0h-5v1.3h1.3v1.4C5.2 3.3 2 7 2 11.4c0 4.8 3.9 8.8 8.8 8.8 4.8 0 8.8-3.9 8.8-8.8-.2-4.5-3.5-8.2-7.7-8.8zm-1.3 15c-3.5 0-6.3-2.8-6.3-6.3S7.1 5 10.6 5c1.4 0 2.7.5 3.8 1.3v1.2h1.2c.8 1.1 1.3 2.3 1.3 3.8 0 3.4-2.8 6.3-6.3 6.3z\"></path></svg>"
+                  },
+                  "reference": "navigation.speed",
+                  "_style": {
+                    "order": 2
+                  },
+                  "factor": 1,
+                  "linear": true,
+                  "children": [
+                    {
+                      "id": "speed.levels.0",
+                      "name": "-Infinity",
+                      "active": true,
+                      "type": "level",
+                      "index": 0,
+                      "value": "-Infinity",
+                      "color": "#a2ce4b"
+                    },
+                    {
+                      "id": "speed.levels.1",
+                      "name": "Min",
+                      "active": true,
+                      "type": "level",
+                      "index": 1,
+                      "value": 0,
+                      "color": "#a2ce4b"
+                    },
+                    {
+                      "id": "speed.levels.2",
+                      "name": "Mid",
+                      "active": true,
+                      "type": "level",
+                      "index": 5,
+                      "value": 50,
+                      "color": "#ffae62"
+                    },
+                    {
+                      "id": "speed.levels.3",
+                      "name": "Max",
+                      "active": true,
+                      "type": "level",
+                      "index": 9,
+                      "value": 100,
+                      "color": "#f16059"
+                    }
+                  ]
+                },
+                {
+                  "id": "altitude",
+                  "active": true,
+                  "name": "Altitude",
+                  "type": "argument",
+                  "description": "Meters above sea level",
+                  "unit": "length-meter",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "navigation.height",
+                  "factor": 1,
+                  "linear": true
+                },
+                {
+                  "id": "angle",
+                  "active": true,
+                  "name": "Angle",
+                  "type": "argument",
+                  "unit": "angle-degree",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "navigation.angle",
+                  "description": "Degrees from north pole",
+                  "factor": 1,
+                  "linear": true
+                },
+                {
+                  "id": "sat-count",
+                  "active": true,
+                  "name": "Satellites",
+                  "type": "argument",
+                  "description": "Number of visible satellites",
+                  "source": "state",
+                  "dataType": "number",
+                  "display": {
+                    "style": "order:4",
+                    "levels": "10, 6",
+                    "svg": "<svg viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M10 16.6c-1.7 0-3.1 1.3-3.4 2.9 0 .3.2.5.4.5h5.9c.2 0 .4-.2.4-.4-.2-1.7-1.6-3-3.3-3zM0 8h6v2H0zM0 11h6v2H0zM14 8h6v2h-6zM14 11h6v2h-6zM12.5 16c.3 0 .5-.2.5-.5V7.3c0-.3-.2-.6-.5-.6h-.2v-.1c0-.3-.2-.6-.5-.6H8.4c-.3 0-.5.3-.5.6v.1h-.2c-.3 0-.6.2-.7.5v8.2c0 .4.4.6.7.6h4.8zM10 2C8.1 2 6.6 3.6 6.5 5.6h1.1c0-1.4 1.1-2.5 2.4-2.5s2.4 1.1 2.4 2.5h1.2C13.4 3.6 11.9 2 10 2z\"></path><path d=\"M10 1.3c2.4 0 4.4 1.9 4.4 4.4h1.2C15.6 2.5 13.1 0 10 0 6.9 0 4.4 2.5 4.4 5.6h1.2c0-2.4 2-4.3 4.4-4.3z\"></path></svg>"
+                  },
+                  "reference": "navigation.sat-count",
+                  "_style": {
+                    "order": 4
+                  },
+                  "factor": 1,
+                  "linear": true,
+                  "children": [
+                    {
+                      "id": "sat-count.levels.0",
+                      "name": "-Infinity",
+                      "active": true,
+                      "type": "level",
+                      "index": 0,
+                      "value": "-Infinity",
+                      "color": "#f16059"
+                    },
+                    {
+                      "id": "sat-count.levels.1",
+                      "name": "Min",
+                      "active": true,
+                      "type": "level",
+                      "index": 1,
+                      "value": 0,
+                      "color": "#f16059"
+                    },
+                    {
+                      "id": "sat-count.levels.2",
+                      "name": "Mid",
+                      "active": true,
+                      "type": "level",
+                      "index": 5,
+                      "value": 15,
+                      "color": "#ffae62"
+                    },
+                    {
+                      "id": "sat-count.levels.3",
+                      "name": "Max",
+                      "active": true,
+                      "type": "level",
+                      "index": 9,
+                      "value": 30,
+                      "color": "#a2ce4b"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "permanent",
+              "name": "Permanent I/O elements",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "movement",
+                  "active": true,
+                  "name": "Movement",
+                  "type": "argument",
+                  "description": "0 – Movement Off\n1 – Movement On",
+                  "source": "state",
+                  "dataType": "boolean",
+                  "reference": "in_out_240"
+                },
+                {
+                  "id": "data_mode",
+                  "name": "Data Mode",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "0 – Home On Stop\n1 – Home On Moving\n2 – Roaming On Stop\n3 – Roaming On Moving\n4 – Unknown On Stop\n5 – Unknown On Moving ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_80"
+                },
+                {
+                  "id": "signal",
+                  "active": true,
+                  "name": "GSM Signal",
+                  "type": "argument",
+                  "description": "Value in scale 1-5",
+                  "source": "state",
+                  "dataType": "number",
+                  "display": {
+                    "style": "order:3",
+                    "levels": "4, 2",
+                    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M8.6 13.7c-.8.8-.8 2 0 2.8.1.1.3.2.4.3V20h1.7v-3.1c.2-.1.5-.2.7-.4.8-.8.8-2 0-2.8-.8-.7-2-.7-2.8 0zm2.1 1.6c-.4 0-.7-.3-.7-.7 0-.4.3-.7.7-.7.4 0 .7.3.7.7-.1.4-.4.7-.7.7zM10 2.9c-4.1 0-7.6 2-10 5l1.8 1.7C3.7 7.1 6.6 5.4 10 5.4c3.4 0 6.3 1.7 8.3 4.2L20 7.9c-2.4-3-5.9-5-10-5zm0 5c-2.7 0-5.1 1.3-6.6 3.4l1.8 1.8c1-1.6 2.8-2.7 4.8-2.7s3.8 1.1 4.8 2.7l1.8-1.8c-1.4-2.1-3.9-3.4-6.6-3.4z\"></path></svg>"
+                  },
+                  "params": {
+                    "command": "",
+                    "in": 0,
+                    "value": 0
+                  },
+                  "reference": "in_out_21",
+                  "_style": {
+                    "order": 3
+                  },
+                  "factor": 1,
+                  "linear": true,
+                  "children": [
+                    {
+                      "id": "signal.levels.0",
+                      "name": "-Infinity",
+                      "active": true,
+                      "type": "level",
+                      "index": 0,
+                      "value": "-Infinity",
+                      "color": "#f16059"
+                    },
+                    {
+                      "id": "signal.levels.1",
+                      "name": "Min",
+                      "active": true,
+                      "type": "level",
+                      "index": 1,
+                      "value": 0,
+                      "color": "#f16059"
+                    },
+                    {
+                      "id": "signal.levels.2",
+                      "name": "Mid",
+                      "active": true,
+                      "type": "level",
+                      "index": 5,
+                      "value": 2,
+                      "color": "#ffae62"
+                    },
+                    {
+                      "id": "signal.levels.3",
+                      "name": "Max",
+                      "active": true,
+                      "type": "level",
+                      "index": 9,
+                      "value": 5,
+                      "color": "#a2ce4b"
+                    }
+                  ]
+                },
+                {
+                  "id": "gnss",
+                  "name": "GNSS",
+                  "active": true,
+                  "type": "subsystem",
+                  "children": [
+                    {
+                      "id": "gnss_status",
+                      "name": "GNSS Status",
+                      "active": true,
+                      "type": "argument",
+                      "source": "state",
+                      "dataType": "number",
+                      "reference": "in_out_69",
+                      "factor": 1,
+                      "linear": true,
+                      "description": "0 - GNSS OFF\n1 – GNSS ON with fix\n2 - GNSS ON without fix\n3 - GNSS sleep"
+                    },
+                    {
+                      "id": "gnss_pdop",
+                      "name": "GNSS PDOP",
+                      "active": true,
+                      "type": "argument",
+                      "source": "state",
+                      "dataType": "number",
+                      "reference": "in_out_181",
+                      "factor": 0.1,
+                      "linear": true
+                    },
+                    {
+                      "id": "gnss_hdop",
+                      "name": "GNSS HDOP",
+                      "active": true,
+                      "type": "argument",
+                      "source": "state",
+                      "dataType": "number",
+                      "reference": "in_out_182",
+                      "factor": 0.1,
+                      "linear": true
+                    }
+                  ]
+                },
+                {
+                  "id": "speed_24",
+                  "name": "Speed",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "in_out_24",
+                  "unit": "speed-kilometer-per-hour"
+                },
+                {
+                  "id": "gsm-cell-id",
+                  "active": true,
+                  "name": "GSM Cell ID",
+                  "type": "argument",
+                  "description": "GSM base station ID",
+                  "source": "state",
+                  "dataType": "number",
+                  "display": {
+                    "style": "order:3",
+                    "levels": "4, 2",
+                    "svg": null
+                  },
+                  "params": {
+                    "command": "",
+                    "in": 0,
+                    "value": 0
+                  },
+                  "reference": "in_out_205",
+                  "_style": {
+                    "order": 3
+                  },
+                  "factor": 1,
+                  "linear": true
+                },
+                {
+                  "id": "gsm_code",
+                  "name": "GSM Area Code",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "in_out_206",
+                  "description": "Location Area code (LAC), it depends on GSM operator. It provides unique number which assigned to a set of base GSM stations. "
+                },
+                {
+                  "id": "voltage",
+                  "name": "Battery voltage",
+                  "active": true,
+                  "type": "argument",
+                  "unit": "electric-volt",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "in_out_67",
+                  "factor": 0.001
+                },
+                {
+                  "id": "gsm_code_op",
+                  "name": "Active GSM Operator",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "in_out_241",
+                  "description": "Currently used GSM Operator code",
+                  "children": []
+                },
+                {
+                  "id": "inst_move",
+                  "name": "Instant Movement",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_303",
+                  "unit": null,
+                  "children": [],
+                  "description": "Logic: 0/1 returns movement value"
+                },
+                {
+                  "id": "iccid1",
+                  "name": "ICCID1",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_11",
+                  "unit": null,
+                  "children": [],
+                  "description": "Value of SIM ICCID, MSB"
+                },
+                {
+                  "id": "iccid2",
+                  "name": "ICCID2",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_14",
+                  "unit": null,
+                  "children": [],
+                  "description": "Value of SIM ICCID, MSB"
+                },
+                {
+                  "id": "coordinates",
+                  "name": "ISO6709 Coordinates",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_387",
+                  "unit": null,
+                  "children": [],
+                  "description": "ISO6709 Coordinates\nLatitude, Longitude (in Degrees, Minutes and Seconds) and Altitude:\nIO value format: ±DDMMSS.SSSS±DDDMMSS.SSSS±AAA.AAA/ "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cmds",
+          "name": "Commands",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "common",
+              "active": true,
+              "name": "Common commands",
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "getinfo",
+                  "name": "Get system info",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getinfo"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Device runtime system information."
+                },
+                {
+                  "id": "getver",
+                  "name": "Get version",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getver"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Returns code version, device IMEI, modem app version, RTC time, Init time, Uptime and BT MAC address.",
+                  "children": []
+                },
+                {
+                  "id": "getstatus",
+                  "name": "Get status",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getstatus"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Modem Status information.",
+                  "children": []
+                },
+                {
+                  "id": "getgps",
+                  "name": "Get GPS",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getgps"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Current GPS data, date and time.",
+                  "children": []
+                },
+                {
+                  "id": "getio",
+                  "name": "Get input/output info",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getio\r\n",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Readout analog input,digital input and output."
+                },
+                {
+                  "id": "ggps",
+                  "name": "Get GPS link",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "ggps",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Returns location information with Google maps link.",
+                  "children": []
+                },
+                {
+                  "id": "readio352",
+                  "name": "Read IO",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "readio 352",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "readio #\t\nReturns IO status, # AVL ID.",
+                  "children": []
+                },
+                {
+                  "id": "cpureset",
+                  "name": "Reset",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "cpureset",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "resets device",
+                  "children": []
+                },
+                {
+                  "id": "fwstats",
+                  "name": "Get FW and restarts",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "fwstats",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Get data about FW and restarts",
+                  "children": []
+                },
+                {
+                  "id": "getrecord",
+                  "name": "Get record",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getrecord",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "SMS command initiates saving and sending of high priority record",
+                  "children": []
+                },
+                {
+                  "id": "getimeiccid",
+                  "name": "Get IMEI and CCID",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getimeiccid 37069012345",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Response is sent to SMS/GPRS command sender and also to GSM number provided.\n\n1.# GSM number using international format e.g. 37069012345 ",
+                  "children": []
+                },
+                {
+                  "id": "getimsi",
+                  "name": "Get IMSI",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getimsi",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Sends the IMSI number of the SIM card inserted as a response to the sender.",
+                  "children": []
+                },
+                {
+                  "id": "allver",
+                  "name": "Get state",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "allver",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Responds with information about hardware and firmware versions and storage space",
+                  "children": []
+                },
+                {
+                  "id": "getparam100",
+                  "name": "Get param #100",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getparam 100"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "getparam #\n\nReturns selected parameter value.\n1.# - first ID value.\n2.# - second ID value.\n3.# - third ID value."
+                },
+                {
+                  "id": "getparam100-179",
+                  "name": "Get params #100 and #179",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getparam 100;179"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "children": [],
+                  "description": "getparam #;#;…\n\nReturns selected parameter value.\n1.# - first ID value.\n2.# - second ID value.\n3.# - third ID value."
+                }
+              ],
+              "description": null
+            }
+          ]
+        }
+      ],
+      "_at": 1594369140752,
+      "base": "teltonika",
+      "description": "Teltonika TAT100\nTAT100 is a device for asset tracking and additional protection against thefts of valuable goods, as well as it could be used in wide range of applications from tools tracking to container tracking.\n\nManual https://wiki.teltonika-mobility.com/view/TAT100_Manual\n\nCommands description https://wiki.teltonika-mobility.com/view/TAT100_SMS/GPRS_Commands"
+    },
+    "props": {
+      "bots": false,
+      "hardwareEvents": false,
+      "helper": "",
+      "prefix": "teltonika:",
+      "order": 5,
+      "typeInput": {
+        "hidden": false
+      },
+      "statusInput": {
+        "hidden": false
+      },
+      "descriptionInput": {
+        "hidden": false
+      },
+      "protocol": "teltonika",
+      "idPattern": "teltonika:<imei>"
+    },
+    "group": "5190951088b5078432000001",
+    "description": "Teltonika TAT100\nTAT100 is a device for asset tracking and additional protection against thefts of valuable goods, as well as it could be used in wide range of applications from tools tracking to container tracking.\n\nManual https://wiki.teltonika-mobility.com/view/TAT100_Manual\n\nCommands description https://wiki.teltonika-mobility.com/view/TAT100_SMS/GPRS_Commands"
+  }
+}
