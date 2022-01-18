@@ -1,0 +1,2760 @@
+{
+  "version": 1,
+  "origin": "sandbox.rightech.io",
+  "time": "2022-01-18T08:30:52.032Z",
+  "user": "5b3c895ad4100417007d22b7",
+  "group": "5190951088b5078432000001",
+  "store": "models",
+  "data": {
+    "_id": "61e59582bada4e0011f6dbe1",
+    "name": "[teltonika] TST100",
+    "base": "teltonika",
+    "data": {
+      "id": "root",
+      "active": true,
+      "name": "[teltonika] TFT100",
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "external-software-modules",
+          "active": true,
+          "copy": true,
+          "type": "subsystem",
+          "children": [],
+          "name": "Внешние программные модули"
+        },
+        {
+          "id": "iye86vhl",
+          "active": true,
+          "name": "Params",
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "gps",
+              "active": true,
+              "name": "GPS",
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "time",
+                  "active": true,
+                  "name": "GPS time",
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "unit": "duration-millisecond",
+                  "reference": "navigation.time"
+                },
+                {
+                  "id": "lat",
+                  "active": true,
+                  "name": "Latitude",
+                  "type": "argument",
+                  "description": "North – south position",
+                  "unit": "angle-degree",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "navigation.latitude",
+                  "factor": 1,
+                  "linear": true
+                },
+                {
+                  "id": "lon",
+                  "active": true,
+                  "name": "Longitude",
+                  "type": "argument",
+                  "description": "East – west position",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "navigation.longitude",
+                  "factor": 1,
+                  "linear": true
+                },
+                {
+                  "id": "speed",
+                  "active": true,
+                  "name": "Speed",
+                  "type": "argument",
+                  "description": "Speed calculated from satellites",
+                  "unit": "speed-kilometer-per-hour",
+                  "source": "state",
+                  "dataType": "number",
+                  "display": {
+                    "levels": "60, 90",
+                    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M2.5 1.3H1.3v1.2H0v1.3h2.5zM10.6 10h1.3v1.3h-1.3zM11.9 8.8h1.3v1.3h-1.3zM13.1 7.5h1.3v1.3h-1.3z\"></path><path class=\"st0\" d=\"M11.9 2.6V1.3h1.3V0h-5v1.3h1.3v1.4C5.2 3.3 2 7 2 11.4c0 4.8 3.9 8.8 8.8 8.8 4.8 0 8.8-3.9 8.8-8.8-.2-4.5-3.5-8.2-7.7-8.8zm-1.3 15c-3.5 0-6.3-2.8-6.3-6.3S7.1 5 10.6 5c1.4 0 2.7.5 3.8 1.3v1.2h1.2c.8 1.1 1.3 2.3 1.3 3.8 0 3.4-2.8 6.3-6.3 6.3z\"></path></svg>"
+                  },
+                  "reference": "navigation.speed",
+                  "_style": {
+                    "order": 2
+                  },
+                  "factor": 1,
+                  "linear": true,
+                  "children": [
+                    {
+                      "id": "speed.levels.0",
+                      "name": "-Infinity",
+                      "active": true,
+                      "type": "level",
+                      "index": 0,
+                      "value": "-Infinity",
+                      "color": "#a2ce4b"
+                    },
+                    {
+                      "id": "speed.levels.1",
+                      "name": "Min",
+                      "active": true,
+                      "type": "level",
+                      "index": 1,
+                      "value": 1,
+                      "color": "#a2ce4b"
+                    },
+                    {
+                      "id": "speed.levels.2",
+                      "name": "Mid",
+                      "active": true,
+                      "type": "level",
+                      "index": 5,
+                      "value": 20,
+                      "color": "#ffae62"
+                    },
+                    {
+                      "id": "speed.levels.3",
+                      "name": "Max",
+                      "active": true,
+                      "type": "level",
+                      "index": 9,
+                      "value": 30,
+                      "color": "#f16059"
+                    }
+                  ]
+                },
+                {
+                  "id": "altitude",
+                  "active": true,
+                  "name": "Altitude",
+                  "type": "argument",
+                  "description": "Meters above sea level",
+                  "unit": "length-meter",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "navigation.height",
+                  "factor": 1,
+                  "linear": true
+                },
+                {
+                  "id": "angle",
+                  "active": true,
+                  "name": "Angle",
+                  "type": "argument",
+                  "unit": "angle-degree",
+                  "source": "state",
+                  "dataType": "number",
+                  "reference": "navigation.angle",
+                  "description": "Degrees from north pole",
+                  "factor": 1,
+                  "linear": true
+                },
+                {
+                  "id": "sat-count",
+                  "active": true,
+                  "name": "Satellites",
+                  "type": "argument",
+                  "description": "Number of visible satellites",
+                  "source": "state",
+                  "dataType": "number",
+                  "display": {
+                    "levels": "10, 6",
+                    "svg": "<svg viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M10 16.6c-1.7 0-3.1 1.3-3.4 2.9 0 .3.2.5.4.5h5.9c.2 0 .4-.2.4-.4-.2-1.7-1.6-3-3.3-3zM0 8h6v2H0zM0 11h6v2H0zM14 8h6v2h-6zM14 11h6v2h-6zM12.5 16c.3 0 .5-.2.5-.5V7.3c0-.3-.2-.6-.5-.6h-.2v-.1c0-.3-.2-.6-.5-.6H8.4c-.3 0-.5.3-.5.6v.1h-.2c-.3 0-.6.2-.7.5v8.2c0 .4.4.6.7.6h4.8zM10 2C8.1 2 6.6 3.6 6.5 5.6h1.1c0-1.4 1.1-2.5 2.4-2.5s2.4 1.1 2.4 2.5h1.2C13.4 3.6 11.9 2 10 2z\"></path><path d=\"M10 1.3c2.4 0 4.4 1.9 4.4 4.4h1.2C15.6 2.5 13.1 0 10 0 6.9 0 4.4 2.5 4.4 5.6h1.2c0-2.4 2-4.3 4.4-4.3z\"></path></svg>"
+                  },
+                  "reference": "navigation.sat-count",
+                  "_style": {
+                    "order": 4
+                  },
+                  "factor": 1,
+                  "linear": true,
+                  "children": [
+                    {
+                      "id": "sat-count.levels.0",
+                      "name": "-Infinity",
+                      "active": true,
+                      "type": "level",
+                      "index": 0,
+                      "value": "-Infinity",
+                      "color": "#f16059"
+                    },
+                    {
+                      "id": "sat-count.levels.1",
+                      "name": "Min",
+                      "active": true,
+                      "type": "level",
+                      "index": 1,
+                      "value": 0,
+                      "color": "#f16059"
+                    },
+                    {
+                      "id": "sat-count.levels.2",
+                      "name": "Mid",
+                      "active": true,
+                      "type": "level",
+                      "index": 5,
+                      "value": 15,
+                      "color": "#f3d54e"
+                    },
+                    {
+                      "id": "sat-count.levels.3",
+                      "name": "Max",
+                      "active": true,
+                      "type": "level",
+                      "index": 9,
+                      "value": 20,
+                      "color": "#a2ce4b"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "permanent",
+              "name": "Permanent I/O elements",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "ignition",
+                  "active": true,
+                  "name": "Ignition",
+                  "type": "argument",
+                  "description": "0 – Ignition Off\n1 – Ignition On ",
+                  "source": "state",
+                  "dataType": "boolean",
+                  "reference": "in_out_239",
+                  "children": [
+                    {
+                      "id": "ignition.levels.0",
+                      "name": "False",
+                      "active": true,
+                      "type": "level",
+                      "index": 0,
+                      "value": false,
+                      "color": "#a8b3b4"
+                    },
+                    {
+                      "id": "ignition.levels.1",
+                      "name": "True",
+                      "active": true,
+                      "type": "level",
+                      "index": 1,
+                      "value": true,
+                      "color": "#f3d54e"
+                    }
+                  ],
+                  "display": {
+                    "svg": "<svg viewBox=\"0 0 32 32\"> \n<path d=\"M22 0c-5.523 0-10 4.477-10 10 0 0.626 0.058 1.238 0.168 1.832l-12.168 12.168v6c0 1.105 0.895 2 2 2h2v-2h4v-4h4v-4h4l2.595-2.595c1.063 0.385 2.209 0.595 3.405 0.595 5.523 0 10-4.477 10-10s-4.477-10-10-10zM24.996 10.004c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z\"></path> </svg>"
+                  }
+                },
+                {
+                  "id": "movement",
+                  "active": true,
+                  "name": "Movement",
+                  "type": "argument",
+                  "description": "0 – Movement Off\n1 – Movement On",
+                  "source": "state",
+                  "dataType": "boolean",
+                  "reference": "in_out_240"
+                },
+                {
+                  "id": "data_mode",
+                  "name": "Data Mode",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "0 – Home On Stop\n1 – Home On Moving\n2 – Roaming On Stop\n3 – Roaming On Moving\n4 – Unknown On Stop\n5 – Unknown On Moving ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_80"
+                },
+                {
+                  "id": "signal",
+                  "active": true,
+                  "name": "GSM Signal",
+                  "type": "argument",
+                  "description": "Value in scale 1-5",
+                  "source": "state",
+                  "dataType": "number",
+                  "display": {
+                    "levels": "4, 2",
+                    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M8.6 13.7c-.8.8-.8 2 0 2.8.1.1.3.2.4.3V20h1.7v-3.1c.2-.1.5-.2.7-.4.8-.8.8-2 0-2.8-.8-.7-2-.7-2.8 0zm2.1 1.6c-.4 0-.7-.3-.7-.7 0-.4.3-.7.7-.7.4 0 .7.3.7.7-.1.4-.4.7-.7.7zM10 2.9c-4.1 0-7.6 2-10 5l1.8 1.7C3.7 7.1 6.6 5.4 10 5.4c3.4 0 6.3 1.7 8.3 4.2L20 7.9c-2.4-3-5.9-5-10-5zm0 5c-2.7 0-5.1 1.3-6.6 3.4l1.8 1.8c1-1.6 2.8-2.7 4.8-2.7s3.8 1.1 4.8 2.7l1.8-1.8c-1.4-2.1-3.9-3.4-6.6-3.4z\"></path></svg>"
+                  },
+                  "params": {
+                    "command": "",
+                    "in": 0,
+                    "value": 0
+                  },
+                  "reference": "in_out_21",
+                  "_style": {
+                    "order": 3
+                  },
+                  "factor": 1,
+                  "linear": true,
+                  "children": [
+                    {
+                      "id": "signal.levels.0",
+                      "name": "-Infinity",
+                      "active": true,
+                      "type": "level",
+                      "index": 0,
+                      "value": "-Infinity",
+                      "color": "#f16059"
+                    },
+                    {
+                      "id": "signal.levels.1",
+                      "name": "Min",
+                      "active": true,
+                      "type": "level",
+                      "index": 1,
+                      "value": 0,
+                      "color": "#f16059"
+                    },
+                    {
+                      "id": "signal.levels.2",
+                      "name": "Mid",
+                      "active": true,
+                      "type": "level",
+                      "index": 5,
+                      "value": 2,
+                      "color": "#ffae62"
+                    },
+                    {
+                      "id": "signal.levels.3",
+                      "name": "Max",
+                      "active": true,
+                      "type": "level",
+                      "index": 9,
+                      "value": 5,
+                      "color": "#a2ce4b"
+                    }
+                  ]
+                },
+                {
+                  "id": "sleep_mode",
+                  "name": "Sleep Mode",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "0 - Sleep modes disabled\n1 – GNSS sleep\n2 – Deep sleep\n3 – Online deep sleep\n4 - Ultra deep sleep ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_200",
+                  "children": []
+                },
+                {
+                  "id": "gnss",
+                  "name": "GNSS",
+                  "active": true,
+                  "type": "subsystem",
+                  "children": [
+                    {
+                      "id": "gnss_status",
+                      "name": "GNSS Status",
+                      "active": true,
+                      "type": "argument",
+                      "source": "state",
+                      "dataType": "number",
+                      "reference": "in_out_69",
+                      "factor": 1,
+                      "linear": true,
+                      "description": "0 - GNSS OFF\n1 – GNSS ON with fix\n2 - GNSS ON without fix\n3 - GNSS sleep"
+                    },
+                    {
+                      "id": "gnss_pdop",
+                      "name": "GNSS PDOP",
+                      "active": true,
+                      "type": "argument",
+                      "source": "state",
+                      "dataType": "number",
+                      "reference": "in_out_181",
+                      "factor": 0.1,
+                      "linear": true
+                    },
+                    {
+                      "id": "gnss_hdop",
+                      "name": "GNSS HDOP",
+                      "active": true,
+                      "type": "argument",
+                      "source": "state",
+                      "dataType": "number",
+                      "reference": "in_out_182",
+                      "factor": 0.1,
+                      "linear": true
+                    }
+                  ]
+                },
+                {
+                  "id": "speed_24",
+                  "name": "Speed",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "in_out_24",
+                  "unit": "speed-kilometer-per-hour"
+                },
+                {
+                  "id": "gsm-cell-id",
+                  "active": true,
+                  "name": "GSM Cell ID",
+                  "type": "argument",
+                  "description": "GSM base station ID",
+                  "source": "state",
+                  "dataType": "number",
+                  "display": {
+                    "style": "order:3",
+                    "levels": "4, 2",
+                    "svg": null
+                  },
+                  "params": {
+                    "command": "",
+                    "in": 0,
+                    "value": 0
+                  },
+                  "reference": "in_out_205",
+                  "_style": {
+                    "order": 3
+                  },
+                  "factor": 1,
+                  "linear": true
+                },
+                {
+                  "id": "gsm_code",
+                  "name": "GSM Area Code",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "in_out_206",
+                  "description": "Location Area code (LAC), it depends on GSM operator. It provides unique number which assigned to a set of base GSM stations. "
+                },
+                {
+                  "id": "bat",
+                  "active": true,
+                  "name": "Battery",
+                  "type": "subsystem",
+                  "children": [
+                    {
+                      "id": "voltage",
+                      "name": "Battery voltage",
+                      "active": true,
+                      "type": "argument",
+                      "unit": "electric-volt",
+                      "source": "state",
+                      "dataType": "number",
+                      "reference": "in_out_67",
+                      "factor": 0.001
+                    },
+                    {
+                      "id": "current",
+                      "name": "Battery current ",
+                      "active": true,
+                      "type": "argument",
+                      "unit": "electric-ampere",
+                      "source": "state",
+                      "dataType": "number",
+                      "reference": "in_out_68",
+                      "factor": 0.001,
+                      "linear": true
+                    },
+                    {
+                      "id": "capacity",
+                      "name": "Battery Level",
+                      "active": true,
+                      "type": "argument",
+                      "unit": "percent",
+                      "source": "state",
+                      "dataType": "number",
+                      "display": {
+                        "levels": "4.19, 3.8",
+                        "svg": "<svg style=\"shape-rendering: optimizespeed\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M20 3V2H0v18h20V3zM5 7h1V6h1v1h1v1H7v1H6V8H5V7zm13 11H2V3h1v14h7V3h8v15zM16 7h-3v1h3V7zm0-7h-4v2h4V0zM8 0H4v2h4V0z\" class=\"st0\"></path></svg>"
+                      },
+                      "reference": "in_out_113",
+                      "factor": 1,
+                      "params": {
+                        "command": "",
+                        "in": 0,
+                        "value": 0
+                      },
+                      "_style": {
+                        "order": 1
+                      },
+                      "linear": true,
+                      "children": [
+                        {
+                          "id": "bat-voltage.levels.0",
+                          "name": "-Infinity",
+                          "active": true,
+                          "type": "level",
+                          "index": 0,
+                          "value": "-Infinity",
+                          "color": "#f16059"
+                        },
+                        {
+                          "id": "bat-voltage.levels.1",
+                          "name": "Min",
+                          "active": true,
+                          "type": "level",
+                          "index": 1,
+                          "value": 30,
+                          "color": "#ffae62"
+                        },
+                        {
+                          "id": "bat-voltage.levels.2",
+                          "name": "Mid",
+                          "active": true,
+                          "type": "level",
+                          "index": 5,
+                          "value": 60,
+                          "color": "#a2ce4b"
+                        },
+                        {
+                          "id": "bat-voltage.levels.3",
+                          "name": "Max",
+                          "active": true,
+                          "type": "level",
+                          "index": 9,
+                          "value": 80,
+                          "color": "#a2ce4b"
+                        }
+                      ],
+                      "description": "Battery capacity level "
+                    },
+                    {
+                      "id": "external",
+                      "name": "External Voltage",
+                      "active": true,
+                      "type": "argument",
+                      "unit": "electric-volt",
+                      "source": "state",
+                      "dataType": "number",
+                      "reference": "in_out_66",
+                      "factor": 0.001,
+                      "linear": true,
+                      "children": [],
+                      "description": "IO element is used to measure External Voltage, when External Voltage is < 65V"
+                    }
+                  ]
+                },
+                {
+                  "id": "gsm_code_op",
+                  "name": "Active GSM Operator",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "number",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "in_out_241",
+                  "description": "Currently used GSM Operator code",
+                  "children": []
+                },
+                {
+                  "id": "trip_odometer",
+                  "name": "Trip Odometer",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_199",
+                  "unit": "length-meter"
+                },
+                {
+                  "id": "total_odometer",
+                  "name": "Total Odometer",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_16",
+                  "unit": "length-meter",
+                  "children": []
+                },
+                {
+                  "id": "inst_move",
+                  "name": "Instant Movement",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_303",
+                  "unit": null,
+                  "children": [],
+                  "description": "Logic: 0/1 returns movement value"
+                },
+                {
+                  "id": "x",
+                  "name": "Axis X",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_17",
+                  "unit": "length-meter",
+                  "children": [],
+                  "description": "X axis value"
+                },
+                {
+                  "id": "y",
+                  "name": "Axis Y",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_18",
+                  "unit": "length-meter",
+                  "children": [],
+                  "description": "Y axis value"
+                },
+                {
+                  "id": "z",
+                  "name": "Axis Z",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_19",
+                  "unit": "length-meter",
+                  "children": [],
+                  "description": "Z axis value"
+                },
+                {
+                  "id": "iccid1",
+                  "name": "ICCID1",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_11",
+                  "unit": null,
+                  "children": [],
+                  "description": "Value of SIM ICCID, MSB"
+                },
+                {
+                  "id": "iccid2",
+                  "name": "ICCID2",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_14",
+                  "unit": null,
+                  "children": [],
+                  "description": "Value of SIM ICCID, MSB"
+                },
+                {
+                  "id": "coordinates",
+                  "name": "ISO6709 Coordinates",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_387",
+                  "unit": null,
+                  "children": [],
+                  "description": "ISO6709 Coordinates\nLatitude, Longitude (in Degrees, Minutes and Seconds) and Altitude:\nIO value format: ±DDMMSS.SSSS±DDDMMSS.SSSS±AAA.AAA/ "
+                }
+              ]
+            },
+            {
+              "id": "eventual",
+              "name": "Eventual I/O elements",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "geo1",
+                  "name": "Geofence zone 01",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "0 – target left zone\n1 – target entered zone\n2 – over speeding end\n3 – over speeding start ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_155"
+                },
+                {
+                  "id": "geo2",
+                  "name": "Geofence zone 02",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "0 – target left zone\n1 – target entered zone\n2 – over speeding end\n3 – over speeding start ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_156",
+                  "children": []
+                },
+                {
+                  "id": "auto_geo",
+                  "name": "Auto Geofence",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "description": "0 – target left zone\n1 – target entered zone ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_175",
+                  "children": [],
+                  "unit": null
+                },
+                {
+                  "id": "trip",
+                  "name": "Trip",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "description": "0 – trip stop\n1 – trip start",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_250",
+                  "children": [],
+                  "unit": null
+                },
+                {
+                  "id": "overspeeding",
+                  "name": "Overspeeding Event",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "At over speeding start km/h, at over speeding end km/h",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_255",
+                  "children": [],
+                  "unit": "speed-kilometer-per-hour"
+                },
+                {
+                  "id": "unplug",
+                  "name": "Unplug",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "description": "0 – battery present\n1 – battery unplug ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_252",
+                  "unit": null
+                },
+                {
+                  "id": "jamming",
+                  "name": "Jamming",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "description": "0 – jamming stop\n1 – jamming start",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_249",
+                  "unit": null,
+                  "children": []
+                },
+                {
+                  "id": "down",
+                  "name": "ManDown/FallDown",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "description": "0 – ManDown/FallDown deactivated\n1 – ManDown/FalDown is active",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_242",
+                  "children": [],
+                  "unit": null
+                },
+                {
+                  "id": "position",
+                  "name": "Last Known Position",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Time in seconds has passed since last GNSS fix",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_386",
+                  "children": [],
+                  "unit": "duration-second"
+                }
+              ]
+            },
+            {
+              "id": "e-scooter",
+              "name": "E-Scooter elements",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "serial_number",
+                  "name": "Serial number",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "description": "Scooter serial number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_339",
+                  "unit": null
+                },
+                {
+                  "id": "master_control_fw",
+                  "name": "Master control FW version",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Scooter's PCB and FW versions. First 4 bits (MSB) describe PCB version and the rest 12 bits - FW version. For example, IO value is 0x1101, it means PCB version is 1 and FW version V1.0.1. ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_340",
+                  "unit": null,
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "error",
+                  "name": "Error",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Scooter error code from 10 to 50. ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_341",
+                  "unit": null,
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "alarm_code",
+                  "name": "Alarm code",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "9 – alarm for being pushed in lock mode\n12 – alarm for high recoil energy during brake",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_342",
+                  "unit": null,
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "lock_status",
+                  "name": "Lock status ",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "description": "0 - Scooter is unlocked\n1 - Scooter is locked ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_344",
+                  "unit": null,
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "buzzer_alarm",
+                  "name": "Buzzer alarm status",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "description": "0 - Scooter's buzzer is not active\n1 - Scooter's buzzer is active ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_345",
+                  "unit": null,
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "external_battery",
+                  "name": "External battery status",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "description": "0 - Scooter don't have external battery connected\n1 - Scooter has external battery connected ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_346",
+                  "unit": null,
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "charging",
+                  "name": "Charging status",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "description": "0 – not charging, 1 - charging",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_347",
+                  "unit": null,
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "operation_mode",
+                  "name": "Current operation mode",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "0 – NORMAL, 1 – ECO, 2 – SPORT",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_349",
+                  "unit": null,
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "int_voltage",
+                  "name": "Internal battery voltage",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Scooter's internal batteryt voltage",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_350",
+                  "unit": "electric-millivolt",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "ext_voltage",
+                  "name": "External battery voltage",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Scooter's external battery voltage",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_351",
+                  "unit": "electric-millivolt",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "percentage",
+                  "name": "Battery percentage",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Battery percentage of the scooter",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_352",
+                  "unit": "percent",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "actual_remaining_mileage",
+                  "name": "Actual remaining mileage",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Actual mileage with remaining battery power",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_353",
+                  "unit": "length-meter",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "predicted_remaining_mileage",
+                  "name": "Predicted remaining mileage",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Predicted mileage with remaining battery power",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_354",
+                  "unit": "length-meter",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "speed_355",
+                  "name": "Speed",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Current scooter's speed",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_355",
+                  "unit": "speed-kilometer-per-hour",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "total_mileage",
+                  "name": "Total mileage",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Scooter's total mileage",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_356",
+                  "unit": "length-meter",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "single_mileage",
+                  "name": "Single mileage",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Single trip mileage",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_357",
+                  "unit": "length-meter",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "total_operation_time",
+                  "name": "Total operation time",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Scooter's total operation time",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_358",
+                  "unit": "duration-second",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "total_riding_time",
+                  "name": "Total riding time",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Scooter's total riding time",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_359",
+                  "unit": "duration-second",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "single_operation_time",
+                  "name": "Single operation time",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Single operation time",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_360",
+                  "unit": "duration-second",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "single_riding_time",
+                  "name": "Single riding time",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Single riding time ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_361",
+                  "unit": "duration-second",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "body_temperature",
+                  "name": "Body temp",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Temperature inside scooter ",
+                  "factor": 0.1,
+                  "linear": true,
+                  "reference": "in_out_362",
+                  "unit": "temperature-celsius",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "Internal_temp1",
+                  "name": "Internal battery temp 1",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Internal battery temperature 1 ",
+                  "factor": 0.1,
+                  "linear": true,
+                  "reference": "in_out_363",
+                  "unit": "temperature-celsius",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "Internal_temp2",
+                  "name": "Internal battery temp 2",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Internal battery temperature 2",
+                  "factor": 0.1,
+                  "linear": true,
+                  "reference": "in_out_364",
+                  "unit": "temperature-celsius",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "external_temp1",
+                  "name": "External battery temp 1 ",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "External battery temperature 1 ",
+                  "factor": 0.1,
+                  "linear": true,
+                  "reference": "in_out_365",
+                  "unit": "temperature-celsius",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "external_temp2",
+                  "name": "External battery temp 2",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "External battery temperature 2",
+                  "factor": 0.1,
+                  "linear": true,
+                  "reference": "in_out_367",
+                  "unit": "temperature-celsius",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "supply_voltage",
+                  "name": "Supply voltage ",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Supply voltage of the central control (system driving voltage) ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_366",
+                  "unit": "electric-millivolt",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "average_speed",
+                  "name": "Average speed",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Average speed",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_369",
+                  "unit": "speed-kilometer-per-hour",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "external_battery_fw",
+                  "name": "External battery FW version",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Scooter's external battery FW version",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_370",
+                  "unit": null,
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "internal_battery_fw",
+                  "name": "Internal battery FW version",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Scooter's internal battery FW version ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_371",
+                  "unit": null,
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "instrument_panel_fw",
+                  "name": "Instrument panel FW version",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Scooter's Instrument panel FW version",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_372",
+                  "unit": null,
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "internal_battery_capacity",
+                  "name": "Internal battery capacity",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Current residual capacity percentage of internal battery ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_374",
+                  "unit": "percent",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "external_battery_capacity",
+                  "name": "External battery capacity",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Current residual capacity percentage of external battery ",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_375",
+                  "unit": "percent",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "normal_speed_limit",
+                  "name": "Normal speed limit",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Normal speed limit",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_392",
+                  "unit": "speed-kilometer-per-hour",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "eco_speed_limit",
+                  "name": "Eco speed limit",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Eco speed limit",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_393",
+                  "unit": "speed-kilometer-per-hour",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "sport_speed_limit",
+                  "name": "Sport speed limit",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Sport speed limit",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_394",
+                  "unit": "speed-kilometer-per-hour",
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "battery_lock",
+                  "name": "Battery lock status",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "description": "Battery lock status",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_396",
+                  "unit": null,
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "cable_lock",
+                  "name": "Cable lock Status",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Cable lock Status",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_397",
+                  "unit": null,
+                  "_parentId": "e-scooter",
+                  "children": []
+                },
+                {
+                  "id": "cable_lock_fw",
+                  "name": "Cable lock FW version",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "description": "Cable lock FW version",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "in_out_377",
+                  "unit": null,
+                  "_parentId": "e-scooter",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "ble",
+              "name": "BLE Sensor I/O elements",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "ble_temp1",
+                  "name": "BLE Temperature #1",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": "temperature-celsius",
+                  "reference": "in_out_25"
+                },
+                {
+                  "id": "ble_bat1",
+                  "name": "BLE Battery #1",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": "percent",
+                  "reference": "in_out_29",
+                  "children": []
+                },
+                {
+                  "id": "ble_hum1",
+                  "name": "BLE Humidity #1",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": "percent",
+                  "reference": "in_out_86",
+                  "children": []
+                },
+                {
+                  "id": "ble1_custom1",
+                  "name": "BLE 1 Custom #1",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": null,
+                  "reference": "in_out_331",
+                  "children": []
+                },
+                {
+                  "id": "beacons",
+                  "name": "Beacon ID's",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": null,
+                  "reference": "in_out_385",
+                  "children": [],
+                  "description": "Data structure:\n\nData part: 1 Byte\nBeacon flag: 1 Byte\nBeacon ID (iBeacon/Eddystone): 20 Bytes/16 Bytes\nSignal strength: 1 Byte"
+                },
+                {
+                  "id": "bt_status",
+                  "name": "BT Status",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": null,
+                  "reference": "in_out_263",
+                  "children": [],
+                  "description": "0 - BT is disabled\n1 - BT Enabled, not device connected\n2 - Device connected, BTv3 Only\n3 - Device connected, BLE only\n4 - Device connected, BLE + BT"
+                },
+                {
+                  "id": "ble_lock_status",
+                  "name": "BLE Lock Status",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": null,
+                  "reference": "in_out_871",
+                  "children": [],
+                  "description": "0 – Unlocked\n1 – Locked On ",
+                  "_parentId": "ble"
+                },
+                {
+                  "id": "ble_lock_battery",
+                  "name": "BLE Lock Battery",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": "percent",
+                  "reference": "in_out_872",
+                  "children": [],
+                  "description": "Battery level of Bluetooth lock",
+                  "_parentId": "ble"
+                },
+                {
+                  "id": "ble_lock_discovered",
+                  "name": "BLE Lock Discovered",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "boolean",
+                  "factor": 1,
+                  "linear": true,
+                  "unit": null,
+                  "reference": "in_out_873",
+                  "children": [],
+                  "description": "1 - Bluetooth lock Discovered",
+                  "_parentId": "ble"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cmds",
+          "name": "Commands",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "common",
+              "active": true,
+              "name": "Common commands",
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "getinfo",
+                  "name": "Get system info",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getinfo"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Device runtime system information."
+                },
+                {
+                  "id": "getver",
+                  "name": "Get version",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getver"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Returns code version, device IMEI, modem app version, RTC time, Init time, Uptime and BT MAC address.",
+                  "children": []
+                },
+                {
+                  "id": "getstatus",
+                  "name": "Get status",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getstatus"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Modem Status information.",
+                  "children": []
+                },
+                {
+                  "id": "getgps",
+                  "name": "Get GPS",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getgps"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Current GPS data, date and time.",
+                  "children": []
+                },
+                {
+                  "id": "getio",
+                  "name": "Get input/output info",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getio\r\n",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Readout analog input,digital input and output."
+                },
+                {
+                  "id": "ggps",
+                  "name": "Get GPS link",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "ggps",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Returns location information with Google maps link.",
+                  "children": []
+                },
+                {
+                  "id": "readio352",
+                  "name": "Read IO",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "readio 352",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "readio #\t\nReturns IO status, # AVL ID.",
+                  "children": []
+                },
+                {
+                  "id": "cpureset",
+                  "name": "Reset",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "cpureset",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "resets device",
+                  "children": []
+                },
+                {
+                  "id": "fwstats",
+                  "name": "Get FW and restarts",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "fwstats",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Get data about FW and restarts",
+                  "children": []
+                },
+                {
+                  "id": "getrecord",
+                  "name": "Get record",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getrecord",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "SMS command initiates saving and sending of high priority record",
+                  "children": []
+                },
+                {
+                  "id": "getimeiccid",
+                  "name": "Get IMEI and CCID",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getimeiccid 37069012345",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Response is sent to SMS/GPRS command sender and also to GSM number provided.\n\n1.# GSM number using international format e.g. 37069012345 ",
+                  "children": []
+                },
+                {
+                  "id": "getimsi",
+                  "name": "Get IMSI",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getimsi",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Sends the IMSI number of the SIM card inserted as a response to the sender.",
+                  "children": []
+                },
+                {
+                  "id": "allver",
+                  "name": "Get state",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "allver",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Responds with information about hardware and firmware versions and storage space",
+                  "children": []
+                },
+                {
+                  "id": "getparam100",
+                  "name": "Get param #100",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getparam 100"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "getparam #\n\nReturns selected parameter value.\n1.# - first ID value.\n2.# - second ID value.\n3.# - third ID value."
+                },
+                {
+                  "id": "getparam100-179",
+                  "name": "Get params #100 and #179",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "getparam 100;179"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "children": [],
+                  "description": "getparam #;#;…\n\nReturns selected parameter value.\n1.# - first ID value.\n2.# - second ID value.\n3.# - third ID value."
+                },
+                {
+                  "id": "setparam100",
+                  "name": "Set param #100",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "setparam 100:0"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "setparam #:#\n\nSets selected parameter value\n\n[Parameter ID] : [New Parameter Value] ; [Parameter ID] : [New Parameter Value]...",
+                  "children": []
+                },
+                {
+                  "id": "setparam100-179",
+                  "name": "Set params #100 and #179",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "setparam 100:1;179:0"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "children": [],
+                  "description": "setparam #:#;#:#;…\n\nSets selected parameter value\n\n[Parameter ID] : [New Parameter Value] ; [Parameter ID] : [New Parameter Value]..."
+                },
+                {
+                  "id": "flush",
+                  "name": "Redirects to other server",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "flush"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "children": [],
+                  "description": "flush #,#,#,#,#,#,#\n\nRedirects device to other server.\n1.# - IMEI.\n2.# - APN.\n3.# - LOGIN.\n4.# - PASS.\n5.# - IP.\n6.# - PORT.\n7.# - MODE (0-TCP/1-UDP)."
+                },
+                {
+                  "id": "countrecs",
+                  "name": "Get records number",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "countrecs"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "children": [],
+                  "description": "Returns records number."
+                },
+                {
+                  "id": "web_connect",
+                  "name": "Connect to Fota WEB",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "web_connect"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "children": [],
+                  "description": "Connect to Fota WEB immediately."
+                },
+                {
+                  "id": "deleterecords",
+                  "name": "Delete records",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "deleterecords"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "children": [],
+                  "description": "Delete all records from SD card."
+                },
+                {
+                  "id": "battery",
+                  "name": "Get battery",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "battery"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Returns battery state info.",
+                  "children": []
+                },
+                {
+                  "id": "wdlog",
+                  "name": "Get 'watch dogs'",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "wdlog"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Returns all information about 'watch dogs'",
+                  "children": []
+                },
+                {
+                  "id": "defaultcfg",
+                  "name": "Load default config",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "defaultcfg"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Load default configuration.",
+                  "children": []
+                },
+                {
+                  "id": "setkey",
+                  "name": "Set key",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "setkey psw"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "setkey # #\n\nAdd new or change current configuration keyword. If device is locked, keyword cannot be changed.\n1.# - old keyword (if adding new keyword space).\n2.# - new keyword.",
+                  "children": []
+                },
+                {
+                  "id": "delkey",
+                  "name": "Delete key",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "delkey 1234"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "delkey #\n\nRemove existing keyword (If device is locked, keyword cannot be changed).\n1.# - old keyword.",
+                  "children": []
+                },
+                {
+                  "id": "bbread",
+                  "name": "Get black box",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "bbread"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "bbread #\n\nReturn black box information (HEX value of event ID and HEX value of custom data field (optional)).\n1.# - returns entered number of latest events. When # is omitted the latest events are packed to single SMS.",
+                  "children": []
+                },
+                {
+                  "id": "bbinfo",
+                  "name": "Get black box HEX",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "bbinfo"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "bbinfo #\n\nReturn same information as bbread command but additional all events timestamp is written in HEX.\n1.# - returns entered number of latest events. When # is omitted the latest events are packed to single SMS.",
+                  "children": []
+                },
+                {
+                  "id": "sdformat",
+                  "name": "Format SD card",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "sdformat"
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Format SD card.",
+                  "children": []
+                }
+              ],
+              "description": null
+            },
+            {
+              "id": "bluetooth",
+              "active": true,
+              "name": "Bluetooth Commands",
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "btgetlist",
+                  "name": "Get Bluetooth list",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "btgetlist 0",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Returns requested Bluetooth list.\n# - 0,1 or 2 (0 – Discovered, 1 – Paired, 2 – Connected, 3 – Discovered BT4/BLE devices). ",
+                  "children": []
+                },
+                {
+                  "id": "btscan",
+                  "name": "Scan",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "btscan",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Starts Bluetooth scan. ",
+                  "children": []
+                },
+                {
+                  "id": "btvisible10",
+                  "name": "Set visible 10 sec",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "btvisible 10",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Sets Bluetooth to visible with TMO.\n# - visibility TMO (from 1 to 255 seconds).",
+                  "children": []
+                },
+                {
+                  "id": "btrelease10",
+                  "name": "Disconnect",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "btrelease 10",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Disconnects from current device and pauses auto connect functionality for TMO.\n# - none or TMO (from 1 to 255 seconds). ",
+                  "children": []
+                },
+                {
+                  "id": "btunpair",
+                  "name": "Unpair",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "btunpair all",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Unpair Bluetooth device.\n# - all, BT address (all – unpair all devices, BT address – unpair only specified MAC address). ",
+                  "children": []
+                },
+                {
+                  "id": "btlock_unlock",
+                  "name": "Unlock Bluetooth lock",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "btlock_unlock",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": null,
+                  "children": []
+                },
+                {
+                  "id": "btlock_changepw",
+                  "name": "Change Bluetooth lock's password",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "btlock_changepw: # #",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "btlock_changepw: # #\nbtlock_changepw:<Current password> <New password> ",
+                  "children": []
+                }
+              ],
+              "description": "Bluetooth Commands"
+            },
+            {
+              "id": "features",
+              "active": true,
+              "name": "Functional commands",
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "auto_calibrate",
+                  "name": "Get the state of calibration",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "auto_calibrate:set",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Returns the state of calibration",
+                  "children": []
+                },
+                {
+                  "id": "odoset",
+                  "name": "Set odometer",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "odoset:0",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Set total odometer value.\n\nodoset:#\n# - new odometer value in km. ",
+                  "children": []
+                },
+                {
+                  "id": "odoget",
+                  "name": "Get odometer",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "odoget",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Display current odometer value.",
+                  "children": []
+                },
+                {
+                  "id": "on_demand_tracking0",
+                  "name": "Stop tracking",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "on_demand_tracking0",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Note: This command is supported from 55.00.00 firmware version.\n\non_demand_tracking#\n\nTracking on Demand functionality. # = Value ↓\n0 – Stops Tracking on Demand functionality.\n1 – Starts Tracking on Demand functionality.\n2 – Generates one high priority record and inititates data sending to server.",
+                  "children": []
+                },
+                {
+                  "id": "on_demand_tracking1",
+                  "name": "Start tracking",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "on_demand_tracking1",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Note: This command is supported from 55.00.00 firmware version.\n\non_demand_tracking#\n\nTracking on Demand functionality. # = Value ↓\n0 – Stops Tracking on Demand functionality.\n1 – Starts Tracking on Demand functionality.\n2 – Generates one high priority record and inititates data sending to server.",
+                  "children": []
+                }
+              ],
+              "description": "Commands Related to Features"
+            },
+            {
+              "id": "e-scooter_cmd",
+              "name": "E-Scooter Commands",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "sclockctrl0",
+                  "name": "Unlock",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "sclockctrl 0",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Used to lock/unlock E-Scooter. \n\nsclockctrl #\n# = Value ↓\n0 - Unlock\n1 - Lock",
+                  "children": []
+                },
+                {
+                  "id": "sclockctrl1",
+                  "name": "Lock",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "sclockctrl 1",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Used to lock/unlock E-Scooter. \n\nsclockctrl #\n# = Value ↓\n0 - Unlock\n1 - Lock",
+                  "children": []
+                },
+                {
+                  "id": "scsetunits0",
+                  "name": "Set kilometers",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scsetunits 0",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Used to change units. \n\nscsetunits #\n# = Value ↓\n0 - Kilometers (km)\n1 - Miles (mi) ",
+                  "children": []
+                },
+                {
+                  "id": "scrstcnt1",
+                  "name": "Reset single time",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scrstcnt 1",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Resets internal E-Scooter counters. \n\nscrstcnt #\n# = Value ↓\n1 - single time\n2 - total mileage\n3 - total ",
+                  "children": []
+                },
+                {
+                  "id": "scrstcnt2",
+                  "name": "Reset total mileage",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scrstcnt 2",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Resets internal E-Scooter counters. \n\nscrstcnt #\n# = Value ↓\n1 - single time\n2 - total mileage\n3 - total ",
+                  "children": []
+                },
+                {
+                  "id": "scrstcnt3",
+                  "name": "Reset total",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scrstcnt 3",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Resets internal E-Scooter counters. \n\nscrstcnt #\n# = Value ↓\n1 - single time\n2 - total mileage\n3 - total ",
+                  "children": []
+                },
+                {
+                  "id": "scsetledswitch0",
+                  "name": "Allow headlight control",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scsetledswitch 0",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "This option disallows headlight control by scledctrl command, if LED switch is set to 1 (scledswitch 1) \n\nscsetledswitch #\n# = Value ↓\n0 - disable\n1 - enable ",
+                  "children": []
+                },
+                {
+                  "id": "scsetledswitch1",
+                  "name": "Disallow headlight control",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scsetledswitch 1",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "This option disallows headlight control by scledctrl command, if LED switch is set to 1 (scledswitch 1) \n\nscsetledswitch #\n# = Value ↓\n0 - disable\n1 - enable ",
+                  "children": []
+                },
+                {
+                  "id": "scledctrl0",
+                  "name": "Turn OFF LED",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scledctrl 0",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Turns ON/OFF LED but only if -> scsetledswitch 0, \n\nscledctrl\n# = Value ↓\n0 - Turn OFF\n1 - Turn ON ",
+                  "children": []
+                },
+                {
+                  "id": "scledctrl1",
+                  "name": "Turn ON LED",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scledctrl 1",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Turns ON/OFF LED but only if -> scsetledswitch 0, \n\nscledctrl\n# = Value ↓\n0 - Turn OFF\n1 - Turn ON ",
+                  "children": []
+                },
+                {
+                  "id": "scsetbtcode",
+                  "name": "Set BT pairing code",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scsetbtcode ######",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Sets BT pairing code.\n\nscsetbtcode ######\n###### - 6 digits BT pairing code ",
+                  "children": []
+                },
+                {
+                  "id": "scsetspdlim",
+                  "name": "Set E-Scooter's Speed limit",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scsetspdlim <arg1> <arg2>",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Sets E-Scooter's Speed limit.\n\nscsetspdlim <arg1> <arg2>\n<arg1> - Mode\n<arg2> - Speed limit ",
+                  "children": []
+                },
+                {
+                  "id": "scsetmode",
+                  "name": "Set E-Scooter's operating mode",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scsetmode #",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Sets E-Scooter's operating mode. \n\nscsetmode #\n# = Value ↓\n0 - NORMAL\n1 - ECO\n2 - SPORT ",
+                  "children": []
+                },
+                {
+                  "id": "scenginectrl",
+                  "name": "Start or shut down the engine",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scenginectrl #",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Start or shut down the engine. \n\nscenginectrl #\n# = Value ↓\n0 - Turn OFF the engine\n1 - Turn ON the engine ",
+                  "children": []
+                },
+                {
+                  "id": "screbootsys",
+                  "name": "Restart",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "screbootsys",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Restart E-Scooter's system. Restart is available only in non-riding mode. Corresponding mark will be reset after completion of the operation. ",
+                  "children": []
+                },
+                {
+                  "id": "scpoweroff",
+                  "name": "Shut down",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scpoweroff",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Shut down E-Scooter. ",
+                  "children": []
+                },
+                {
+                  "id": "scsetcruiseswitch",
+                  "name": "Cruise control switch",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scsetcruiseswitch #",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Cruise control switch. \n\nscsetcruiseswitch #\n# = Value ↓\n0 - OFF\n1 - ON ",
+                  "children": []
+                },
+                {
+                  "id": "sclookfor",
+                  "name": "Enable looking for",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "sclookfor #",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Enable looking for scooter functionality. Initiates headlight and taillight flash + buzzer beep. \n\nsclookfor #\n# = Value ↓\n0 - OFF\n1 - ON ",
+                  "children": []
+                },
+                {
+                  "id": "scsetbeepswitch",
+                  "name": "Beep control switch",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scsetbeepswitch #",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Beep control switch. \n\nscsetbeepswitch #\n# = Value ↓\n0 - OFF\n1 - ON ",
+                  "children": []
+                },
+                {
+                  "id": "scbuzzerctrl",
+                  "name": "Buzzer control",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scbuzzerctrl <arg1> <arg2>",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "IoT buzzer control.\n\nscbuzzerctrl <arg1> <arg2>\n<arg1> - 0 - OFF; 1 - ON\n<arg2> - timeout (sec) ",
+                  "children": []
+                },
+                {
+                  "id": "scgetbtcode",
+                  "name": "Get BT pairing code",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scgetbtcode",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Returns BT pairing code",
+                  "children": []
+                },
+                {
+                  "id": "scgetspdlim",
+                  "name": "Get speed limit",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scgetspdlim #",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Returns Speed limit value for chosen operating mode. \n\nscgetspdlim #\n# = Value\n0 - NORMAL mode\n1 - ECO mode\n2 - SPORT mode ",
+                  "children": []
+                },
+                {
+                  "id": "scgetmode",
+                  "name": "Get operating mode",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scgetmode",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Returns operating mode. ",
+                  "children": []
+                },
+                {
+                  "id": "scgetcruiseswitch",
+                  "name": "Get cruise control switch state",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scgetcruiseswitch",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Returns cruise control switch state. ",
+                  "children": []
+                },
+                {
+                  "id": "scgetconfig",
+                  "name": "Get functions setup",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scgetconfig",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Returns E-Scooter's functions setup. ",
+                  "children": []
+                },
+                {
+                  "id": "scgetledswitch",
+                  "name": "Get headlight control switch state",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scgetledswitch",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Returns headlight control switch state. ",
+                  "children": []
+                },
+                {
+                  "id": "scsetalarmswitch",
+                  "name": "Beep control on alarm",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scsetalarmswitch <arg>",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Beep control on alarm.\n\nscsetalarmswitch <arg>\n<arg> - 0 - OFF; 1 - ON ",
+                  "children": []
+                },
+                {
+                  "id": "scgetalarmswitch",
+                  "name": "Get alarm control switch state",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scgetalarmswitch",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Returns alarm control switch state. ",
+                  "children": []
+                },
+                {
+                  "id": "scgetbeepswitch",
+                  "name": "Get beep control switch state",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scgetbeepswitch",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Returns beep control switch state. ",
+                  "children": []
+                },
+                {
+                  "id": "scsetconfig",
+                  "name": "Functions setup",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scsetconfig <arg1> <arg2>",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "E-Scooter's functions setup.\n\nscsetconfig <arg1> <arg2>\n<arg1> - 0 - 1st instruction set; 1 - 2nd instruction set\n<arg2> - 2 bytes value where each bit controls separate parameter ",
+                  "children": []
+                },
+                {
+                  "id": "sciap",
+                  "name": "Firmware update",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "sciap <arg>",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "E-Scooter's firmware update force command.\n\nsciap <arg>\n<arg> - 0 – Master control, 1 – BMS1 (internal battery), 2 - BMS2 (external battery), 3 - Instrument panel (scooter head), 4 – Cable Lock (Wired)",
+                  "children": []
+                },
+                {
+                  "id": "scbatopen",
+                  "name": "Open battery lock",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "scbatopen",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Opens battery lock for battery replacement ",
+                  "children": []
+                },
+                {
+                  "id": "sccableunlock",
+                  "name": "Unlock cable lock",
+                  "active": true,
+                  "type": "action",
+                  "source": "state",
+                  "dataType": "string",
+                  "params": {
+                    "command": "sccableunlock",
+                    "in": 1,
+                    "value": 1
+                  },
+                  "command": "text_command",
+                  "service": "ric-gate",
+                  "description": "Unlock cable lock",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "_at": 1594369140752,
+      "base": "teltonika",
+      "description": "Teltonika TST100\nProfessional waterproof tracker designed for E-scooters with internal high gain GNSS/GSM antennas and internal Li-ion battery. \n\nManual https://wiki.teltonika-mobility.com/view/TST100_Manual\n \nCommands description https://wiki.teltonika-sas.com/view/TST100_SMS/GPRS_Commands"
+    },
+    "props": {
+      "bots": false,
+      "hardwareEvents": false,
+      "helper": "",
+      "prefix": "teltonika:",
+      "order": 5,
+      "typeInput": {
+        "hidden": false
+      },
+      "statusInput": {
+        "hidden": false
+      },
+      "descriptionInput": {
+        "hidden": false
+      },
+      "protocol": "teltonika",
+      "idPattern": "teltonika:<imei>"
+    },
+    "group": "5190951088b5078432000001",
+    "description": "Teltonika TST100\nProfessional waterproof tracker designed for E-scooters with internal high gain GNSS/GSM antennas and internal Li-ion battery. \n\nManual https://wiki.teltonika-mobility.com/view/TST100_Manual\n \nCommands description https://wiki.teltonika-sas.com/view/TST100_SMS/GPRS_Commands"
+  }
+}
