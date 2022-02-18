@@ -1,7 +1,7 @@
 {
   "version": 1,
   "origin": "dev.rightech.io",
-  "time": "2021-12-23T14:04:32.309Z",
+  "time": "2022-02-18T13:33:15.474Z",
   "user": "613645025dab3700105ae872",
   "group": "613645025dab3700105ae871",
   "store": "models",
@@ -196,129 +196,123 @@
           ]
         },
         {
-          "id": "temperature_value",
+          "id": "type",
+          "name": "Packet type",
+          "active": true,
+          "type": "argument",
+          "dataType": "number",
+          "factor": 1,
+          "linear": true
+        },
+        {
+          "id": "bat",
+          "name": "Battery charge",
+          "active": true,
+          "type": "argument",
+          "dataType": "number",
+          "factor": 1,
+          "linear": true,
+          "_parentId": "root",
+          "children": [
+            {
+              "id": "bat.levels.0",
+              "name": "-Infinity",
+              "active": true,
+              "type": "level",
+              "index": 0,
+              "value": "-Infinity",
+              "color": "#f16059"
+            },
+            {
+              "id": "bat.levels.1",
+              "name": "Min",
+              "active": true,
+              "type": "level",
+              "index": 1,
+              "value": 30,
+              "color": "#f16059"
+            },
+            {
+              "id": "bat.levels.2",
+              "name": "Mid",
+              "active": true,
+              "type": "level",
+              "index": 5,
+              "value": 50,
+              "color": "#ffae62"
+            },
+            {
+              "id": "bat.levels.3",
+              "name": "Max",
+              "active": true,
+              "type": "level",
+              "index": 9,
+              "value": 80,
+              "color": "#a2ce4b"
+            }
+          ],
+          "display": {
+            "svg": "<svg viewBox=\"0 0 16 16\"><path d=\"M 1.585938 4 C 0.71875 4 0 4.71875 0 5.585938 L 0 10.410156 C 0 11.28125 0.71875 12 1.585938 12 L 12.410156 12 C 13.28125 12 14 11.28125 14 10.410156 L 14 10 L 15 10 C 15.546875 10 16 9.546875 16 9 L 16 7 C 16 6.453125 15.546875 6 15 6 L 14 6 L 14 5.585938 C 14 4.71875 13.28125 4 12.410156 4 Z M 1.585938 5 L 12.410156 5 C 12.742188 5 13 5.257813 13 5.585938 L 13 10.410156 C 13 10.742188 12.742188 11 12.410156 11 L 1.585938 11 C 1.257813 11 1 10.742188 1 10.410156 L 1 5.585938 C 1 5.257813 1.257813 5 1.585938 5 Z M 2 6 L 2 10 L 9 10 L 9 6 Z M 14 7 L 15 7 L 15 9 L 14 9 Z\" /></svg>"
+          },
+          "unit": "percent"
+        },
+        {
+          "id": "cfg",
+          "name": "Configuration",
+          "active": true,
+          "type": "argument",
+          "dataType": "object",
+          "factor": 1,
+          "linear": true,
+          "unit": null
+        },
+        {
+          "id": "timestamp",
+          "name": "Time",
+          "active": true,
+          "type": "argument",
+          "dataType": "number",
+          "factor": 1,
+          "linear": true,
+          "unit": "duration-millisecond",
+          "_parentId": "root",
+          "children": []
+        },
+        {
+          "id": "temp",
           "name": "Temperature",
           "active": true,
           "type": "argument",
           "dataType": "number",
           "factor": 1,
           "linear": true,
-          "unit": "temperature-celsius"
+          "unit": "temperature-celsius",
+          "_parentId": "root",
+          "children": []
         },
         {
-          "id": "humidity_value",
-          "name": "Humidity",
+          "id": "inputs",
+          "name": "Inputs",
+          "active": true,
+          "type": "argument",
+          "dataType": "number[]",
+          "factor": 1,
+          "linear": true,
+          "unit": null,
+          "_parentId": "root",
+          "children": []
+        },
+        {
+          "id": "evin",
+          "name": "Alarm input",
           "active": true,
           "type": "argument",
           "dataType": "number",
           "factor": 1,
           "linear": true,
-          "unit": "percent"
-        },
-        {
-          "id": "light_value",
-          "name": "Light",
-          "active": true,
-          "type": "argument",
-          "dataType": "number",
-          "display": {
-            "svg": null
-          },
-          "factor": 1,
-          "linear": true,
-          "unit": "light-lux"
-        },
-        {
-          "id": "switch_detected",
-          "name": "Reed switch",
-          "active": true,
-          "type": "argument",
-          "dataType": "boolean",
-          "factor": 1,
-          "linear": true,
-          "unit": null
-        },
-        {
-          "id": "leak_detected",
-          "name": "Leakage",
-          "active": true,
-          "type": "argument",
-          "dataType": "boolean",
-          "factor": 1,
-          "linear": true,
-          "unit": null
-        },
-        {
-          "id": "accelerometer",
-          "name": "Accelerometer",
-          "active": true,
-          "type": "subsystem",
-          "children": [
-            {
-              "id": "hit_detected",
-              "name": "Hit",
-              "active": true,
-              "type": "argument",
-              "dataType": "boolean",
-              "factor": 1,
-              "linear": true,
-              "unit": null
-            },
-            {
-              "id": "axis_1",
-              "name": "Tilt angle. Axis 1",
-              "active": true,
-              "type": "argument",
-              "dataType": "number",
-              "factor": 1,
-              "linear": true,
-              "unit": "angle-degree"
-            },
-            {
-              "id": "axis_2",
-              "name": "Tilt angle. Axis 2",
-              "active": true,
-              "type": "argument",
-              "dataType": "number",
-              "factor": 1,
-              "linear": true,
-              "unit": "angle-degree",
-              "children": []
-            },
-            {
-              "id": "axis_3",
-              "name": "Tilt angle. Axis 3",
-              "active": true,
-              "type": "argument",
-              "dataType": "number",
-              "factor": 1,
-              "linear": true,
-              "unit": "angle-degree",
-              "children": []
-            },
-            {
-              "id": "current_acceleration",
-              "name": "Current acceleration",
-              "active": true,
-              "type": "argument",
-              "dataType": "number",
-              "factor": 1,
-              "linear": true,
-              "unit": "acceleration-meter-per-second-squared",
-              "children": []
-            },
-            {
-              "id": "max_acceleration",
-              "name": "Max acceleration",
-              "active": true,
-              "type": "argument",
-              "dataType": "number",
-              "factor": 1,
-              "linear": true,
-              "unit": "acceleration-meter-per-second-squared",
-              "children": []
-            }
-          ]
+          "unit": null,
+          "_parentId": "root",
+          "children": []
         }
       ],
       "_isRoot": true,

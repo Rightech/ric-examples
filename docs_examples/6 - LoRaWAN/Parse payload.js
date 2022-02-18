@@ -2,58 +2,74 @@
 //@handler  : Parse payload
 //@author   : Kristina Goldinova
 
+const EVENT_PACKET = 1;
+const EVENT_ALARM = 2;
+
 /**
- * @param {string} payload base64 sensors data
+ * Check if n-th bit set for number
+ * @param value {number} number value
+ * @param bit   {number} bit position
  */
+function bit(value, bit) {
+  return (value & (1 << bit)) !== 0;
+}
 
-// Types codes
-var temp_and_humid_sensor = 0x01;
-var light_sensor = 0x02;
-var accelerometer = 0x03;
-var switch_sensor = 0x04;
-var leakage_sensor = 0x05;
-
+/**
+ * Parse Vega SI-11 Payload
+ * https://en.iotvega.com/product/si11
+ *
+ * ```
+ *                   | 0    | 1   | 2   | 3 | 4 | 5 | 6 | 7 | 8-11  | 12-15 | 16-19 | 20-23
+ *  1 - EVENT_PACKET | type | bat | cfg |  timestamp    | t | in[0] | in[1] | in[2] | in[3]
+ *  2 - EVENT_ALARM  | type | bat | cfg | i |   timestamp   | in[0] | in[1] | in[2] | in[3]
+ *
+ * ```
+ * @param payload {string} base64 encoded payload
+ */
 function process(payload) {
-  const buf = ric.base64.decode(payload); // decode
+  const data = ric.base64.decode(payload);
   let offset = 0;
 
-  let sensor_type = buf.getUint8(offset++);
-  switch (sensor_type) {
-    case temp_and_humid_sensor:
-      let temperature = buf.getUint16(offset, true) * 0.01; offset += 2;
-      let humidity = buf.getUint16(offset, true) * 0.01;
-      return { temperature, humidity };
+  /* - option 1 - parse binary payload from raw byte array */
+  const bytes = new Uint8Array(data.buffer);
 
-    case light_sensor:
-      let light = buf.getUint16(offset, true) * 0.01;
-      return { light };
+  const evtype = bytes[offset++];
+  const battery = bytes[offset++];
+  const configByte = bytes[offset++];
+  const config = {
+    activation: bit(configByte, 0) ? "abp": "otaa",
+    inputs: [
+      +bit(configByte, 4),
+      +bit(configByte, 5),
+      +bit(configByte, 6),
+      +bit(configByte, 7)
+    ],
+  };
+  const evin = evtype === EVENT_ALARM
+      ? bytes[offset++]
+      : undefined;
 
-    case accelerometer:
-      let hit_detected = buf.getUint16(offset, true) == 1; offset += 2;
-      let axis1 = buf.getUint16(offset, true); offset += 2;
-      let axis2 = buf.getUint16(offset, true); offset += 2;
-      let axis3 = buf.getUint16(offset, true); offset += 2;
-      let current_accel = buf.getUint16(offset, true); offset += 2;
-      let max_accel = buf.getUint16(offset, true);
-      return { hit_detected, axis1, axis2, axis3, current_accel, max_accel };
+  /* - option 2 - use JS `DataView` interface (like Node's `Buffer`) */
+  const evtime = data.getUint32(offset, true) * 1000;
+  offset += 4;
 
-    case switch_sensor:
-      let switch_detected = buf.getUint8(offset) == 1;
-      return { switch_detected };
+  const temperature = evtype === EVENT_PACKET
+      ? data.getInt8(offset++)
+      : undefined;
 
-    case leakage_sensor:
-      let leak_detected = buf.getUint8(offset) == 1;
-      return { leak_detected };
-
-    default:
-      break;
+  const inputs = [];
+  for (let i = 0; i < 4; i++) {
+    inputs[i] = data.getUint32(offset, true);
+    offset += 4;
   }
+
+  return { evtype, battery, config, evin, evtime, temperature, inputs };
 }
 
 /* ↑ here ends original handler code  */
 /* ↓ here goes generated debug  code  */
 
-/* 01. define test values for model "Modem model" */
+/* 01. define test values */
 const config = {};
 const packet = {
   "payload": "string"
@@ -61,21 +77,17 @@ const packet = {
 
 /* 02. run handler code */
 const result = process(
-  packet["payload"]
+    packet["payload"]
 );
 
-/* 03. log handler results converted back to "Modem model" */
+/* 03. log handler results */
 console.log({
-  "temperature_value": result["temperature"],
-  "humidity_value": result["humidity"],
-  "light_value": result["light"],
-  "hit_detected": result["hit_detected"],
-  "axis_1": result["axis1"],
-  "axis_2": result["axis2"],
-  "axis_3": result["axis3"],
-  "current_acceleration": result["current_accel"],
-  "max_acceleration": result["max_accel"],
-  "switch_detected": result["switch_detected"],
-  "leak_detected": result["leak_detected"]
+  "evtype": result["evtype"],
+  "battery": result["battery"],
+  "config": result["config"],
+  "evin": result["evin"],
+  "evtime": result["evtime"],
+  "temperature": result["temperature"],
+  "inputs": result["inputs"]
 });
 
