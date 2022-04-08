@@ -6,8 +6,14 @@ Configure your Packet Forwarder with following params:
 ```
     "gateway_conf": {
         "server_address": "{{env}}",
+        
+        /* RU864 */
         "serv_port_up": 1700,
-        "serv_port_down": 1700
+        "serv_port_down": 1700,
+        
+        /* EU868 */
+        "serv_port_up": 1701,
+        "serv_port_down": 1701
     }   
 ```
 
