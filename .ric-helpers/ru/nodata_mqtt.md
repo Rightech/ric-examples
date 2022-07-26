@@ -25,7 +25,7 @@ $ mosquitto_pub -d \
 ```
 
 Или какого-нибудь другого:
-* [MQTT.fx](https://mqttfx.jensd.de/)
+* [MQTT X](https://mqttx.app/)
 * [MQTT Explorer](https://mqtt-explorer.com/)
 
 

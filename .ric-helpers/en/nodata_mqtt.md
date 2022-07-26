@@ -25,7 +25,7 @@ $ mosquitto_pub -d \
 ```
 
 Or any other MQTT client tool like:
-* [MQTT.fx](https://mqttfx.jensd.de/)
+* [MQTT X](https://mqttx.app/)
 * [MQTT Explorer](https://mqtt-explorer.com/)
 
 If you have any further questions contact our [tech guys](mailto:development@rightech.io?subject=Telematic%20protocols&body=Im%20interested%20in%20mqtt%20devices)  
