@@ -1,0 +1,2002 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2022-09-12T11:50:11.694Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "models",
+  "data": {
+    "_id": "631b3c2fc724320010fd3bdf",
+    "name": "LwM2M device model",
+    "base": "lwm2m",
+    "description": "Send Battery Level",
+    "data": {
+      "id": "root",
+      "active": true,
+      "name": "LwM2M device model",
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "external-software-modules",
+          "active": true,
+          "copy": true,
+          "type": "subsystem",
+          "children": [],
+          "disabled": true,
+          "name": "External software modules",
+          "_isBase": true
+        },
+        {
+          "id": "params",
+          "active": true,
+          "name": "Params",
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "server-info",
+              "name": "Server information",
+              "active": true,
+              "type": "subsystem",
+              "children": []
+            },
+            {
+              "id": "service",
+              "name": "Service information",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "type",
+                  "name": "Packet type",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "type",
+                  "description": "0 - CON\n1 - NON\n2 - ACK\n3 - RST",
+                  "unit": null,
+                  "_parentId": "service"
+                },
+                {
+                  "id": "code",
+                  "name": "Code",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "code",
+                  "description": "0.00 - Empty\n0.01 - GET\n0.02 - POST\n0.03 - PUT\n0.04 - DELETE\n2.01 - Created\n2.02 - Deleted\n2.03 - Valid\n2.04 - Changed\n2.05 - Content\n4.00 - Bad Request\n4.01 - Unauthorized\n4.02 - Bad Option\n4.03 - Forbidden\n4.04 - Not Found\n4.05 - Method Not Allowed\n4.06 - Not Acceptable\n4.12 - Precondition Failed\n4.13 - Request Entity Too Large\n4.15 - Unsupported Content-Format\n5.00 - Internal Server Error\n5.01 - Not Implemented\n5.02 - Bad Gateway\n5.03 - Service Unavailable\n5.04 - Gateway Timeout\n5.05 - Proxying Not Supported",
+                  "children": [],
+                  "unit": null,
+                  "_parentId": "service"
+                },
+                {
+                  "id": "messageId",
+                  "name": "Message ID",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "messageId",
+                  "description": "Используется для выявления дубликатов сообщения",
+                  "children": [],
+                  "unit": null,
+                  "_parentId": "service"
+                },
+                {
+                  "id": "token",
+                  "name": "Token",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "token",
+                  "children": [],
+                  "unit": null,
+                  "_parentId": "service"
+                },
+                {
+                  "id": "ep",
+                  "name": "Endpoint Client Name",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "ep",
+                  "children": [],
+                  "unit": null,
+                  "description": "From Query",
+                  "_parentId": "service"
+                },
+                {
+                  "id": "lt",
+                  "name": "Lifetime",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "lt",
+                  "children": [],
+                  "unit": "duration-second",
+                  "description": "From Query",
+                  "_parentId": "service"
+                },
+                {
+                  "id": "sms",
+                  "name": "MSISDN",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "sms",
+                  "children": [],
+                  "unit": null,
+                  "description": "From Query",
+                  "_parentId": "service"
+                },
+                {
+                  "id": "lwm2m",
+                  "name": "Version",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "lwm2m",
+                  "children": [],
+                  "unit": null,
+                  "description": "From Query",
+                  "_parentId": "service"
+                },
+                {
+                  "id": "b",
+                  "name": "Binding",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "linear": true,
+                  "factor": 1,
+                  "reference": "b",
+                  "children": [],
+                  "unit": null,
+                  "description": "From Query\n\nU - UDP connection in standard mode\nUQ - UDP connection in queue mode\nS - SMS connection in standard mode\nSQ - SMS connection in queue mode\nUS - both UDP and SMS connections active, both in standard mode\nUQS - both UDP and SMS connections active; UDP in queue mode, SMS in standard mode",
+                  "_parentId": "service"
+                },
+                {
+                  "id": "options",
+                  "name": "Options",
+                  "active": true,
+                  "type": "subsystem",
+                  "description": "(URI, max-age, Content и Etag, ...)",
+                  "children": [
+                    {
+                      "id": "uri",
+                      "name": "Uri",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "uri",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "host0",
+                      "name": "Uri-Host",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "option.Uri-Host.0",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "port0",
+                      "name": "Uri-Port",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "option.Uri-Port.0",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "path0",
+                      "name": "Uri-Path 0",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "option.Uri-Path.0",
+                      "unit": null,
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "path1",
+                      "name": "Uri-Path 1",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "linear": true,
+                      "factor": 1,
+                      "reference": "option.Uri-Path.1",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "path2",
+                      "name": "Uri-Path 2",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "linear": true,
+                      "factor": 1,
+                      "reference": "option.Uri-Path.2",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "observe0",
+                      "name": "Observe",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "linear": true,
+                      "factor": 1,
+                      "reference": "option.Observe.0",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "content",
+                      "name": "Content-Format",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "linear": true,
+                      "factor": 1,
+                      "reference": "option.Content-Format.0",
+                      "children": [],
+                      "unit": null,
+                      "description": "0 - text/plain\n40 - application/link-format\n41 - application/xml\n42 - application/octet-stream\n47 - application/exi\n50 - application/json\n60 - application/cbor\n110 - application/senml+json\n112 - application/senml+cbor",
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "query0",
+                      "name": "Uri-Query 0",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "linear": true,
+                      "factor": 1,
+                      "reference": "option.Uri-Query.0",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "query1",
+                      "name": "Uri-Query 1",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "linear": true,
+                      "factor": 1,
+                      "reference": "option.Uri-Query.1",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "options"
+                    },
+                    {
+                      "id": "query2",
+                      "name": "Uri-Query 2",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "linear": true,
+                      "factor": 1,
+                      "reference": "option.Uri-Query.2",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "options"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "objects",
+              "name": "Core objects",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "server",
+                  "name": "Server",
+                  "active": true,
+                  "type": "subsystem",
+                  "description": "This LwM2M Objects provides the data related to a LwM2M Server. A Bootstrap-Server has no such an Object Instance\nassociated to it.",
+                  "children": [
+                    {
+                      "id": "short_server_id",
+                      "name": "Short Server ID",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Used as link to associate server Object Instance.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/1/0/0",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "server"
+                    },
+                    {
+                      "id": "lifetime",
+                      "name": "Lifetime",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Specify the lifetime of the registration in seconds.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/1/0/1",
+                      "unit": "duration-second",
+                      "children": [],
+                      "_parentId": "server"
+                    },
+                    {
+                      "id": "def_min_period",
+                      "name": "Default Minimum Period",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "The default value the LwM2M Client should\nuse for the Minimum Period of an Observation\nin the absence of this parameter being\nincluded in an Observation. If this Resource\ndoesn’t exist, the default value is 0.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/1/0/2",
+                      "unit": "duration-second",
+                      "children": [],
+                      "_parentId": "server"
+                    },
+                    {
+                      "id": "def_max_period",
+                      "name": "Default Maximum Period",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "The default value the LwM2M Client should\nuse for the Maximum Period of an\nObservation in the absence of this parameter\nbeing included in an Observation.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/1/0/3",
+                      "unit": "duration-second",
+                      "children": [],
+                      "_parentId": "server"
+                    },
+                    {
+                      "id": "disable_timeout",
+                      "name": "Disable Timeout",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "A period to disable the Server. After this\nperiod, the LwM2M Client MUST perform\nregistration process to the Server. If this\nResource is not set, a default timeout value is\n86400 (1 day)",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/1/0/5",
+                      "unit": "duration-second",
+                      "children": [],
+                      "_parentId": "server"
+                    },
+                    {
+                      "id": "notification_storing",
+                      "name": "Notification Storing",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "boolean",
+                      "description": "Notification Storing When Disabled or Offline",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/1/0/6",
+                      "unit": null,
+                      "_parentId": "server"
+                    },
+                    {
+                      "id": "binding",
+                      "name": "Binding",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "description": "This Resource defines the transport binding configured for the LwM2M Client. If the\nLwM2M Client supports the binding specified in this Resource, the LwM2M Client MUST use\nthat transport for the Current Binding Mode.\n\nU - UDP connection in standard mode\nUQ - UDP connection in queue mode\nS - SMS connection in standard mode\nSQ - SMS connection in queue mode\nUS - both UDP and SMS connections active, both in standard mode\nUQS - both UDP and SMS connections active; UDP in queue mode, SMS in standard mode\n",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/1/0/7",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "server"
+                    }
+                  ]
+                },
+                {
+                  "id": "access_control",
+                  "name": "Access Control ",
+                  "active": true,
+                  "type": "subsystem",
+                  "description": "Access Control Object is used to check whether the LwM2M Server has access right for performing an operation.",
+                  "children": [
+                    {
+                      "id": "object_id",
+                      "name": "Object ID",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Resources 0 and 1 point to the Object Instance for which\nthe Instances of the ACL Resource of that Access\nControl Object Instance are applicable.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/2/0/0",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "access_control"
+                    },
+                    {
+                      "id": "object_instance_id",
+                      "name": "Object Instance ID",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": null,
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/2/0/1",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "access_control"
+                    },
+                    {
+                      "id": "acl0",
+                      "name": "ACL 0",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "The Resource Instance ID MUST be the Short Server ID\nof a certain LwM2M Server for which associated access\nrights are contained in the Resource Instance value. The\nResource Instance ID 0 is a specific ID, determining the\nACL Instance which contains the default access rights.\nEach bit set in the Resource Instance value, grants an\naccess right to the LwM2M Server to the corresponding\noperation. The bit order is specified as below. 1st LSB:\nR(Read, Observe, Write-Attributes) 2nd LSB: W(Write)\n3rd LSB: E(Execute) 4th LSB: D(Delete) 5th LSB:\nC(Create) Other bits are reserved for future use.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/2/0/2/0",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "access_control"
+                    },
+                    {
+                      "id": "acl999",
+                      "name": "ACL 999",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "The Resource Instance ID MUST be the Short Server ID\nof a certain LwM2M Server for which associated access\nrights are contained in the Resource Instance value. The\nResource Instance ID 0 is a specific ID, determining the\nACL Instance which contains the default access rights.\nEach bit set in the Resource Instance value, grants an\naccess right to the LwM2M Server to the corresponding\noperation. The bit order is specified as below. 1st LSB:\nR(Read, Observe, Write-Attributes) 2nd LSB: W(Write)\n3rd LSB: E(Execute) 4th LSB: D(Delete) 5th LSB:\nC(Create) Other bits are reserved for future use.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/2/0/2/999",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "access_control"
+                    },
+                    {
+                      "id": "access_control_owner",
+                      "name": "Access Control Owner",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Short Server ID of a certain LwM2M Server; only such an\nLwM2M Server can manage the Resources of this Object\nInstance. The specific value MAX_ID=65535 means this\nAccess Control Object Instance is created and modified\nduring a Bootstrap phase only",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/2/0/3",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "access_control"
+                    }
+                  ]
+                },
+                {
+                  "id": "device",
+                  "name": "Device",
+                  "active": true,
+                  "type": "subsystem",
+                  "description": "This LwM2M Object provides a range of device related information which can be queried by the LwM2M Server, and a\ndevice reboot and factory reset function.",
+                  "children": [
+                    {
+                      "id": "manufacturer",
+                      "name": "Manufacturer",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "description": "Human readable manufacturer name",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/0",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "model_number",
+                      "name": "Model Number ",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "description": "A model identifier (manufacturer specified string)",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/1",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "serial_number",
+                      "name": "Serial Number",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "description": "Serial Number",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/2",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "firmware_version",
+                      "name": "Firmware Version",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "description": "Current firmware version of the Device.The\nFirmware Management function could rely on this\nresource.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/3",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "power_sources0",
+                      "name": "Available Power Sources 0",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "0 – DC power 1 – Internal Battery 2 – External\nBattery 4 – Power over Ethernet 5 – USB 6 – AC\n(Mains) power 7 – Solar The same Resource\nInstance ID MUST be used to associate a given\nPower Source (Resource ID:6) with its Present\nVoltage (Resource ID:7) and its Present Current\n(Resource ID:8)",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/6/0",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "power_sources1",
+                      "name": "Available Power Sources 1",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "0 – DC power 1 – Internal Battery 2 – External\nBattery 4 – Power over Ethernet 5 – USB 6 – AC\n(Mains) power 7 – Solar The same Resource\nInstance ID MUST be used to associate a given\nPower Source (Resource ID:6) with its Present\nVoltage (Resource ID:7) and its Present Current\n(Resource ID:8)",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/6/1",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "power_source_voltage0",
+                      "name": "Power Source Voltage 0",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Present voltage for each Available Power Sources\nResource Instance.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/7/0",
+                      "unit": "electric-millivolt",
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "power_source_voltage1",
+                      "name": "Power Source Voltage 1",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Present voltage for each Available Power Sources\nResource Instance.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/7/1",
+                      "unit": "electric-millivolt",
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "power_source_current0",
+                      "name": "Power Source Current 0",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Present current for each Available Power Source.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/8/0",
+                      "unit": "electric-milliampere",
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "power_source_current1",
+                      "name": "Power Source Current 1",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Present current for each Available Power Source.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/8/1",
+                      "unit": "electric-milliampere",
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "battery_level",
+                      "name": "Battery Level ",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Contains the current battery level as a percentage\n(with a range from 0 to 100). This value is only\nvalid for the Device internal Battery if present (one\nAvailable Power Sources Resource Instance is 1).",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/9",
+                      "unit": "percent",
+                      "children": [
+                        {
+                          "id": "battery_level.levels.0",
+                          "name": "-Infinity",
+                          "active": true,
+                          "type": "level",
+                          "index": 0,
+                          "value": "-Infinity",
+                          "color": "#f16059"
+                        },
+                        {
+                          "id": "battery_level.levels.1",
+                          "name": "Min",
+                          "active": true,
+                          "type": "level",
+                          "index": 1,
+                          "value": 0,
+                          "color": "#ffae62"
+                        },
+                        {
+                          "id": "battery_level.levels.2",
+                          "name": "Mid",
+                          "active": true,
+                          "type": "level",
+                          "index": 5,
+                          "value": 50,
+                          "color": "#f3d54e"
+                        },
+                        {
+                          "id": "battery_level.levels.3",
+                          "name": "Max",
+                          "active": true,
+                          "type": "level",
+                          "index": 9,
+                          "value": 80,
+                          "color": "#a2ce4b"
+                        }
+                      ],
+                      "display": {
+                        "svg": "<svg viewBox=\"0 0 16 16\"><path d=\"M 1.585938 4 C 0.71875 4 0 4.71875 0 5.585938 L 0 10.410156 C 0 11.28125 0.71875 12 1.585938 12 L 12.410156 12 C 13.28125 12 14 11.28125 14 10.410156 L 14 10 L 15 10 C 15.546875 10 16 9.546875 16 9 L 16 7 C 16 6.453125 15.546875 6 15 6 L 14 6 L 14 5.585938 C 14 4.71875 13.28125 4 12.410156 4 Z M 1.585938 5 L 12.410156 5 C 12.742188 5 13 5.257813 13 5.585938 L 13 10.410156 C 13 10.742188 12.742188 11 12.410156 11 L 1.585938 11 C 1.257813 11 1 10.742188 1 10.410156 L 1 5.585938 C 1 5.257813 1.257813 5 1.585938 5 Z M 2 6 L 2 10 L 9 10 L 9 6 Z M 14 7 L 15 7 L 15 9 L 14 9 Z\" /></svg>"
+                      },
+                      "levels": {
+                        "type": "range",
+                        "value": [
+                          {
+                            "color": "#f16059",
+                            "name": "-Infinity",
+                            "value": {
+                              "a": "-Infinity",
+                              "b": 10
+                            }
+                          },
+                          {
+                            "color": "#f3d54e",
+                            "name": "Min",
+                            "value": {
+                              "a": 10,
+                              "b": 50
+                            }
+                          },
+                          {
+                            "color": "#ffae62",
+                            "name": "Mid",
+                            "value": {
+                              "a": 50,
+                              "b": 80
+                            }
+                          },
+                          {
+                            "color": "#a2ce4b",
+                            "name": "Max",
+                            "value": {
+                              "a": 80,
+                              "b": "Infinity"
+                            }
+                          }
+                        ],
+                        "svg": "<svg viewBox=\"0 0 16 16\"><path d=\"M 1.585938 4 C 0.71875 4 0 4.71875 0 5.585938 L 0 10.410156 C 0 11.28125 0.71875 12 1.585938 12 L 12.410156 12 C 13.28125 12 14 11.28125 14 10.410156 L 14 10 L 15 10 C 15.546875 10 16 9.546875 16 9 L 16 7 C 16 6.453125 15.546875 6 15 6 L 14 6 L 14 5.585938 C 14 4.71875 13.28125 4 12.410156 4 Z M 1.585938 5 L 12.410156 5 C 12.742188 5 13 5.257813 13 5.585938 L 13 10.410156 C 13 10.742188 12.742188 11 12.410156 11 L 1.585938 11 C 1.257813 11 1 10.742188 1 10.410156 L 1 5.585938 C 1 5.257813 1.257813 5 1.585938 5 Z M 2 6 L 2 10 L 9 10 L 9 6 Z M 14 7 L 15 7 L 15 9 L 14 9 Z\" /></svg>"
+                      },
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "memory_free",
+                      "name": "Memory Free",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Estimated current available amount of storage\nspace which can store data and software in the\nLwM2M Device (expressed in kilobytes).",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/10",
+                      "unit": "digital-kilobyte",
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "error_code0",
+                      "name": "Error Code 0",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "0=No error \n1=Low battery power \n2=External power supply off \n3=GPS module failure \n4=Low received signal strength \n5=Out of memory \n6=SMS failure\n7=IP connectivity failure \n8=Peripheral malfunction",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/11/0",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "current_time",
+                      "name": "Current Time ",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Current UNIX time of the LwM2M Client. The\nLwM2M Client should be responsible to increase\nthis time value as every second elapses. The\nLwM2M Server is able to write this Resource to\nmake the LwM2M Client synchronized with the\nLwM2M Server.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/13",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "utc_offset",
+                      "name": "UTC Offset",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "description": "Indicates the UTC offset currently in effect for this\nLwM2M Device. UTC+X [ISO 8601].",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/14",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "timezone",
+                      "name": "Timezone",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "description": "Indicates in which time zone the LwM2M Device is\nlocated, in IANA Timezone (TZ) database format.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/15",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "bimding",
+                      "name": "Binding and Modes",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "description": "Indicates which bindings and modes are supported\nin the LwM2M Client. The possible values are\nthose listed in the LwM2M Core Specification.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/16",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "device_type",
+                      "name": "Device Type",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "description": "Type of the device (manufacturer specified string:\ne.g. smart meters / dev Class / ...)",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/17",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "hardware_version",
+                      "name": "Hardware Version",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "description": "Current hardware version of the device",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/18",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "device"
+                    },
+                    {
+                      "id": "software_version",
+                      "name": "Software Version",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "description": "Current software version of the device\n(manufacturer specified string). On elaborated\nLwM2M device, SW could be split in 2 parts: a\nfirmware one and a higher level software on top.\nBoth pieces of Software are together managed by\nLwM2M Firmware Update Object (Object ID 5)",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/3/0/19",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "device"
+                    }
+                  ]
+                },
+                {
+                  "id": "connectivity_monitoring",
+                  "name": "Connectivity Monitoring ",
+                  "active": true,
+                  "type": "subsystem",
+                  "description": "This LwM2M Object enables monitoring of parameters related to network connectivity. In this general connectivity\nObject, the Resources are limited to the most general cases common to most network bearers. It is recommended to\nread the description, which refers to relevant standard development organizations (e.g. 3GPP, IEEE). The goal of the\nConnectivity Monitoring Object is to carry information reflecting the more up to date values of the current connection\nfor monitoring purposes. Resources such as Link Quality, Radio Signal Strength, Cell ID are retrieved during connected\nmode at least for cellular networks.",
+                  "children": [
+                    {
+                      "id": "network_bearer",
+                      "name": "Network Bearer",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "ndicates the network bearer used for the current\nLwM2M communication session from the network\nbearer list below. The number range is split into three\ncategories: \n0 - 20 are Cellular Bearers \n21 - 40 are Wireless Bearers \n41 - 50 are Wireline Bearers More specifically: \n\n0: GSM cellular network \n1: TD-SCDMA cellular network \n2: WCDMA cellular network\n3: CDMA2000 cellular network \n4: WiMAX cellular network \n5: LTE-TDD cellular network \n6: LTE-FDD cellular network \n7: NB-IoT \n8 - 20: Reserved for other types of cellular network \n21: WLAN network \n22: Bluetooth network \n23: IEEE 802.15.4 network \n24 - 40: Reserved for other types of local wireless network \n41: Ethernet \n42: DSL \n43: PLC \n44 - 50: reserved for other types of wireline networks.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/4/0/0",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "connectivity_monitoring"
+                    },
+                    {
+                      "id": "available_network_bearer0",
+                      "name": "Available Network Bearer 0",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Indicates a list of current available network bearer.\nEach Resource Instance has a value from the network\nbearer list.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/4/0/1/0",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "connectivity_monitoring"
+                    },
+                    {
+                      "id": "radio_signal_strength",
+                      "name": "Radio Signal Strength",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Indicates the average value of the received signal\nstrength indication used in the current network\nbearer (as indicated by Resource 0 of this Object). For\nthe following network bearers the signal strength\nparameters indicated below are represented by this\nresource: GSM: RSSI UMTS: RSCP LTE: RSRP NB-IoT:\nNRSRP",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/4/0/2",
+                      "unit": "decibel",
+                      "children": [],
+                      "_parentId": "connectivity_monitoring"
+                    },
+                    {
+                      "id": "link_quality",
+                      "name": "Link Quality",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "This contains received link quality e.g. LQI for IEEE\n802.15.4 (range 0...255), RxQual Downlink for GSM\n(range 0...7, refer to [3GPP 44.018] for more details on\nNetwork Measurement Report encoding), RSRQ for\nLTE, (refer to [3GPP 36.214]), NRSRQ for NB-IoT (refer\nto [3GPP 36.214]).",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/4/0/3",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "connectivity_monitoring"
+                    },
+                    {
+                      "id": "ip_addresses0",
+                      "name": "IP Addresses 0",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "description": "The IP addresses assigned to the connectivity\ninterface. (e.g. IPv4, IPv6, etc.)",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/4/0/4/0",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "connectivity_monitoring"
+                    },
+                    {
+                      "id": "router_ip_addresses0",
+                      "name": "Router IP Addresses 0",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "description": "The IP address of the next-hop IP router, on each of\nthe interfaces specified in resource 4 (IP Addresses).\nNote: This IP Address doesn’t indicate the Server IP\naddress",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/4/0/5/0",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "connectivity_monitoring"
+                    },
+                    {
+                      "id": "link_utilization",
+                      "name": "Link Utilization",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "The percentage indicating the average utilization of\nthe link to the next-hop IP router.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/4/0/6",
+                      "unit": "percent",
+                      "children": [],
+                      "_parentId": "connectivity_monitoring"
+                    },
+                    {
+                      "id": "apn0",
+                      "name": "APN 0",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "description": "Access Point Name in case Network Bearer Resource\nis a Cellular Network.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/4/0/7/0",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "connectivity_monitoring"
+                    },
+                    {
+                      "id": "cell_id",
+                      "name": "Cell ID",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Serving Cell ID in case Network Bearer Resource is a\nCellular Network. As specified in TS [3GPP 23.003]\nand in [3GPP. 24.008]. Range (0...65535) in GSM/EDGE\nUTRAN Cell ID has a length of 28 bits. Cell Identity in\nWCDMA/TD-SCDMA. Range: (0...268435455). LTE Cell\nID has a length of 28 bits. Parameter definitions in\n[3GPP 25.331].",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/4/0/8",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "connectivity_monitoring"
+                    },
+                    {
+                      "id": "smnc",
+                      "name": "SMNC",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Serving Mobile Network Code. This is applicable when\nthe Network Bearer Resource value is referring to a\ncellular network. As specified in TS [3GPP 23.003].",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/4/0/9",
+                      "unit": "percent",
+                      "children": [],
+                      "_parentId": "connectivity_monitoring"
+                    },
+                    {
+                      "id": "smcc",
+                      "name": "SMCC",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Serving Mobile Country Code. This is applicable when\nthe Network Bearer Resource value is referring to a\ncellular network. As specified in TS [3GPP 23.003]",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/4/0/10",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "connectivity_monitoring"
+                    }
+                  ]
+                },
+                {
+                  "id": "firmware_update",
+                  "name": "Firmware Update",
+                  "active": true,
+                  "type": "subsystem",
+                  "description": "This LwM2M Object enables management of firmware which is to be updated. This Object includes installing a firmware\npackage, updating firmware, and performing actions after updating firmware. The firmware update MAY require to\nreboot the device; it will depend on a number of factors, such as the operating system architecture and the extent of the\nupdated software. The envisioned functionality is to allow a LwM2M Client to connect to any LwM2M Server to obtain a\nfirmware image using the object and resource structure defined in this section experiencing communication security\nprotection using TLS/DTLS. ",
+                  "children": [
+                    {
+                      "id": "state",
+                      "name": "State",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Indicates current state with respect to this firmware\nupdate. This value is set by the LwM2M Client. 0:\nIdle (before downloading or after successful\nupdating) 1: Downloading (The data sequence is on\nthe way) 2: Downloaded 3: Updating If writing the\nfirmware package to Package Resource has\ncompleted, or, if the device has downloaded the\nfirmware package from the Package URI the state\nchanges to Downloaded. Writing an empty string to\nPackage URI Resource or setting the Package\nResource to NULL (‘\\0’), resets the Firmware Update\nState Machine: the State Resource value is set to Idle\nand the Update Result Resource value is set to 0.\nWhen in Downloaded state, and the executable\nResource Update is triggered, the state changes to\nUpdating. If the Update Resource failed, the state\nreturns at Downloaded. If performing the Update\nResource was successful, the state changes from\nUpdating to Idle. The firmware update state machine\nis illustrated in Figure 29 of the LwM2M version 1.0\nspecification (and also in Figure E.6.1-1 of this\nspecification).",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/5/0/3",
+                      "_parentId": "firmware_update"
+                    },
+                    {
+                      "id": "update_result",
+                      "name": "Update Result ",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "Contains the result of downloading or updating the\nfirmware 0: Initial value. Once the updating process\nis initiated (Download /Update), this Resource MUST\nbe reset to Initial value. 1: Firmware updated\nsuccessfully. 2: Not enough flash memory for the\nnew firmware package. 3: Out of RAM during\ndownloading process. 4: Connection lost during\ndownloading process. 5: Integrity check failure for\nnew downloaded package. 6: Unsupported package\ntype. 7: Invalid URI. 8: Firmware update failed. 9:\nUnsupported protocol. A LwM2M client indicates the\nfailure to retrieve the firmware image using the URI\nprovided in the Package URI resource by writing the\nvalue 9 to the /5/0/5 (Update Result resource) when\nthe URI contained a URI scheme unsupported by the\nclient. Consequently, the LwM2M Client is unable to\nretrieve the firmware image using the URI provided\nby the LwM2M Server in the Package URI when it\nrefers to an unsupported protocol.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/5/0/5",
+                      "children": [],
+                      "_parentId": "firmware_update"
+                    },
+                    {
+                      "id": "pkg_name",
+                      "name": "PkgName",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "description": "Name of the Firmware Package",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/5/0/6",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "firmware_update"
+                    },
+                    {
+                      "id": "pkg_version",
+                      "name": "PkgVersion",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "description": "Version of the Firmware package",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/5/0/7",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "firmware_update"
+                    },
+                    {
+                      "id": "protocol_support0",
+                      "name": "Protocol Support 0",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "This resource indicates what protocols the LwM2M\nClient implements to retrieve firmware images. The\nLwM2M server uses this information to decide what\nURI to include in the Package URI. A LwM2M Server\nMUST NOT include a URI in the Package URI object\nthat uses a protocol that is unsupported by the\nLwM2M client. For example, if a LwM2M client\nindicates that it supports CoAP and CoAPS then a\nLwM2M Server must not provide an HTTP URI in the\nPacket URI. The following values are defined by this\nversion of the specification: 0 – CoAP (as defined in\nRFC 7252) with the additional support for block-wise\ntransfer. CoAP is the default setting. 1 – CoAPS (as\ndefined in RFC 7252) with the additional support for\nblock-wise transfer 2 – HTTP 1.1 (as defined in RFC\n7230) 3 – HTTPS 1.1 (as defined in RFC 7230) 4 - CoAP\nover TCP (as defined in RFC 8323) 5 - CoAP over TLS\n(as defined in RFC 8323) Additional values MAY be\ndefined in the future. Any value not understood by\nthe LwM2M Server MUST be ignored.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/5/0/8/0",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "firmware_update"
+                    },
+                    {
+                      "id": "protocol_support1",
+                      "name": "Protocol Support 1",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "This resource indicates what protocols the LwM2M\nClient implements to retrieve firmware images. The\nLwM2M server uses this information to decide what\nURI to include in the Package URI. A LwM2M Server\nMUST NOT include a URI in the Package URI object\nthat uses a protocol that is unsupported by the\nLwM2M client. For example, if a LwM2M client\nindicates that it supports CoAP and CoAPS then a\nLwM2M Server must not provide an HTTP URI in the\nPacket URI. The following values are defined by this\nversion of the specification: 0 – CoAP (as defined in\nRFC 7252) with the additional support for block-wise\ntransfer. CoAP is the default setting. 1 – CoAPS (as\ndefined in RFC 7252) with the additional support for\nblock-wise transfer 2 – HTTP 1.1 (as defined in RFC\n7230) 3 – HTTPS 1.1 (as defined in RFC 7230) 4 - CoAP\nover TCP (as defined in RFC 8323) 5 - CoAP over TLS\n(as defined in RFC 8323) Additional values MAY be\ndefined in the future. Any value not understood by\nthe LwM2M Server MUST be ignored.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/5/0/8/1",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "firmware_update"
+                    },
+                    {
+                      "id": "delivery_method",
+                      "name": "Delivery Method",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "description": "The LwM2M Client uses this resource to indicate its\nsupport for transferring firmware images to the\nclient either via the Package Resource (=push) or via\nthe Package URI Resource (=pull) mechanism. 0 –\nPull only 1 – Push only 2 – Both. In this case the\nLwM2M Server MAY choose the preferred\nmechanism for conveying the firmware image to the\nLwM2M Client.",
+                      "factor": 1,
+                      "linear": true,
+                      "reference": "/5/0/9",
+                      "children": [],
+                      "unit": null,
+                      "_parentId": "firmware_update"
+                    }
+                  ]
+                },
+                {
+                  "id": "location",
+                  "name": "Location",
+                  "active": true,
+                  "type": "subsystem",
+                  "description": "This LwM2M Objects provide a range of device related information which can be queried by the LwM2M Server, and a\ndevice reboot and factory reset function.",
+                  "children": [
+                    {
+                      "id": "lat",
+                      "name": "Latitude",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "factor": 1,
+                      "linear": true,
+                      "description": "The decimal notation of latitude, e.g. -43.5723\n[World Geodetic System 1984]",
+                      "reference": "/6/0/0",
+                      "unit": "angle-degree",
+                      "_parentId": "location"
+                    },
+                    {
+                      "id": "lon",
+                      "name": "Longitude",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "factor": 1,
+                      "linear": true,
+                      "description": "The decimal notation of longitude, e.g. 153.21760\n[World Geodetic System 1984].",
+                      "reference": "/6/0/1",
+                      "unit": "angle-degree",
+                      "children": [],
+                      "_parentId": "location"
+                    },
+                    {
+                      "id": "altitude",
+                      "name": "Altitude",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "factor": 1,
+                      "linear": true,
+                      "description": "The decimal notation of altitude in meters above\nsea level.",
+                      "reference": "/6/0/2",
+                      "unit": "length-meter",
+                      "children": [],
+                      "_parentId": "location"
+                    },
+                    {
+                      "id": "radius",
+                      "name": "Radius",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "factor": 1,
+                      "linear": true,
+                      "description": "The value in the Radius Resource indicates the size\nin meters of a circular area around a point of\ngeometry.",
+                      "reference": "/6/0/3",
+                      "unit": "length-meter",
+                      "children": [],
+                      "_parentId": "location"
+                    },
+                    {
+                      "id": "velocity",
+                      "name": "Velocity",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "string",
+                      "factor": 1,
+                      "linear": true,
+                      "description": "The velocity in the LwM2M Client is defined in\n[3GPP-TS_23.032].",
+                      "reference": "/6/0/4",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "location"
+                    },
+                    {
+                      "id": "timestamp",
+                      "name": "Timestamp",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "factor": 1000,
+                      "linear": true,
+                      "description": "The timestamp of when the location measurement\nwas performed.",
+                      "reference": "/6/0/5",
+                      "unit": "duration-millisecond",
+                      "children": [],
+                      "_parentId": "location"
+                    },
+                    {
+                      "id": "speed",
+                      "name": "Speed",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "factor": 1,
+                      "linear": true,
+                      "description": "Speed is the time rate of change in position of a\nLwM2M Client without regard for direction: the\nscalar component of velocity.",
+                      "reference": "/6/0/6",
+                      "unit": "speed-meter-per-second",
+                      "children": [],
+                      "_parentId": "location"
+                    }
+                  ]
+                },
+                {
+                  "id": "connectivity_statistics",
+                  "name": "Connectivity Statistics ",
+                  "active": true,
+                  "type": "subsystem",
+                  "description": "This LwM2M Objects enables client to collect statistical information and enables the LwM2M Server to retrieve these\ninformation, set the collection duration and reset the statistical parameters.",
+                  "children": [
+                    {
+                      "id": "sms_tx_counter",
+                      "name": "SMS Tx Counter ",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "factor": 1,
+                      "linear": true,
+                      "description": "Indicate the total number of SMS successfully\ntransmitted during the collection period.",
+                      "reference": "/7/0/0",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "connectivity_statistics"
+                    },
+                    {
+                      "id": "sms_rx_counter",
+                      "name": "SMS Rx Counter",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "factor": 1,
+                      "linear": true,
+                      "description": "Indicate the total number of SMS successfully\nreceived during the collection period.",
+                      "reference": "/7/0/1",
+                      "unit": null,
+                      "children": [],
+                      "_parentId": "connectivity_statistics"
+                    },
+                    {
+                      "id": "tx_data",
+                      "name": "Tx Data",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "factor": 1,
+                      "linear": true,
+                      "description": "Indicate the total amount of data (IP / non-IP)\ntransmitted during the collection period.",
+                      "reference": "/7/0/2",
+                      "unit": "digital-kilobyte",
+                      "children": [],
+                      "_parentId": "connectivity_statistics"
+                    },
+                    {
+                      "id": "rx_data",
+                      "name": "Rx Data",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "factor": 1,
+                      "linear": true,
+                      "description": "Indicate the total amount of data (IP / non-IP)\nreceived during the collection period.",
+                      "reference": "/7/0/3",
+                      "unit": "digital-kilobyte",
+                      "children": [],
+                      "_parentId": "connectivity_statistics"
+                    },
+                    {
+                      "id": "max_message_size",
+                      "name": "Max Message Size",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "factor": 1,
+                      "linear": true,
+                      "description": "The maximum IP message size that is used during\nthe collection period.",
+                      "reference": "/7/0/4",
+                      "unit": "digital-byte",
+                      "children": [],
+                      "_parentId": "connectivity_statistics"
+                    },
+                    {
+                      "id": "ave_message_size",
+                      "name": "Average Message Size",
+                      "active": true,
+                      "type": "argument",
+                      "dataType": "number",
+                      "factor": 1,
+                      "linear": true,
+                      "description": "The average IP message size that is used during the\ncollection period.",
+                      "reference": "/7/0/5",
+                      "unit": "digital-byte",
+                      "children": [],
+                      "_parentId": "connectivity_statistics"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "temperature",
+              "name": "Temperature",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "3303_0_5601",
+                  "name": "Min Measured Value",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/3303/0/5601",
+                  "children": [],
+                  "description": "The minimum value measured by the sensor since power ON or reset.",
+                  "_parentId": "temperature"
+                },
+                {
+                  "id": "3303_0_5602",
+                  "name": "Max Measured Value",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/3303/0/5602",
+                  "children": [],
+                  "description": "The maximum value measured by the sensor since power ON or reset.",
+                  "_parentId": "temperature"
+                },
+                {
+                  "id": "3303_0_5603",
+                  "name": "Min Range Value",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/3303/0/5603",
+                  "children": [],
+                  "description": "The minimum value that can be measured by the sensor.",
+                  "_parentId": "temperature"
+                },
+                {
+                  "id": "3303_0_5604",
+                  "name": "Max Range Value",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/3303/0/5604",
+                  "children": [],
+                  "description": "The maximum value that can be measured by the sensor.",
+                  "_parentId": "temperature"
+                },
+                {
+                  "id": "3303_0_5700",
+                  "name": "Sensor Value",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/3303/0/5700",
+                  "children": [],
+                  "description": "Last or Current Measured Value from the Sensor.",
+                  "_parentId": "temperature"
+                },
+                {
+                  "id": "3303_0_5701",
+                  "name": "Sensor Units",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/3303/0/5701",
+                  "children": [],
+                  "description": "Measurement Units Definition.",
+                  "unit": null,
+                  "_parentId": "temperature"
+                }
+              ],
+              "description": "This IPSO object should be used with a temperature sensor to report a temperature measurement. It also provides resources for minimum/maximum measured values and the minimum/maximum range that can be measured by the temperature sensor. An example measurement unit is degrees Celsius."
+            },
+            {
+              "id": "current",
+              "name": "Current",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "3317_0_5601",
+                  "name": "Min Measured Value",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/3317/0/5601",
+                  "children": [],
+                  "description": "The minimum value measured by the sensor since power ON or reset.",
+                  "_parentId": "current"
+                },
+                {
+                  "id": "3317_0_5602",
+                  "name": "Max Measured Value",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/3317/0/5602",
+                  "children": [],
+                  "description": "The maximum value measured by the sensor since power ON or reset.",
+                  "_parentId": "current"
+                },
+                {
+                  "id": "3317_0_5603",
+                  "name": "Min Range Value",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/3317/0/5603",
+                  "children": [],
+                  "description": "The minimum value that can be measured by the sensor.",
+                  "_parentId": "current"
+                },
+                {
+                  "id": "3317_0_5604",
+                  "name": "Max Range Value",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/3317/0/5604",
+                  "children": [],
+                  "description": "The maximum value that can be measured by the sensor.",
+                  "_parentId": "current"
+                },
+                {
+                  "id": "3317_0_5700",
+                  "name": "Sensor Value",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/3317/0/5700",
+                  "children": [],
+                  "description": "Last or Current Measured Value from the Sensor.",
+                  "_parentId": "current"
+                },
+                {
+                  "id": "3317_0_5701",
+                  "name": "Sensor Units",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/3317/0/5701",
+                  "children": [],
+                  "description": "Measurement Units Definition.",
+                  "unit": null,
+                  "_parentId": "current"
+                }
+              ],
+              "description": "This IPSO object should be used with an ammeter to report measured electric current in amperes. It also provides resources for minimum and maximum measured values, as well as the minimum and maximum range that can be measured by the sensor. An example measurement unit is ampere."
+            },
+            {
+              "id": "custom_object31024",
+              "name": "Custom object 31024",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "31024_10_1",
+                  "name": "31024/10/1",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/31024/10/1",
+                  "_parentId": "custom_object31024"
+                },
+                {
+                  "id": "31024_10_3",
+                  "name": "31024/10/3",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/31024/10/3",
+                  "children": [],
+                  "_parentId": "custom_object31024"
+                },
+                {
+                  "id": "31024_10_5",
+                  "name": "31024/10/5",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/31024/10/5",
+                  "children": [],
+                  "unit": null,
+                  "_parentId": "custom_object31024"
+                },
+                {
+                  "id": "31024_11_1",
+                  "name": "31024/11/1",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/31024/11/1",
+                  "children": [],
+                  "_parentId": "custom_object31024"
+                },
+                {
+                  "id": "31024_11_3",
+                  "name": "31024/11/3",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/31024/11/3",
+                  "children": [],
+                  "_parentId": "custom_object31024"
+                },
+                {
+                  "id": "31024_11_5",
+                  "name": "31024/11/5",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/31024/11/5",
+                  "children": [],
+                  "unit": null,
+                  "_parentId": "custom_object31024"
+                },
+                {
+                  "id": "31024_12_1",
+                  "name": "31024/12/1",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/31024/12/1",
+                  "children": [],
+                  "unit": null,
+                  "_parentId": "custom_object31024"
+                },
+                {
+                  "id": "31024_12_3",
+                  "name": "31024/12/3",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/31024/12/3",
+                  "children": [],
+                  "unit": null,
+                  "_parentId": "custom_object31024"
+                },
+                {
+                  "id": "31024_12_5",
+                  "name": "31024/12/5",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "/31024/12/5",
+                  "children": [],
+                  "unit": null,
+                  "_parentId": "custom_object31024"
+                }
+              ]
+            },
+            {
+              "id": "lwm2m-last",
+              "active": true,
+              "name": "Last LwM2M Publish",
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "path",
+                  "active": true,
+                  "name": "Path",
+                  "type": "argument",
+                  "dataType": "string",
+                  "reference": "path",
+                  "_parentId": "lwm2m-last"
+                },
+                {
+                  "id": "payload",
+                  "active": true,
+                  "name": "Payload",
+                  "type": "argument",
+                  "dataType": "string",
+                  "reference": "payload",
+                  "_parentId": "lwm2m-last"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cmds",
+          "active": true,
+          "name": "Commands",
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "get_1",
+              "name": "READ Server",
+              "active": true,
+              "type": "action",
+              "command": "coap_command",
+              "params": {
+                "data": "",
+                "path": "/1",
+                "method": "get"
+              },
+              "service": "ric-gate"
+            },
+            {
+              "id": "discover_1",
+              "name": "DISCOVER Server",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "command": "coap_command",
+              "service": "ric-gate",
+              "params": {
+                "path": "/1",
+                "data": "discover"
+              }
+            },
+            {
+              "id": "get_1_0",
+              "name": "READ Server 0",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "command": "coap_command",
+              "service": "ric-gate",
+              "params": {
+                "path": "/1/0"
+              }
+            },
+            {
+              "id": "get_1_0_6",
+              "name": "READ Notification Storing When Disabled or Offline",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "command": "coap_command",
+              "service": "ric-gate",
+              "params": {
+                "path": "/1/0/6"
+              }
+            },
+            {
+              "id": "get_3",
+              "name": "READ Device",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "command": "coap_command",
+              "service": "ric-gate",
+              "params": {
+                "path": "/3"
+              }
+            },
+            {
+              "id": "get_6",
+              "name": "READ Location",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "command": "coap_command",
+              "service": "ric-gate",
+              "params": {
+                "path": "/6"
+              }
+            },
+            {
+              "id": "get_7",
+              "name": "READ Connectivity Statistics",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "command": "coap_command",
+              "service": "ric-gate",
+              "params": {
+                "path": "/7"
+              }
+            },
+            {
+              "id": "get_31024",
+              "name": "READ Custom parameters",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "service": "ric-gate",
+              "command": "coap_command",
+              "params": {
+                "path": "/31024"
+              }
+            },
+            {
+              "id": "get_31024_10_1",
+              "name": "READ 31024/10/1",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "service": "ric-gate",
+              "command": "coap_command",
+              "params": {
+                "path": "/31024/10/1"
+              }
+            },
+            {
+              "id": "put_31024_10_1",
+              "name": "WRITE 31024/10/1",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "command": "coap_command",
+              "params": {
+                "method": "put",
+                "data": "254",
+                "path": "/31024/10/1"
+              },
+              "service": "ric-gate"
+            },
+            {
+              "id": "periods_31024_10_1",
+              "name": "WRITE periods 31024/10/1",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "command": "coap_command",
+              "service": "ric-gate",
+              "params": {
+                "method": "put",
+                "path": "/31024/10/1?pmin=5&pmax=60"
+              }
+            },
+            {
+              "id": "limits_31024_10_1",
+              "name": "WRITE limits 31024/10/1",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "command": "coap_command",
+              "service": "ric-gate",
+              "params": {
+                "method": "put",
+                "path": "/31024/10/1?gt=60.0&lt=1.0&st=5.0"
+              }
+            },
+            {
+              "id": "clear_attr_31024_10_1",
+              "name": "CLEAR attr 31024/10/1",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "command": "coap_command",
+              "service": "ric-gate",
+              "params": {
+                "method": "put",
+                "path": "/31024/10/1?pmin&pmax&gt&lt&st"
+              }
+            },
+            {
+              "id": "exec_31024_10_2",
+              "name": "EXECUTE 31024/10/2",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "service": "ric-gate",
+              "command": "coap_command",
+              "params": {
+                "method": "post",
+                "path": "/31024/10/2"
+              }
+            },
+            {
+              "id": "delete_31024_11",
+              "name": "DELETE 31024/11",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "service": "ric-gate",
+              "command": "coap_command",
+              "params": {
+                "method": "delete",
+                "path": "/31024/11"
+              }
+            },
+            {
+              "id": "create_31024_11",
+              "name": "CREATE 31024/11",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "command": "coap_command",
+              "service": "ric-gate",
+              "params": {
+                "path": "/31024",
+                "data": "[\n    {\n      \"bn\": \"/31024/\",\n      \"n\": \"11/1\",\n      \"v\": 8\n    }\n  ]",
+                "method": "post"
+              }
+            },
+            {
+              "id": "observe_31024",
+              "name": "OBSERVE 31024",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "service": "ric-gate",
+              "command": "coap_command",
+              "params": {
+                "path": "/31024",
+                "data": "observe"
+              }
+            },
+            {
+              "id": "cancel_observe_31024",
+              "name": "CANCEL Observe 31024",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "service": "ric-gate",
+              "command": "coap_command",
+              "params": {
+                "path": "/31024",
+                "data": "cancel"
+              }
+            },
+            {
+              "id": "observe_3_0_9",
+              "name": "OBSERVE Battery level",
+              "active": true,
+              "type": "action",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "service": "ric-gate",
+              "command": "coap_command",
+              "params": {
+                "path": "/3/0/9",
+                "data": "observe"
+              }
+            },
+            {
+              "id": "cancel_observe_3_0_9",
+              "name": "CANCEL Observe Battery level",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "coap_command",
+              "params": {
+                "path": "/3/0/9",
+                "data": "cancel"
+              }
+            }
+          ]
+        }
+      ],
+      "description": "Send Battery Level",
+      "base": "base",
+      "disabled": [],
+      "removed": [],
+      "_isRoot": true
+    },
+    "props": {
+      "bots": false,
+      "hardwareEvents": false,
+      "helper": "",
+      "prefix": "",
+      "order": 13,
+      "typeInput": {
+        "hidden": false
+      },
+      "statusInput": {
+        "hidden": false
+      },
+      "descriptionInput": {
+        "hidden": false
+      },
+      "protocol": "lwm2m",
+      "idPattern": "lwm2m-$tagname-$nanoid",
+      "icon": "<svg viewBox=\"0 0 48 48\"><path fill=\"#b0bec5\" d=\"M14,41H9c-0.552,0-1-0.448-1-1v-4c0-0.552,0.448-1,1-1h5c0.552,0,1,0.448,1,1v4 C15,40.552,14.552,41,14,41z\" /><path fill=\"#43a047\" d=\"M43,39H5c-2.209,0-4-1.791-4-4V12c0-2.209,1.791-4,4-4h38c2.209,0,4,1.791,4,4v23 C47,37.209,45.209,39,43,39z\" /><path fill=\"#ffc107\" d=\"M42.5 10A2.5 2.5 0 1 0 42.5 15 2.5 2.5 0 1 0 42.5 10zM42.5 32A2.5 2.5 0 1 0 42.5 37 2.5 2.5 0 1 0 42.5 32zM5.5 32A2.5 2.5 0 1 0 5.5 37 2.5 2.5 0 1 0 5.5 32zM5.5 10A2.5 2.5 0 1 0 5.5 15 2.5 2.5 0 1 0 5.5 10zM20.5 11A1.5 1.5 0 1 0 20.5 14 1.5 1.5 0 1 0 20.5 11zM13.5 11A1.5 1.5 0 1 0 13.5 14 1.5 1.5 0 1 0 13.5 11zM27.5 11A1.5 1.5 0 1 0 27.5 14 1.5 1.5 0 1 0 27.5 11zM34.5 11A1.5 1.5 0 1 0 34.5 14 1.5 1.5 0 1 0 34.5 11zM31 24c-.552 0-1-.448-1-1s.448-1 1-1h2c.552 0 1 .448 1 1s-.448 1-1 1H31zM15 24c-.552 0-1-.448-1-1s.448-1 1-1h2c.552 0 1 .448 1 1s-.448 1-1 1H15zM31 29c-.552 0-1-.448-1-1s.448-1 1-1h2c.552 0 1 .448 1 1s-.448 1-1 1H31zM27 31c0-.552.448-1 1-1s1 .448 1 1v2c0 .552-.448 1-1 1s-1-.448-1-1V31zM19 31c0-.552.448-1 1-1s1 .448 1 1v2c0 .552-.448 1-1 1s-1-.448-1-1V31zM27 18c0-.552.448-1 1-1s1 .448 1 1v2c0 .552-.448 1-1 1s-1-.448-1-1V18zM19 18c0-.552.448-1 1-1s1 .448 1 1v2c0 .552-.448 1-1 1s-1-.448-1-1V18zM15 29c-.552 0-1-.448-1-1s.448-1 1-1h2c.552 0 1 .448 1 1s-.448 1-1 1H15z\" /><g><path fill=\"#b0bec5\" d=\"M44 23h-6c-.55 0-1-.45-1-1v-2c0-.55.45-1 1-1h6c.55 0 1 .45 1 1v2C45 22.55 44.55 23 44 23zM10 28H4c-.55 0-1-.45-1-1v-7c0-.55.45-1 1-1h6c.55 0 1 .45 1 1v7C11 27.55 10.55 28 10 28zM44 28h-6c-.55 0-1-.45-1-1v-1c0-.55.45-1 1-1h6c.55 0 1 .45 1 1v1C45 27.55 44.55 28 44 28z\" /></g><g><path fill=\"#37474f\" d=\"M42.5 11.5A1 1 0 1 0 42.5 13.5 1 1 0 1 0 42.5 11.5zM42.5 33.5A1 1 0 1 0 42.5 35.5 1 1 0 1 0 42.5 33.5zM5.5 33.5A1 1 0 1 0 5.5 35.5 1 1 0 1 0 5.5 33.5zM5.5 11.5A1 1 0 1 0 5.5 13.5 1 1 0 1 0 5.5 11.5zM30.941 32H17c-.552 0-1-.448-1-1v-9l3-3h11.941C31.526 19 32 19.448 32 20v11C32 31.552 31.526 32 30.941 32z\" /></g></svg>"
+    },
+    "group": "613645025dab3700105ae871"
+  }
+}

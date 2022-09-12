@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2022-09-12T11:50:06.451Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "objects",
+  "data": {
+    "_id": "631f1cd5c724320010fd3cb5",
+    "id": "test_device",
+    "name": "Device with battery",
+    "config": {
+      "levels": {},
+      "position": {}
+    },
+    "status": "ok",
+    "owner": "613645025dab3700105ae872",
+    "group": "613645025dab3700105ae871",
+    "_licensed": true,
+    "time": 1662983381256,
+    "_org": "613645025dab3700105ae871"
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2022-09-10T14:49:15.521Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "models",
+  "data": {
+    "_id": "631b6398c724320010fd3bf4",
+    "name": "Lamp sensor model",
+    "base": "websocket",
+    "data": {
+      "id": "root",
+      "active": true,
+      "name": "Lamp sensor model",
+      "type": "subsystem",
+      "children": [
+        {
+          "id": "external-software-modules",
+          "active": true,
+          "copy": true,
+          "type": "subsystem",
+          "children": []
+        },
+        {
+          "id": "params",
+          "name": "Params",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "server-info",
+              "name": "Server information",
+              "active": true,
+              "type": "subsystem",
+              "children": []
+            },
+            {
+              "id": "request",
+              "name": "Request information",
+              "active": true,
+              "type": "subsystem",
+              "dataType": "number",
+              "factor": 1,
+              "linear": true,
+              "children": [
+                {
+                  "id": "path",
+                  "name": "Path",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "string",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "request.path",
+                  "unit": null,
+                  "_parentId": "request"
+                },
+                {
+                  "id": "method",
+                  "name": "Method",
+                  "active": false,
+                  "type": "argument",
+                  "dataType": "string",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "request.method",
+                  "unit": null,
+                  "children": []
+                },
+                {
+                  "id": "version",
+                  "name": "Version",
+                  "active": true,
+                  "type": "argument",
+                  "dataType": "number",
+                  "factor": 1,
+                  "linear": true,
+                  "reference": "request.version",
+                  "unit": null,
+                  "children": [],
+                  "_parentId": "request"
+                }
+              ]
+            },
+            {
+              "id": "luminosity",
+              "name": "Luminosity",
+              "active": true,
+              "type": "argument",
+              "dataType": "number",
+              "linear": true,
+              "factor": 1,
+              "unit": "light-lux",
+              "reference": "luminosity",
+              "children": [],
+              "_parentId": "telemetry"
+            },
+            {
+              "id": "lamp",
+              "name": "Lamp",
+              "active": true,
+              "type": "argument",
+              "dataType": "boolean",
+              "linear": true,
+              "factor": 1,
+              "unit": null,
+              "reference": "lamp",
+              "children": [],
+              "_parentId": "telemetry",
+              "levels": {
+                "svg": "<svg viewBox=\"0 0 16 16\"><path d=\"M 2.40625 1.195313 L 1.695313 1.90625 L 2.050781 2.257813 L 2.757813 2.964844 L 3.109375 3.320313 L 3.820313 2.609375 L 3.464844 2.257813 L 2.757813 1.550781 Z M 13.59375 1.195313 L 13.242188 1.550781 L 12.183594 2.609375 L 12.890625 3.320313 L 13.242188 2.964844 L 14.300781 1.90625 Z M 8 2 C 5.796875 2 4 3.796875 4 6 C 4 7.382813 4.605469 8.179688 5.09375 8.859375 C 5.585938 9.535156 6 10.109375 6 11.5 L 6 12.5 C 6 13.148438 6.425781 13.703125 7.007813 13.90625 C 7.003906 13.9375 7 13.96875 7 14 C 7 14.550781 7.449219 15 8 15 C 8.550781 15 9 14.550781 9 14 C 9 13.96875 9 13.9375 8.996094 13.90625 C 9.578125 13.699219 10 13.148438 10 12.5 L 10 11.5 C 10 10.109375 10.414063 9.535156 10.90625 8.859375 C 11.394531 8.179688 12 7.382813 12 6 C 12 3.796875 10.203125 2 8 2 Z M 8 3 C 9.664063 3 11 4.335938 11 6 C 11 7.117188 10.605469 7.570313 10.09375 8.265625 C 9.652344 8.878906 9.214844 9.742188 9.09375 11 L 6.90625 11 C 6.785156 9.742188 6.347656 8.878906 5.90625 8.265625 C 5.394531 7.570313 5 7.117188 5 6 C 5 4.335938 6.335938 3 8 3 Z M 1 6 L 1 7 L 3 7 L 3 6 Z M 13 6 L 13 7 L 15 7 L 15 6 Z M 3.109375 9.679688 L 2.757813 10.035156 L 2.050781 10.742188 L 1.695313 11.09375 L 2.40625 11.800781 L 3.464844 10.742188 L 3.820313 10.390625 Z M 12.890625 9.679688 L 12.183594 10.390625 L 13.59375 11.800781 L 14.300781 11.09375 L 13.242188 10.035156 Z M 7 12 L 9 12 L 9 12.5 C 9 12.78125 8.78125 13 8.5 13 L 7.5 13 C 7.21875 13 7 12.78125 7 12.5 Z\" /></svg>",
+                "type": "boolean",
+                "value": [
+                  {
+                    "color": "#f3d54e",
+                    "name": "True",
+                    "value": true
+                  },
+                  {
+                    "color": "#a8b3b4",
+                    "name": "False",
+                    "value": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": "ws-last",
+              "name": "Last WS Message",
+              "active": true,
+              "type": "subsystem",
+              "children": [
+                {
+                  "id": "body",
+                  "name": "Body",
+                  "active": true,
+                  "type": "argument",
+                  "source": "state",
+                  "dataType": "string",
+                  "reference": "body",
+                  "_parentId": "ws-last"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cmds",
+          "name": "Commands",
+          "active": true,
+          "type": "subsystem",
+          "children": [
+            {
+              "id": "lamp-on",
+              "name": "Turn-on lamp",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "text_command",
+              "params": {
+                "topic": "base/relay/led1",
+                "payload": "1",
+                "command": "{\"device\":\"lamp\",\"data\":1}"
+              },
+              "description": null
+            },
+            {
+              "id": "lamp-off",
+              "name": "Turn-off lamp",
+              "active": true,
+              "type": "action",
+              "service": "ric-gate",
+              "command": "text_command",
+              "params": {
+                "topic": "base/relay/led1",
+                "payload": "0",
+                "command": "{\"device\":\"lamp\",\"data\":0}"
+              }
+            }
+          ]
+        }
+      ],
+      "description": "Базовая модель",
+      "base": "base"
+    },
+    "props": {
+      "bots": false,
+      "hardwareEvents": false,
+      "helper": "",
+      "prefix": "",
+      "order": 2.9,
+      "typeInput": {
+        "hidden": false
+      },
+      "statusInput": {
+        "hidden": false
+      },
+      "descriptionInput": {
+        "hidden": false
+      },
+      "protocol": "websocket",
+      "idPattern": "ws-$tagname-$nanoid",
+      "auth": {
+        "fields": {
+          "password": {
+            "secret": true,
+            "title": "password"
+          },
+          "username": {
+            "title": "username"
+          }
+        },
+        "title": "ws_auth"
+      },
+      "idInput": {
+        "label": "ID"
+      },
+      "namePattern": "ws-$tagname-$nanoid"
+    },
+    "group": "613645025dab3700105ae871"
+  }
+}

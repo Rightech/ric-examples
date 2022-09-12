@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "origin": "dev.rightech.io",
+  "time": "2022-09-10T14:49:11.875Z",
+  "user": "613645025dab3700105ae872",
+  "group": "613645025dab3700105ae871",
+  "store": "objects",
+  "data": {
+    "_id": "631b65acc724320010fd3bf5",
+    "id": "ws_lamp",
+    "name": "Lamp",
+    "config": {
+      "levels": {},
+      "position": {}
+    },
+    "status": "ok",
+    "owner": "613645025dab3700105ae872",
+    "group": "613645025dab3700105ae871",
+    "_licensed": true,
+    "time": 1662739884985,
+    "_org": "613645025dab3700105ae871"
+  }
+}
