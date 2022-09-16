@@ -3,7 +3,7 @@
 Вы можете подключить ваше устройство по протоколу WebSocket:
 
 ```
-wss://ws.{{env}}/api/v1/objects/{{object.id}}/connect
+wss://ws.{{env}}/objects/{{object.id}}/connect
 ```
 
 И что-нибудь отправить.

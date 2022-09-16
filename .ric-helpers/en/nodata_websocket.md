@@ -4,7 +4,7 @@ This device has not sent any data yet.
 You can connect your device using the WebSocket protocol:
 
 ```
-wss://ws.{{env}}/api/v1/objects/{{object.id}}/connect
+wss://ws.{{env}}/objects/{{object.id}}/connect
 ```
 
 And send something.
