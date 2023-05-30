@@ -330,7 +330,7 @@ services:
       - command
 
   device-snmp:
-    image: edgexfoundry/docker-device-snmp-go:1.2.1
+    image: edgexfoundry/docker-device-snmp-go:1.3.1
     ports:
       - "127.0.0.1:49993:49993"
     container_name: edgex-device-snmp
