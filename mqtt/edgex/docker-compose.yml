@@ -135,7 +135,7 @@ services:
       - notifications
 
   data:
-    image: edgexfoundry/docker-core-data-go:1.2.1
+    image: edgexfoundry/docker-core-data-go:1.3.1
     ports:
       - "127.0.0.1:48080:48080"
       - "127.0.0.1:5563:5563"
