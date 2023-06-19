@@ -315,7 +315,7 @@ services:
       - command
 
   device-modbus:
-    image: edgexfoundry/docker-device-modbus-go:1.2.1
+    image: edgexfoundry/docker-device-modbus-go:1.3.1
     ports:
       - "127.0.0.1:49991:49991"
     container_name: edgex-device-modbus
